@@ -1,4 +1,24 @@
-*
+#admin
+admin/
+#
 
-!.gitignore
-!README.md
+#catalog
+catalog/
+#
+
+#image
+image/
+#
+
+#system
+system/
+#
+
+.htaccess
+config.php
+index.php
+php.ini
+robots.txt
+.DS_Store
+.idea/
+
