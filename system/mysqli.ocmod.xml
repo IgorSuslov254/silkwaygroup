@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modification>
+    <name>Modification library mysqli for sql 8></name>
+    <code>1</code>
+    <version>1.0</version>
+    <author>Suslov Igor</author>
+    <link>igirsuslov@gmail.com</link>
+
+    <file path="system/library/db/mysqli.php">
+        <operation>
+            <search>
+                <![CDATA[$this->connection->query("SET SESSION sql_mode = 'NO_ZERO_IN_DATE,NO_ZERO_DATE,NO_ENGINE_SUBSTITUTION'");]]>
+            </search>
+            <add position="replace">
+                <![CDATA[$this->connection->query("SET SESSION sql_mode = 'NO_ZERO_IN_DATE,NO_ENGINE_SUBSTITUTION'");]]>
+            </add>
+        </operation>
+    </file>
+
+</modification>
