@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modification>
+    <name>Modification ptcontrolpanel></name>
+    <code>2</code>
+    <version>1.0</version>
+    <author>Suslov Igor</author>
+    <link>igirsuslov@gmail.com</link>
+
+    <file path="admin/view/template/tmarket/module/ptcontrolpanel.twig">
+        <operation>
+            <search>
+                <![CDATA[<option value="3" {% if module_ptcontrolpanel_header_layout[store.store_id] == '3' %} selected="selected" {% endif %}>{{ entry_header }} 3</option>]]>
+            </search>
+            <add position="after">
+                <![CDATA[<option value="4" {% if module_ptcontrolpanel_header_layout[store.store_id] == '4' %} selected="selected" {% endif %}>{{ entry_header }} 4</option>]]>
+            </add>
+        </operation>
+    </file>
+
+</modification>
