@@ -1128,7 +1128,13 @@ h2.price{margin:0;}
 .product-info-details-more .nav-tabs>li>a:hover,.product-info-details-more .nav-tabs>li.active>a,.product-info-details-more .nav-tabs>li.active>a:focus,.product-info-details-more .nav-tabs>li.active>a:hover{border:0;background:transparent;color: var(--heading-color);}
 .product-info-details-more .tab-content{padding: 30px;line-height: 24px;border: 1px solid #ebebeb;border-radius: 0;}
 .related-products {}
-.container{width:100%;}
+
+@media (min-width: 1200px) {
+	.container {
+		width: 90%;
+	}
+}
+
 .fluid-width > .container{width:auto;max-width: 1770px;}
 @media (max-width: 1800px) {
 	.fluid-width .swiper-viewport .swiper-button-next {right: 0 !Important;}

@@ -24,7 +24,10 @@
 					<ul class="nav navbar-nav navbar-right">
 						<li id="top-links" class="nav header-dropdown">
 							<ul class="list-inline">
-								<li class="dropdown"><a href="{{ account }}" title="{{ text_account }}" class="dropdown-toggle" data-toggle="dropdown"><i class="ion-android-person icons"></i> <span class="hidden-xs">{{ text_account }}</span> <i class="icon-right ion-ios-arrow-down"></i></a>
+								<li class="dropdown">
+									<a href="{{ account }}" title="{{ text_account }}" class="dropdown-toggle" data-toggle="dropdown">
+										<span class="hidden-xs">{{ text_account }}
+									</a>
 									<ul class="dropdown-menu dropdown-menu-right pt-account">
 										{% if logged %}
 											<li><a href="{{ account }}">{{ text_account }}</a></li>
@@ -40,10 +43,30 @@
 								</li>
 							</ul>
 						</li>
-						<a href="{{ home }}index.php?route=account/order" class="btn btn-default btn-lg">Отследить груз</a>
+						<a href="{{ home }}index.php?route=account/order" class="btn btn-default btn-lg">{{ text_track_shipment }}</a>
 					</ul>
 				</div><!-- /.navbar-collapse -->
 			</div>
 		</div><!-- /.container-fluid -->
 	</nav>
+	<div class="container header-body">
+		<div class="row">
+			<h1>
+				доставка товара и сборных грузов
+				<br>
+				из Китая под ключ
+				<br>
+				В любой город россии
+			</h1>
+			<p>
+				Мы предоставляем полный комплекс услуг по выкупу товаров непосредственно у производителей и поставщиков в Китае,
+				<br>
+				обеспечивая эффективное управление вашими закупками от начала и до конца.
+				<br>
+				Работая с нами, вы получаете полноценного представителя на территории КНР.
+				<br>
+				С нами вы не только выгодно приобретете товар, но и сможете заработать!
+			</p>
+		</div>
+	</div>
 </header>

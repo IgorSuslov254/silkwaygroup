@@ -1,9 +1,22 @@
 header {
-    height: 1100px;
     background-image:  linear-gradient( rgba(0,0,0,.5), rgba(0,0,0,.5) ), url("../../../../../../../image/catalog/silkway/first page.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
+}
+header .header-body h1{
+    margin-top: 50px;
+    color: white;
+    font-size: 74px;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 140px;
+}
+header .header-body > div > p {
+    font-size: 20px;
+    color: white;
+    margin-top: 30px;
+    line-height: 40px;
 }
 header .navbar-silk-way {
     -webkit-border-radius: 0;
@@ -35,6 +48,26 @@ header .navbar-silk-way .container-fluid .navbar-collapse:before {
 header .navbar-silk-way .container-fluid .navbar-collapse:after,
 header .navbar-silk-way .container-fluid .navbar-collapse:before {
     /*display: none;*/
+}
+header .navbar-silk-way .container-fluid .navbar-collapse #search input{
+    background: rgb(217 217 217 / 40%);
+    color: white;
+    border: 1px solid rgb(235 235 240 / 20%);
+    border-right: none;
+    border-radius: 4px 0 0 4px;
+}
+header .navbar-silk-way .container-fluid .navbar-collapse #search > span > button {
+    height: 45px;
+    background: rgb(217 217 217 / 40%);
+    color: white;
+    border: 1px solid rgb(235 235 240 / 20%);
+    border-left: none;
+    margin-left: 0;
+    padding: 10px 6px;
+    border-radius: 0 4px 4px 0;
+}
+header .navbar-silk-way .container-fluid .navbar-collapse #search input::placeholder {
+    color: rgb(255 255 255 / 70%);
 }
 header .navbar-silk-way .container-fluid .navbar-collapse .pt-menu {
     width: 35%;
@@ -89,14 +122,30 @@ header .navbar-silk-way .container-fluid .navbar-collapse .navbar-right {
     width: 25%;
     justify-content: flex-end;
 }
-header .navbar-silk-way .container-fluid .navbar-collapse .navbar-nav > li {
-    float: none;
-    margin-right: 30px;
-}
-header .navbar-silk-way .container-fluid .navbar-collapse .navbar-nav > a {
+header .navbar-silk-way .container-fluid .navbar-collapse .navbar-right > a {
+    padding: 10px 80px;
+    font-weight: bold;
+    font-size: 16px;
+    text-transform: none;
     height: 100%;
     display: flex;
     align-items: center;
+}
+header .navbar-silk-way .container-fluid .navbar-collapse .navbar-right .nav .dropdown > a {
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+}
+header .navbar-silk-way .container-fluid .navbar-collapse .navbar-right .nav .dropdown > a[aria-expanded = "true"] {
+    color: var(--button-bg-hover-color);
+    transition: 0.3s;
+}
+header .navbar-silk-way .container-fluid .navbar-collapse .navbar-right .nav .dropdown.open > a {
+    background: none;
+}
+header .navbar-silk-way .container-fluid .navbar-collapse .navbar-nav > li {
+    float: none;
+    margin-right: 30px;
 }
 header .navbar-silk-way .container-fluid .navbar-collapse .navbar-left #search {
     width: 100%;
