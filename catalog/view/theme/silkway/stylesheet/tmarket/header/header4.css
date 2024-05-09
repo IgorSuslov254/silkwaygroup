@@ -18,6 +18,30 @@ header .header-body > div > p {
     margin-top: 30px;
     line-height: 40px;
 }
+header .header-body > div > button {
+    margin-top: 50px;
+    padding: 25px 60px;
+    font-size: 16px;
+    text-transform: none;
+    font-weight: bold;
+}
+header .header-body > div > .about-us {
+    margin-top: 115px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 40px;
+    border-top: 1px solid rgb(235 235 240 / 20%);
+    border-right: 1px solid rgb(235 235 240 / 20%);
+}
+header .header-body > div > .about-us > div {
+    padding: 30px 50px;
+    border-left: 1px solid rgb(235 235 240 / 20%);
+}
+header .header-body > div > .about-us > div > p {
+    font-size: 16px;
+    color: white;
+    margin-top: 30px;
+}
 header .navbar-silk-way {
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
