@@ -25,7 +25,8 @@
         $data['text_h1'] = $this->language->get('text_h1');
         $data['text_p'] = $this->language->get('text_p');
         $data['text_button'] = $this->language->get('text_button');
-        $data['text_about_us'] = $this->language->get('text_about_us');]]>
+        $data['text_about_us'] = $this->language->get('text_about_us');
+        $data['is_main'] = $_SERVER['REQUEST_URI'] == '/' ? true : false;]]>
             </add>
         </operation>
     </file>

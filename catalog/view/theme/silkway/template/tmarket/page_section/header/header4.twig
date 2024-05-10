@@ -1,4 +1,8 @@
-<header>
+<header
+	{% if not is_main %}
+		class="not-main"
+	{% endif %}
+>
 	<nav class="navbar navbar-silk-way">
 		<div class="container-fluid">
 			<div class="row">
@@ -49,19 +53,22 @@
 			</div>
 		</div><!-- /.container-fluid -->
 	</nav>
-	<div class="container header-body">
-		<div class="row">
-			<h1>{{ text_h1 }}</h1>
-			<p>{{ text_p }}</p>
-			<button class="btn btn-default btn-lg">{{ text_button }}</button>
-			<div class="about-us">
-				{% for about_us in text_about_us %}
-					<div>
-						{{ about_us['svg'] }}
-						<p>{{ about_us['p'] }}</p>
-					</div>
-				{% endfor %}
+
+	{% if is_main %}
+		<div class="container header-body">
+			<div class="row">
+				<h1>{{ text_h1 }}</h1>
+				<p>{{ text_p }}</p>
+				<button class="btn btn-default btn-lg">{{ text_button }}</button>
+				<div class="about-us">
+					{% for about_us in text_about_us %}
+						<div>
+							{{ about_us['svg'] }}
+							<p>{{ about_us['p'] }}</p>
+						</div>
+					{% endfor %}
+				</div>
 			</div>
 		</div>
-	</div>
+	{% endif %}
 </header>

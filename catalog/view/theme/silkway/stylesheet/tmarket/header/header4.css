@@ -4,6 +4,9 @@ header {
     background-repeat: no-repeat;
     background-position: center center;
 }
+header.not-main {
+    background: #26292e;
+}
 header .header-body h1{
     margin-top: 50px;
     color: white;
@@ -71,7 +74,7 @@ header .navbar-silk-way .container-fluid .navbar-collapse:before {
 }
 header .navbar-silk-way .container-fluid .navbar-collapse:after,
 header .navbar-silk-way .container-fluid .navbar-collapse:before {
-    /*display: none;*/
+    display: none;
 }
 header .navbar-silk-way .container-fluid .navbar-collapse #search input{
     background: rgb(217 217 217 / 40%);
@@ -137,13 +140,13 @@ header .navbar-silk-way .container-fluid .navbar-collapse .pt-menu .mega-menu-co
     }
 }
 header .navbar-silk-way .container-fluid .navbar-collapse .navbar-left {
-    width: 40%;
+    width: 35%;
 }
 header .navbar-silk-way .container-fluid .navbar-collapse .navbar-right {
     height: 100%;
     display: flex;
     align-items: center;
-    width: 25%;
+    width: 30%;
     justify-content: flex-end;
 }
 header .navbar-silk-way .container-fluid .navbar-collapse .navbar-right > a {
@@ -154,6 +157,7 @@ header .navbar-silk-way .container-fluid .navbar-collapse .navbar-right > a {
     height: 100%;
     display: flex;
     align-items: center;
+    border-radius: 0;
 }
 header .navbar-silk-way .container-fluid .navbar-collapse .navbar-right .nav .dropdown > a {
     color: white;
@@ -180,4 +184,158 @@ header .navbar-silk-way .container-fluid .ul-top-items .li-top-item {
 }
 header .navbar-silk-way .container-fluid .ul-top-items .li-top-item .a-top-link {
     background: none !important;
+}
+
+@media (max-width: 2100px) {
+    header .navbar-silk-way .container-fluid .navbar-collapse .pt-menu > .ul-top-items .li-top-item .a-top-link {
+        font-size: 14px !important;
+    }
+    header .navbar-silk-way .container-fluid .navbar-collapse .navbar-right .nav .dropdown > a {
+        font-size: 14px;
+    }
+    header .navbar-silk-way .container-fluid .navbar-collapse .navbar-right > a {
+        padding: 10px 60px;
+        font-size: 14px;
+    }
+    header .navbar-silk-way .container-fluid .navbar-collapse .pt-menu {
+        width: 40%;
+    }
+    header .navbar-silk-way .container-fluid .navbar-collapse .navbar-left {
+        width: 30%;
+    }
+    header .header-body h1 {
+        margin-top: 40px;
+        font-size: 64px;
+        line-height: 110px;
+    }
+    header .header-body > div > p {
+        font-size: 16px;
+        margin-top: 25px;
+        line-height: 30px;
+    }
+    header .header-body > div > button {
+        margin-top: 40px;
+        padding: 18px 42px;
+        font-size: 14px;
+    }
+    header .header-body > div > .about-us {
+        margin-top: 95px;
+        gap: 20px;
+    }
+    header .header-body > div > .about-us > div {
+        padding: 20px 40px;
+    }
+    header .navbar-silk-way .container-fluid .navbar-collapse .pt-menu .mega-menu-container {
+        width: 50% !important;
+    }
+    header .header-body > div > .about-us > div > p {
+        font-size: 14px;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 1600px) {
+    header .navbar-silk-way .container-fluid .navbar-collapse .navbar-right {
+        width: 30%;
+    }
+    header .navbar-silk-way .container-fluid .navbar-collapse .navbar-right > a {
+        padding: 10px 40px;
+    }
+    header .navbar-silk-way .container-fluid .navbar-header {
+        margin: 0 0 0 30px;
+    }
+    header .navbar-silk-way .container-fluid .navbar-collapse .pt-menu {
+        width: 45%;
+    }
+    header .navbar-silk-way .container-fluid .navbar-collapse .pt-menu {
+        padding-left: 20px;
+    }
+    header .navbar-silk-way .container-fluid .navbar-collapse .navbar-left {
+        width: 25%;
+    }
+    header .navbar-silk-way .container-fluid .navbar-collapse .pt-menu .mega-menu-container {
+        width: 52% !important;
+        margin-top: 15px;
+    }
+    header .header-body h1 {
+        margin-top: 30px;
+        font-size: 56px;
+        line-height: 100px;
+    }
+    header .header-body > div > p {
+        font-size: 14px;
+        margin-top: 20px;
+        line-height: 28px;
+    }
+    header .header-body > div > button {
+        margin-top: 30px;
+    }
+    header .header-body > div > .about-us {
+        margin-top: 80px;
+        gap: 10px;
+    }
+    header .header-body > div > .about-us > div > p {
+        font-size: 12px;
+        margin-top: 15px;
+    }
+}
+
+@media (max-width: 1400px) {
+    header .navbar-silk-way .container-fluid > .row {
+        height: 75px;
+    }
+    header .navbar-silk-way .container-fluid .navbar-collapse .pt-menu {
+        padding-left: 10px;
+    }
+    header .navbar-silk-way .container-fluid .navbar-collapse .pt-menu > .ul-top-items .li-top-item .a-top-link {
+        font-size: 12px !important;
+    }
+    header .navbar-silk-way .container-fluid .navbar-collapse .navbar-right .nav .dropdown > a {
+        font-size: 12px;
+    }
+    header .navbar-silk-way .container-fluid .navbar-collapse .navbar-right > a {
+        padding: 10px 30px;
+        font-size: 12px;
+    }
+    header .navbar-silk-way .container-fluid .navbar-collapse .pt-menu {
+        width: 48%;
+    }
+    header .navbar-silk-way .container-fluid .navbar-collapse .navbar-left {
+        width: 21%;
+    }
+    header .navbar-silk-way .container-fluid .navbar-collapse .navbar-right {
+        width: 31%;
+    }
+    header .navbar-silk-way .container-fluid .navbar-collapse .pt-menu .mega-menu-container {
+        width: 55% !important;
+        margin-top: 10px;
+    }
+    header .header-body h1 {
+        margin-top: 20px;
+        font-size: 49px;
+        line-height: 90px;
+    }
+    header .header-body > div > button {
+        margin-top: 30px;
+        font-size: 12px;
+        padding: 15px 39px;
+    }
+    header .header-body > div > .about-us {
+        margin-top: 65px;
+    }
+    header .header-body > div > .about-us > div {
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 992px) {
+
+}
+
+@media (max-width: 768px) {
+
+}
+
+@media (max-width: 576px) {
+
 }
