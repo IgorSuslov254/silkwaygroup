@@ -2,7 +2,10 @@
 
 class ModelExtensionModuleSwShippingInformation extends Model
 {
-    public function install()
+    /**
+     * @return void
+     */
+    public function install(): void
     {
         $this->db->query("
             CREATE TABLE IF NOT EXISTS `sw_shipping_information`(
@@ -18,7 +21,10 @@ class ModelExtensionModuleSwShippingInformation extends Model
         ");
     }
 
-    public function uninstall()
+    /**
+     * @return void
+     */
+    public function uninstall(): void
     {
         $this->db->query("
             DROP TABLE IF EXISTS
