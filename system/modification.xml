@@ -28,5 +28,21 @@
             } elseif (is_file($file)) {]]>
       </add>
     </operation>
-  </file> 
+    <operation>
+      <search>
+        <![CDATA['debug'       => false,]]>
+      </search>
+      <add position="replace">
+        <![CDATA['debug'       => true,]]>
+      </add>
+    </operation>
+    <operation>
+      <search>
+        <![CDATA[$twig = new \Twig\Environment($loader, $config);]]>
+      </search>
+      <add position="after">
+        <![CDATA[$twig->addExtension(new \Twig_Extension_Debug());]]>
+      </add>
+    </operation>
+  </file>
 </modification>
