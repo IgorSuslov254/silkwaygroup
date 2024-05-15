@@ -143,6 +143,7 @@ image/
 
 #system
 system/*
+!system/modification.xml
 !system/*.ocmod.xml
 #
 
