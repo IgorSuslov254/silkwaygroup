@@ -1,9 +1,6 @@
 {{ header }}{{ column_left }}
 
 <div id="content">
-
-    {{ dump(sw_shipping_information) }}
-
     <div class="loader-block hidden">
         <div class="loader"></div>
     </div>
@@ -40,6 +37,70 @@
                 </div>
             </div>
         </div>
+
+        {% for data in sw_shipping_information['data'] %}
+            <form id="{{ data['id'] }}" class="hidden"></form>
+            <form id="insert" class="hidden"></form>
+        {% endfor %}
+
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    {% for info in sw_shipping_information['info'] %}
+                        <td class="text-left">{{ info['Comment'] }}</td>
+                    {% endfor %}
+                    <td class="text-right">Действие</td>
+                </tr>
+            </thead>
+            <tbody>
+                {% for data in sw_shipping_information['data'] %}
+                    <tr data-id="{{ data['id'] }}">
+                        {% for key, value in data %}
+                            <td class="text-left">
+                                {% if sw_shipping_information['info'][key]['Type'] == 'int(11)' %}
+                                    {% if key == 'id' %}
+                                        {{ value }}
+                                    {% else %}
+                                        <input type="number" name="{{ key }}" min="1" max="1000" form="{{ data['id'] }}" value="{{ value }}">
+                                    {% endif %}
+                                {% else %}
+                                    <input type="text" name="{{ key }}" maxlength="1000" form="{{ data['id'] }}" value="{{ value }}">
+                                {% endif %}
+                            </td>
+                        {% endfor %}
+                        <td class="text-right d-flex">
+                            <button type="submit" form="{{ data['id'] }}" data-toggle="tooltip" title="" class="btn btn-info" data-original-title="Редактировать">
+                                <i class="fa fa-pencil"></i>
+                            </button>
+                            <button data-id="{{ data['id'] }}" data-toggle="tooltip" title="" class="btn btn-warning" data-original-title="Удалить">
+                                <i class="fa fa-trash-o"></i>
+                            </button>
+                        </td>
+                    </tr>
+
+                    {% if data['id'] == sw_shipping_information['data']|last['id'] %}
+                        <tr>
+                            {% for key, value in data %}
+                                <td class="text-left">
+                                    {% if sw_shipping_information['info'][key]['Type'] == 'int(11)' %}
+                                        {% if key != 'id' %}
+                                            <input type="number" name="{{ key }}" min="1" max="1000" form="insert">
+                                        {% endif %}
+                                    {% else %}
+                                        <input type="text" name="{{ key }}" maxlength="1000" form="insert">
+                                    {% endif %}
+                                </td>
+                            {% endfor %}
+                            <td class="text-right">
+                                <button type="submit" form="insert" data-toggle="tooltip" title="" class="btn btn-success" data-original-title="Активировать">
+                                    <i class="fa fa-plus-circle"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    {% endif %}
+                {% endfor %}
+            </tbody>
+        </table>
     </div>
 </div>
 

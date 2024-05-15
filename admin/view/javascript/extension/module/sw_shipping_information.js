@@ -12,4 +12,12 @@ $(document).ready(function () {
             }
         });
     });
+
+    $('form').submit(function () {
+        let data = $(this).serialize() + '&id=' + $(this).attr('id');
+
+        console.log(data)
+
+        return false;
+    })
 });

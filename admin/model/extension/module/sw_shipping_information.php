@@ -14,17 +14,39 @@ class ModelExtensionModuleSwShippingInformation extends Model
             FROM
                 sw_shipping_information;
         ");
-        $response['info'] = $query->rows;
+
+        foreach ($query->rows as $value) {
+            $response['info'][$value['Field']] = $value;
+        }
 
         $query = $this->db->query("
             SELECT
                 *
             FROM
                 `sw_shipping_information`
+            ORDER BY
+                `sort`
+            ASC 
         ");
         $response['data'] = $query->rows;
 
         return $response;
+    }
+
+    /**
+     * @return void
+     */
+    public function updateSwShippingInformation(): void
+    {
+        $query = $this->db->query("
+            UPDATE
+                `sw_shipping_information`
+            SET
+                `name` = 'test',
+                `description` = 'test'
+            WHERE
+                `sw_shipping_information`.`id` = 1;
+        ");
     }
 
     /**
