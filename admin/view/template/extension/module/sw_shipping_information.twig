@@ -64,11 +64,25 @@
                                         <input type="number" name="{{ key }}" min="1" max="1000" form="{{ data['id'] }}" value="{{ value }}">
                                     {% endif %}
                                 {% else %}
-                                    <input type="text" name="{{ key }}" maxlength="1000" form="{{ data['id'] }}" value="{{ value }}">
+                                    {% if key == 'photo' %}
+
+                                        {% if value is empty %}
+                                            {% set value = 'no_image.png' %}
+                                        {% endif %}
+
+                                        <div>
+                                            <a href="#" id="thumb-image{{ data['id'] }}" data-toggle="image" class="img-thumbnail">
+                                                <img src="/image/{{ value }}" alt="" title="" data-placeholder="/image/no_image.png" width="100" />
+                                            </a>
+                                            <input type="hidden" name="{{ key }}" value="{{ value }}" id="input-image{{ data['id'] }}" form="{{ data['id'] }}" />
+                                        </div>
+                                    {% else %}
+                                        <input type="text" name="{{ key }}" maxlength="1000" form="{{ data['id'] }}" value="{{ value }}">
+                                    {% endif %}
                                 {% endif %}
                             </td>
                         {% endfor %}
-                        <td class="text-right d-flex">
+                        <td class="text-right">
                             <button type="submit" form="{{ data['id'] }}" data-toggle="tooltip" title="" class="btn btn-info" data-original-title="Редактировать">
                                 <i class="fa fa-pencil"></i>
                             </button>
@@ -87,7 +101,16 @@
                                             <input type="number" name="{{ key }}" min="1" max="1000" form="insert">
                                         {% endif %}
                                     {% else %}
-                                        <input type="text" name="{{ key }}" maxlength="1000" form="insert">
+                                        {% if key == 'photo' %}
+                                            <div>
+                                                <a href="#" id="thumb-image-insert" data-toggle="image" class="img-thumbnail">
+                                                    <img src="/image/no_image.png" alt="" title="" data-placeholder="/image/no_image.png" width="100" />
+                                                </a>
+                                                <input type="hidden" name="{{ key }}" value="" id="input-image-insert" form="insert" />
+                                            </div>
+                                        {% else %}
+                                            <input type="text" name="{{ key }}" maxlength="1000" form="insert">
+                                        {% endif %}
                                     {% endif %}
                                 </td>
                             {% endfor %}
@@ -103,6 +126,7 @@
         </table>
     </div>
 </div>
+
 
 <script>
     const link = '{{ link }}';
