@@ -3,6 +3,50 @@
 class ModelExtensionModuleSwShippingInformation extends Model
 {
     /**
+     * @param array $data
+     * @return int
+     */
+    public function create(array $data = []): int
+    {
+        $names = '`id`';
+        $values = 'NULL';
+        unset($data['id']);
+
+        foreach ($data as $key => $value) {
+            $names .= ",`{$key}`";
+            $values .= ",'{$value}'";
+        }
+
+        return $this->db->query("
+            INSERT INTO `sw_shipping_information`({$names})
+            VALUES($values);        
+        ");
+    }
+
+    /**
+     * @param array $data
+     * @return int
+     */
+    public function update(array $data = []): int
+    {
+        $update = '';
+        $i = 1;
+        foreach ($data as $key => $value) {
+            $update .= '`' . $key . '`' . '=' . '\'' . $value . '\'' . (count($data) == $i ? '' : ',');
+            $i++;
+        }
+
+        return $this->db->query("
+            UPDATE
+                `sw_shipping_information`
+            SET
+                {$update}
+            WHERE
+                `sw_shipping_information`.`id` = {$data['id']}; 
+        ");
+    }
+
+    /**
      * @return array
      */
     public function getSwShippingInformation(): array

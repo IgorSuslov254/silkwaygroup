@@ -40,7 +40,7 @@
 
         {% for data in sw_shipping_information['data'] %}
             <form id="{{ data['id'] }}" class="hidden"></form>
-            <form id="insert" class="hidden"></form>
+            <form id="create" class="hidden"></form>
         {% endfor %}
 
         <table class="table table-bordered table-hover">
@@ -54,10 +54,10 @@
             </thead>
             <tbody>
                 {% for data in sw_shipping_information['data'] %}
-                    <tr data-id="{{ data['id'] }}">
+                    <tr data-id="{{ data['id'] }}" class="elem-js">
                         {% for key, value in data %}
                             <td class="text-left">
-                                {% if sw_shipping_information['info'][key]['Type'] == 'int(11)' %}
+                                {% if (sw_shipping_information['info'][key]['Type'] == 'int(11)' or sw_shipping_information['info'][key]['Type'] == 'int') %}
                                     {% if key == 'id' %}
                                         {{ value }}
                                     {% else %}
@@ -83,39 +83,39 @@
                             </td>
                         {% endfor %}
                         <td class="text-right">
-                            <button type="submit" form="{{ data['id'] }}" data-toggle="tooltip" title="" class="btn btn-info" data-original-title="Редактировать">
+                            <button type="submit" form="{{ data['id'] }}" data-toggle="tooltip" title="" class="btn btn-info" data-original-title="{{ text_button_update }}">
                                 <i class="fa fa-pencil"></i>
                             </button>
-                            <button data-id="{{ data['id'] }}" data-toggle="tooltip" title="" class="btn btn-warning" data-original-title="Удалить">
+                            <button data-id="{{ data['id'] }}" data-toggle="tooltip" title="" class="btn btn-warning" data-original-title="{{ text_button_delete }}">
                                 <i class="fa fa-trash-o"></i>
                             </button>
                         </td>
                     </tr>
 
                     {% if data['id'] == sw_shipping_information['data']|last['id'] %}
-                        <tr>
+                        <tr data-name="create">
                             {% for key, value in data %}
                                 <td class="text-left">
-                                    {% if sw_shipping_information['info'][key]['Type'] == 'int(11)' %}
+                                    {% if (sw_shipping_information['info'][key]['Type'] == 'int(11)' or sw_shipping_information['info'][key]['Type'] == 'int') %}
                                         {% if key != 'id' %}
-                                            <input type="number" name="{{ key }}" min="1" max="1000" form="insert">
+                                            <input type="number" name="{{ key }}" min="1" max="1000" form="create">
                                         {% endif %}
                                     {% else %}
                                         {% if key == 'photo' %}
                                             <div>
-                                                <a href="#" id="thumb-image-insert" data-toggle="image" class="img-thumbnail">
+                                                <a href="#" id="thumb-image-create" data-toggle="image" class="img-thumbnail">
                                                     <img src="/image/no_image.png" alt="" title="" data-placeholder="/image/no_image.png" width="100" />
                                                 </a>
-                                                <input type="hidden" name="{{ key }}" value="" id="input-image-insert" form="insert" />
+                                                <input type="hidden" name="{{ key }}" value="" id="input-image-create" form="create" />
                                             </div>
                                         {% else %}
-                                            <input type="text" name="{{ key }}" maxlength="1000" form="insert">
+                                            <input type="text" name="{{ key }}" maxlength="1000" form="create">
                                         {% endif %}
                                     {% endif %}
                                 </td>
                             {% endfor %}
                             <td class="text-right">
-                                <button type="submit" form="insert" data-toggle="tooltip" title="" class="btn btn-success" data-original-title="Активировать">
+                                <button type="submit" form="create" data-toggle="tooltip" title="" class="btn btn-success" data-original-title="{{ text_button_create }}">
                                     <i class="fa fa-plus-circle"></i>
                                 </button>
                             </td>
@@ -129,7 +129,9 @@
 
 
 <script>
-    const link = '{{ link }}';
+    const enable_link = '{{ enable_link }}';
+    const update_link = '{{ update_link }}';
+    const create_link = '{{ create_link }}';
 </script>
 
 {{ footer }}

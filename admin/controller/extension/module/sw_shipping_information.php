@@ -1,27 +1,91 @@
 <?php
 class ControllerExtensionModuleSwShippingInformation extends Controller {
+    /**
+     * @var array
+     */
+    private array $data;
 
     /**
      * @return void
      */
     public function index(): void
     {
-        $data = $this->load->language('extension/module/sw_shipping_information');
+        $this->data = $this->load->language('extension/module/sw_shipping_information');
         $this->load->model('extension/module/sw_shipping_information');
 
         $this->document->setTitle($this->language->get('heading_title'));
         $this->document->addScript('view/javascript/extension/module/sw_shipping_information.js');
         $this->document->addStyle('view/stylesheet/extension/module/sw_shipping_information.css');
 
-        $data['module_sw_shipping_information_status'] = $this->config->get('module_sw_shipping_information_status');
-        $data['breadcrumbs'] = $this->getBreadCrumbs();
-        $data['header'] = $this->load->controller('common/header');
-        $data['column_left'] = $this->load->controller('common/column_left');
-        $data['footer'] = $this->load->controller('common/footer');
-        $data['link'] = $this->url->link('extension/module/sw_shipping_information/enable&user_token=' . $this->session->data['user_token'], '', true);
-        $data['sw_shipping_information'] = $this->model_extension_module_sw_shipping_information->getSwShippingInformation();
+        $this->data['module_sw_shipping_information_status'] = $this->config->get('module_sw_shipping_information_status');
+        $this->data['breadcrumbs'] = $this->getBreadCrumbs();
+        $this->data['header'] = $this->load->controller('common/header');
+        $this->data['column_left'] = $this->load->controller('common/column_left');
+        $this->data['footer'] = $this->load->controller('common/footer');
+        $this->data['sw_shipping_information'] = $this->model_extension_module_sw_shipping_information->getSwShippingInformation();
 
-        $this->response->setOutput($this->load->view('extension/module/sw_shipping_information', $data));
+        $this->setLinks(['enable', 'update', 'create']);
+
+        $this->response->setOutput($this->load->view('extension/module/sw_shipping_information', $this->data));
+    }
+
+    /**
+     * @param array $links
+     * @return void
+     */
+    private function setLinks(array $links = []): void
+    {
+        foreach ($links as $link) {
+            $this->data["{$link}_link"] = $this->url->link('extension/module/sw_shipping_information/'. $link .'&user_token=' . $this->session->data['user_token'], '', true);
+        }
+    }
+
+    /**
+     * @return void
+     */
+    public function create(): void
+    {
+        $this->load->language('extension/module/sw_shipping_information');
+        $this->response->addHeader('Content-Type: application/json');
+
+        try {
+            $this->load->model('extension/module/sw_shipping_information');
+
+            if (!$this->model_extension_module_sw_shipping_information->create($this->request->post)) throw new Exception("");
+        } catch (Exception $e) {
+            $this->response->setOutput(json_encode(
+                ['response' => str_replace('$error', $this->language->get('create_error'). $e->getMessage(), $this->language->get('alert_danger'))]
+            ));
+            return;
+        }
+
+        $this->response->setOutput(json_encode(
+            ['response' => str_replace('$success', $this->language->get('create_success'), $this->language->get('alert_success'))]
+        ));
+    }
+
+    /**
+     * @return void
+     */
+    public function update(): void
+    {
+        $this->load->language('extension/module/sw_shipping_information');
+        $this->response->addHeader('Content-Type: application/json');
+
+        try {
+            $this->load->model('extension/module/sw_shipping_information');
+
+            if (!$this->model_extension_module_sw_shipping_information->update($this->request->post)) throw new Exception("");
+        } catch (Exception $e) {
+            $this->response->setOutput(json_encode(
+                ['response' => str_replace('$error', $this->language->get('update_error') . $e->getMessage(), $this->language->get('alert_danger'))]
+            ));
+            return;
+        }
+
+        $this->response->setOutput(json_encode(
+            ['response' => str_replace('$success', $this->language->get('update_success'), $this->language->get('alert_success'))]
+        ));
     }
 
     /**
