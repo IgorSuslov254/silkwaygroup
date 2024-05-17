@@ -47,11 +47,14 @@ class ControllerExtensionModuleSwShippingInformation extends Controller {
     {
         $this->load->language('extension/module/sw_shipping_information');
         $this->response->addHeader('Content-Type: application/json');
+        $res = 0;
 
         try {
             $this->load->model('extension/module/sw_shipping_information');
 
-            if (!$this->model_extension_module_sw_shipping_information->create($this->request->post)) throw new Exception("");
+            $res = $this->model_extension_module_sw_shipping_information->create($this->request->post);
+
+            if (!$res) throw new Exception("");
         } catch (Exception $e) {
             $this->response->setOutput(json_encode(
                 ['response' => str_replace('$error', $this->language->get('create_error'). $e->getMessage(), $this->language->get('alert_danger'))]
@@ -60,7 +63,10 @@ class ControllerExtensionModuleSwShippingInformation extends Controller {
         }
 
         $this->response->setOutput(json_encode(
-            ['response' => str_replace('$success', $this->language->get('create_success'), $this->language->get('alert_success'))]
+            [
+                'response' => str_replace('$success', $this->language->get('create_success'), $this->language->get('alert_success')),
+                'id' => $res
+            ]
         ));
     }
 

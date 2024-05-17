@@ -40,8 +40,8 @@
 
         {% for data in sw_shipping_information['data'] %}
             <form id="{{ data['id'] }}" class="hidden"></form>
-            <form id="create" class="hidden"></form>
         {% endfor %}
+        <form id="create" class="hidden"></form>
 
         <table class="table table-bordered table-hover">
             <thead>
@@ -54,7 +54,7 @@
             </thead>
             <tbody>
                 {% for data in sw_shipping_information['data'] %}
-                    <tr data-id="{{ data['id'] }}" class="elem-js">
+                    <tr data-id="{{ data['id'] }}" data-sort="{{ data['sort'] }}" >
                         {% for key, value in data %}
                             <td class="text-left">
                                 {% if (sw_shipping_information['info'][key]['Type'] == 'int(11)' or sw_shipping_information['info'][key]['Type'] == 'int') %}
@@ -132,6 +132,8 @@
     const enable_link = '{{ enable_link }}';
     const update_link = '{{ update_link }}';
     const create_link = '{{ create_link }}';
+    const text_button_update = '{{ text_button_update }}';
+    const text_button_delete = '{{ text_button_delete }}';
 </script>
 
 {{ footer }}

@@ -6,7 +6,7 @@ class ModelExtensionModuleSwShippingInformation extends Model
      * @param array $data
      * @return int
      */
-    public function create(array $data = []): int
+    public function create(array $data = [])
     {
         $names = '`id`';
         $values = 'NULL';
@@ -17,10 +17,17 @@ class ModelExtensionModuleSwShippingInformation extends Model
             $values .= ",'{$value}'";
         }
 
-        return $this->db->query("
+        if ($this->db->query("
             INSERT INTO `sw_shipping_information`({$names})
-            VALUES($values);        
-        ");
+            VALUES($values);
+        ")) {
+            return $this->db->query("
+                SELECT
+                    LAST_INSERT_ID() as LAST_INSERT_ID;
+            ")->rows[0]['LAST_INSERT_ID'];
+        } else {
+            return 0;
+        }
     }
 
     /**
