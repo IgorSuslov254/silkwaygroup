@@ -11,6 +11,15 @@ $_['text_extension'] = 'Расширения';
 $_['text_button_update'] = 'Изменить';
 $_['text_button_delete'] = 'Удалить';
 $_['text_button_create'] = 'Добавить';
+$_['db_fields'] = [
+    'id' => 'ИД',
+    'name' => 'Название',
+    'description' => 'Описание',
+    'photo' => 'Фото',
+    'price' => 'Цена и срок доставки',
+    'payment' => 'Оплата',
+    'sort' => 'Сортировка'
+];
 
 // Error
 $_['install_error'] = "Ошибка при активации модуля '{$_['heading_title']}': ";

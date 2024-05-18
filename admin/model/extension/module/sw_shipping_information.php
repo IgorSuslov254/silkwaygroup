@@ -6,7 +6,7 @@ class ModelExtensionModuleSwShippingInformation extends Model
      * @param array $data
      * @return int
      */
-    public function create(array $data = [])
+    public function create(array $data = []): int
     {
         $names = '`id`';
         $values = 'NULL';
@@ -105,38 +105,19 @@ class ModelExtensionModuleSwShippingInformation extends Model
      */
     public function install(): void
     {
-        $this->db->query("
-            CREATE TABLE IF NOT EXISTS `sw_shipping_information`(
-                `id` INT NOT NULL AUTO_INCREMENT COMMENT 'ИД',
-                `name` TEXT COLLATE utf8mb4_general_ci NOT NULL COMMENT 'Название',
-                `description` TEXT COLLATE utf8mb4_general_ci NOT NULL COMMENT 'Описание',
-                `photo` TEXT COLLATE utf8mb4_general_ci NOT NULL COMMENT 'Фото',
-                `price` TEXT NOT NULL COMMENT 'Цена и срок доставки',
-                `payment` TEXT NOT NULL COMMENT 'Оплата',
-                `sort` INT NOT NULL COMMENT 'Сортировка',
-                PRIMARY KEY(`id`)
-            ) ENGINE = MyISAM DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = 'Информация о доставках';
-        ");
+        $this->load->language('extension/module/sw_shipping_information');
 
         $this->db->query("
-            INSERT INTO `sw_shipping_information`(
-                `id`,
-                `name`,
-                `description`,
-                `photo`,
-                `price`,
-                `payment`,
-                `sort`
-            )
-            VALUES(
-                NULL,
-                'test',
-                'test',
-                'test',
-                'test',
-                'test',
-                '1'
-            );
+            CREATE TABLE IF NOT EXISTS `sw_shipping_information`(
+                `id` INT NOT NULL AUTO_INCREMENT COMMENT '{$this->language->get('db_fields')["id"]}',
+                `name` TEXT COLLATE utf8mb4_general_ci NOT NULL COMMENT '{$this->language->get('db_fields')["name"]}',
+                `description` TEXT COLLATE utf8mb4_general_ci NOT NULL COMMENT '{$this->language->get('db_fields')["description"]}',
+                `photo` TEXT COLLATE utf8mb4_general_ci NOT NULL COMMENT '{$this->language->get('db_fields')["photo"]}',
+                `price` TEXT NOT NULL COMMENT '{$this->language->get('db_fields')["price"]}',
+                `payment` TEXT NOT NULL COMMENT '{$this->language->get('db_fields')["payment"]}',
+                `sort` INT NOT NULL COMMENT '{$this->language->get('db_fields')["sort"]}',
+                PRIMARY KEY(`id`)
+            ) ENGINE = MyISAM DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '{$this->language->get('heading_title')}';
         ");
     }
 
