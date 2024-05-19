@@ -61,7 +61,7 @@
                                     {% if key == 'id' %}
                                         {{ value }}
                                     {% else %}
-                                        <input type="number" name="{{ key }}" min="1" max="1000" form="{{ data['id'] }}" value="{{ value }}">
+                                        <input type="number" name="{{ key }}" min="1" max="1000" form="{{ data['id'] }}" value="{{ value }}" required>
                                     {% endif %}
                                 {% else %}
                                     {% if key == 'photo' %}
@@ -77,7 +77,7 @@
                                             <input type="hidden" name="{{ key }}" value="{{ value }}" id="input-image{{ data['id'] }}" form="{{ data['id'] }}" />
                                         </div>
                                     {% else %}
-                                        <input type="text" name="{{ key }}" maxlength="1000" form="{{ data['id'] }}" value="{{ value }}">
+                                        <input type="text" name="{{ key }}" maxlength="1000" form="{{ data['id'] }}" value="{{ value }}" required>
                                     {% endif %}
                                 {% endif %}
                             </td>
@@ -86,7 +86,7 @@
                             <button type="submit" form="{{ data['id'] }}" data-toggle="tooltip" title="" class="btn btn-info" data-original-title="{{ text_button_update }}">
                                 <i class="fa fa-pencil"></i>
                             </button>
-                            <button data-id="{{ data['id'] }}" data-toggle="tooltip" title="" class="btn btn-warning" data-original-title="{{ text_button_delete }}">
+                            <button data-id="{{ data['id'] }}" data-toggle="tooltip" title="" class="btn btn-warning button-delete-js" data-original-title="{{ text_button_delete }}">
                                 <i class="fa fa-trash-o"></i>
                             </button>
                         </td>
@@ -98,7 +98,7 @@
                         <td class="text-left">
                             {% if (value['Type'] == 'int(11)' or value['Type'] == 'int') %}
                                 {% if key != 'id' %}
-                                    <input type="number" name="{{ key }}" min="1" max="1000" form="create">
+                                    <input type="number" name="{{ key }}" min="1" max="1000" form="create" required>
                                 {% endif %}
                             {% else %}
                                 {% if key == 'photo' %}
@@ -109,7 +109,7 @@
                                         <input type="hidden" name="{{ key }}" value="" id="input-image-create" form="create" />
                                     </div>
                                 {% else %}
-                                    <input type="text" name="{{ key }}" maxlength="1000" form="create">
+                                    <input type="text" name="{{ key }}" maxlength="1000" form="create" required>
                                 {% endif %}
                             {% endif %}
                         </td>
@@ -128,8 +128,7 @@
 
 <script>
     const enable_link = '{{ enable_link }}';
-    const update_link = '{{ update_link }}';
-    const create_link = '{{ create_link }}';
+    const cud_link = '{{ cud_link }}';
     const text_button_update = '{{ text_button_update }}';
     const text_button_delete = '{{ text_button_delete }}';
 </script>

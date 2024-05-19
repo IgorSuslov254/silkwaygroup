@@ -22,9 +22,9 @@ class ControllerExtensionModuleSwShippingInformation extends Controller {
         $this->data['header'] = $this->load->controller('common/header');
         $this->data['column_left'] = $this->load->controller('common/column_left');
         $this->data['footer'] = $this->load->controller('common/footer');
-        $this->data['sw_shipping_information'] = $this->model_extension_module_sw_shipping_information->getSwShippingInformation();
+        $this->data['sw_shipping_information'] = $this->model_extension_module_sw_shipping_information->get();
 
-        $this->setLinks(['enable', 'update', 'create']);
+        $this->setLinks(['enable', 'cud']);
 
         $this->response->setOutput($this->load->view('extension/module/sw_shipping_information', $this->data));
     }
@@ -40,57 +40,32 @@ class ControllerExtensionModuleSwShippingInformation extends Controller {
         }
     }
 
-    /**
-     * @return void
-     */
-    public function create(): void
+    public function cud():void
     {
+        $method = $this->request->post['method'];
+        unset($this->request->post['method']);
+
         $this->load->language('extension/module/sw_shipping_information');
         $this->response->addHeader('Content-Type: application/json');
-        $res = 0;
 
         try {
             $this->load->model('extension/module/sw_shipping_information');
 
-            $res = $this->model_extension_module_sw_shipping_information->create($this->request->post);
+            $res = $this->model_extension_module_sw_shipping_information->$method($this->request->post);
 
             if (!$res) throw new Exception("");
         } catch (Exception $e) {
             $this->response->setOutput(json_encode(
-                ['response' => str_replace('$error', $this->language->get('create_error'). $e->getMessage(), $this->language->get('alert_danger'))]
+                ['response' => str_replace('$error', $this->language->get("{$method}_error") . $e->getMessage(), $this->language->get('alert_danger'))]
             ));
             return;
         }
 
         $this->response->setOutput(json_encode(
             [
-                'response' => str_replace('$success', $this->language->get('create_success'), $this->language->get('alert_success')),
+                'response' => str_replace('$success', $this->language->get("{$method}_success"), $this->language->get('alert_success')),
                 'id' => $res
             ]
-        ));
-    }
-
-    /**
-     * @return void
-     */
-    public function update(): void
-    {
-        $this->load->language('extension/module/sw_shipping_information');
-        $this->response->addHeader('Content-Type: application/json');
-
-        try {
-            $this->load->model('extension/module/sw_shipping_information');
-
-            if (!$this->model_extension_module_sw_shipping_information->update($this->request->post)) throw new Exception("");
-        } catch (Exception $e) {
-            $this->response->setOutput(json_encode(
-                ['response' => str_replace('$error', $this->language->get('update_error') . $e->getMessage(), $this->language->get('alert_danger'))]
-            ));
-            return;
-        }
-
-        $this->response->setOutput(json_encode(
-            ['response' => str_replace('$success', $this->language->get('update_success'), $this->language->get('alert_success'))]
         ));
     }
 

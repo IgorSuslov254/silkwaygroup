@@ -54,9 +54,24 @@ class ModelExtensionModuleSwShippingInformation extends Model
     }
 
     /**
+     * @param int $id
+     * @return int
+     */
+    public function delete(array $data = []): int
+    {
+        return $this->db->query("
+            DELETE
+            FROM
+                sw_shipping_information
+            WHERE
+                `sw_shipping_information`.`id` = {$data['id']} 
+        ");
+    }
+
+    /**
      * @return array
      */
-    public function getSwShippingInformation(): array
+    public function get(): array
     {
         $response = [];
 
@@ -82,22 +97,6 @@ class ModelExtensionModuleSwShippingInformation extends Model
         $response['data'] = $query->rows;
 
         return $response;
-    }
-
-    /**
-     * @return void
-     */
-    public function updateSwShippingInformation(): void
-    {
-        $query = $this->db->query("
-            UPDATE
-                `sw_shipping_information`
-            SET
-                `name` = 'test',
-                `description` = 'test'
-            WHERE
-                `sw_shipping_information`.`id` = 1;
-        ");
     }
 
     /**
