@@ -1,4 +1,6 @@
 #sw_shipping_information > div > div {
+    display: flex;
+    justify-content: center;
     margin-top: 60px;
 }
 #sw_shipping_information .cart {
@@ -22,7 +24,7 @@
     margin: 40px auto;
 }
 #sw_shipping_information .cart button {
-    margin-top: 40px;
+    margin-top: 30px;
     border-radius: 5px;
     text-transform: none;
     font-size: 20px;
