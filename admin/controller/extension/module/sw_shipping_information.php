@@ -1,5 +1,6 @@
 <?php
-class ControllerExtensionModuleSwShippingInformation extends Controller {
+class ControllerExtensionModuleSwShippingInformation extends Controller
+{
     /**
      * @var array
      */

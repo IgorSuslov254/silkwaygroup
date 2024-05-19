@@ -1,0 +1,18 @@
+<div id="sw_shipping_information" class="container">
+    <div class="row">
+        {% for value in sw_shipping_information %}
+            <div class="col-xs-6 col-sm-4 col-lg-3">
+                <div class="cart">
+                    <h3>{{ value['name'] }}</h3>
+                    <p>{{ value['description'] }}</p>
+                    <img src="/image/{{ value['photo'] }}" alt="{{ value['photo'] }}">
+                    <p>{{ value['price'] }}</p>
+                    <p>{{ value['payment'] }}</p>
+                    <div class="text-center">
+                        <button class="btn btn-default">{{ button }}</button>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>

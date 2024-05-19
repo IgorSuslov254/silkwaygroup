@@ -1,0 +1,125 @@
+#sw_shipping_information > div > div {
+    margin-top: 60px;
+}
+#sw_shipping_information .cart {
+    max-width: 386px;
+    box-shadow: 0 0 10px 2px #00000036;
+    border-radius: 20px;
+    padding: 10px 20px 30px 20px;
+}
+#sw_shipping_information .cart h3 {
+    font-size: 36px;
+    font-weight: bold;
+    line-height: 42px;
+}
+#sw_shipping_information .cart p {
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 28px;
+}
+#sw_shipping_information .cart img {
+    width: 100%;
+    margin: 40px auto;
+}
+#sw_shipping_information .cart button {
+    margin-top: 40px;
+    border-radius: 5px;
+    text-transform: none;
+    font-size: 20px;
+    line-height: 26px;
+}
+
+@media (max-width: 2100px) {
+    #sw_shipping_information .cart h3 {
+        font-size: 28px;
+        line-height: 32px;
+    }
+    #sw_shipping_information .cart p {
+        font-size: 18px;
+        line-height: 22px;
+    }
+    #sw_shipping_information .cart img {
+        margin: 30px auto;
+    }
+    #sw_shipping_information .cart button {
+        margin-top: 30px;
+        font-size: 18px;
+        line-height: 22px;
+    }
+}
+
+@media (max-width: 1600px) {
+    #sw_shipping_information .cart h3 {
+        font-size: 22px;
+        line-height: 26px;
+    }
+    #sw_shipping_information .cart p {
+        font-size: 15px;
+        line-height: 19px;
+    }
+    #sw_shipping_information .cart img {
+        margin: 20px auto;
+    }
+    #sw_shipping_information .cart button {
+        margin-top: 20px;
+        font-size: 15px;
+        line-height: 19px;
+    }
+}
+
+@media (max-width: 1400px) {
+    #sw_shipping_information .cart h3 {
+        font-size: 18px;
+        line-height: 22px;
+    }
+    #sw_shipping_information .cart p {
+        font-size: 12px;
+        line-height: 16px;
+    }
+    #sw_shipping_information .cart img {
+        margin: 10px auto;
+    }
+    #sw_shipping_information .cart button {
+        margin-top: 10px;
+        font-size: 12px;
+        line-height: 16px;
+    }
+}
+
+@media (max-width: 1200px) {
+
+}
+
+@media (max-width: 992px) {
+    #sw_shipping_information .cart h3 {
+        font-size: 16px;
+        line-height: 20px;
+    }
+    #sw_shipping_information .cart p {
+        font-size: 11px;
+        line-height: 15px;
+    }
+    #sw_shipping_information .cart button {
+        font-size: 11px;
+        line-height: 15px;
+    }
+}
+
+@media (max-width: 767px) {
+
+}
+
+@media (max-width: 576px) {
+    #sw_shipping_information .cart h3 {
+        font-size: 15px;
+        line-height: 19px;
+    }
+    #sw_shipping_information .cart p {
+        font-size: 10px;
+        line-height: 14px;
+    }
+    #sw_shipping_information .cart button {
+        font-size: 10px;
+        line-height: 14px;
+    }
+}
