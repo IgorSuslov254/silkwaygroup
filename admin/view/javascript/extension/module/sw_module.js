@@ -22,7 +22,7 @@ $(document).ready(function () {
             }
 
             return false;
-    })
+        })
         .on('click', '.button-delete-js', function () {
             $('.loader-block').removeClass('hidden');
 
