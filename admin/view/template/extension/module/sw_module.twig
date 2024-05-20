@@ -24,8 +24,8 @@
                 <div class="form-group">
                     <label class="col-sm-2 control-label" for="input-status">{{ entry_status }}</label>
                     <div class="col-sm-10">
-                        <select name="module_sw_shipping_information_status" id="input-status" class="form-control">
-                            {% if module_sw_shipping_information_status %}
+                        <select name="module_{{ module_name }}_status" id="input-status" class="form-control">
+                            {% if status %}
                                 <option value="1" selected="selected">{{ text_enabled }}</option>
                                 <option value="0">{{ text_disabled }}</option>
                             {% else %}
@@ -38,7 +38,7 @@
             </div>
         </div>
 
-        {% for data in sw_shipping_information['data'] %}
+        {% for data in sw_module['data'] %}
             <form id="{{ data['id'] }}" class="hidden"></form>
         {% endfor %}
         <form id="create" class="hidden"></form>
@@ -46,18 +46,18 @@
         <table class="table table-bordered table-hover">
             <thead>
             <tr>
-                {% for info in sw_shipping_information['info'] %}
+                {% for info in sw_module['info'] %}
                     <td class="text-left">{{ info['Comment'] }}</td>
                 {% endfor %}
                 <td class="text-right">Действие</td>
             </tr>
             </thead>
             <tbody>
-            {% for data in sw_shipping_information['data'] %}
+            {% for data in sw_module['data'] %}
                 <tr data-id="{{ data['id'] }}" data-sort="{{ data['sort'] }}" >
                     {% for key, value in data %}
                         <td class="text-left">
-                            {% if (sw_shipping_information['info'][key]['Type'] == 'int(11)' or sw_shipping_information['info'][key]['Type'] == 'int') %}
+                            {% if (sw_module['info'][key]['Type'] == 'int(11)' or sw_module['info'][key]['Type'] == 'int') %}
                                 {% if key == 'id' %}
                                     {{ value }}
                                 {% else %}
@@ -94,7 +94,7 @@
             {% endfor %}
 
             <tr data-name="create">
-                {% for key, value in sw_shipping_information['info'] %}
+                {% for key, value in sw_module['info'] %}
                     <td class="text-left">
                         {% if (value['Type'] == 'int(11)' or value['Type'] == 'int') %}
                             {% if key != 'id' %}

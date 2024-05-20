@@ -29,12 +29,13 @@ abstract class ControllerExtensionModuleSwModule extends Controller
         $this->document->addScript("view/javascript/extension/module/sw_module.js");
         $this->document->addStyle("view/stylesheet/extension/module/sw_module.css");
 
-        $this->data["module_{$this->module_name}_status"] = $this->config->get("module_{$this->module_name}_status");
+        $this->data["status"] = $this->config->get("module_{$this->module_name}_status");
         $this->data['breadcrumbs'] = $this->getBreadCrumbs();
         $this->data['header'] = $this->load->controller('common/header');
         $this->data['column_left'] = $this->load->controller('common/column_left');
         $this->data['footer'] = $this->load->controller('common/footer');
-        $this->data[$this->module_name] = $this->{"model_extension_module_{$this->module_name}"}->get();
+        $this->data['sw_module'] = $this->{"model_extension_module_{$this->module_name}"}->get();
+        $this->data['module_name'] = $this->module_name;
 
         $this->setLinks(['enable', 'cud']);
 
