@@ -1,7 +1,7 @@
 <?php
 
 // Heading
-$_['heading_title'] = 'services';
+$_['heading_title'] = 'SERVICES';
 
 // Common
 $_['description'] = 'We will also help you with the following services';
