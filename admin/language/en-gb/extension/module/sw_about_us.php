@@ -11,18 +11,15 @@ $_['text_extension'] = 'Extensions';
 $_['text_button_update'] = 'Change';
 $_['text_button_delete'] = 'Remove';
 $_['text_button_create'] = 'Add';
-$_['db'] = "
-    CREATE TABLE IF NOT EXISTS `sw_about_us`(
-        `id` INT NOT NULL AUTO_INCREMENT COMMENT 'ID',
-        `name` TEXT COLLATE utf8mb4_general_ci NOT NULL COMMENT 'name',
-        `description` TEXT COLLATE utf8mb4_general_ci NOT NULL COMMENT 'description',
-        `photo` TEXT COLLATE utf8mb4_general_ci NOT NULL COMMENT 'photo',
-        `price` TEXT NOT NULL COMMENT 'price',
-        `payment` TEXT NOT NULL COMMENT 'payment',
-        `sort` INT NOT NULL COMMENT 'sort',
-        PRIMARY KEY(`id`)
-    ) ENGINE = MyISAM DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = 'About us';
-";
+
+$_['db'] = [
+    'id' => 'ID',
+    'photo' => 'photo',
+    'name' => 'name',
+    'description' => 'description',
+    'sort' => 'sort',
+    'comment' => $_['heading_title']
+];
 
 // Error
 $_['install_error'] = "Error when activating the module '{$_['heading_title']}': ";

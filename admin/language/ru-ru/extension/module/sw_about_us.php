@@ -11,16 +11,15 @@ $_['text_extension'] = 'Расширения';
 $_['text_button_update'] = 'Изменить';
 $_['text_button_delete'] = 'Удалить';
 $_['text_button_create'] = 'Добавить';
-$_['db'] = "
-    CREATE TABLE IF NOT EXISTS `sw_about_us`(
-        `id` INT NOT NULL AUTO_INCREMENT COMMENT 'ИД',
-        `photo` TEXT COLLATE utf8mb4_general_ci NOT NULL COMMENT 'Фото',
-        `name` TEXT COLLATE utf8mb4_general_ci NOT NULL COMMENT 'Название',
-        `description` TEXT COLLATE utf8mb4_general_ci NOT NULL COMMENT 'Описание',
-        `sort` INT NOT NULL COMMENT 'Сортировка',
-        PRIMARY KEY(`id`)
-    ) ENGINE = MyISAM DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = 'Почему мы';
-";
+
+$_['db'] = [
+    'id' => 'ИД',
+    'photo' => 'Фото',
+    'name' => 'Название',
+    'description' => 'Описание',
+    'sort' => 'Сортировка',
+    'comment' => $_['heading_title']
+];
 
 // Error
 $_['install_error'] = "Ошибка при активации модуля '{$_['heading_title']}': ";

@@ -107,12 +107,7 @@ abstract class ModelExtensionModuleSwModule extends Model
     /**
      * @return void
      */
-    public function install(): void
-    {
-        $this->load->language("extension/module/{$this->module_name}");
-
-        $this->db->query($this->language->get('db'));
-    }
+     abstract public function install(): void;
 
     /**
      * @return void
