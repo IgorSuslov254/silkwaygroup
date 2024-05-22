@@ -1,0 +1,15 @@
+<div id="sw_about_us" class="container">
+    <h2>{{ lang['heading_title'] }}</h2>
+    <h3>{{ lang['description'] }}</h3>
+    <div class="row">
+        {% for value in data %}
+            <div class="col-xs-12 col-sm-6 col-lg-4">
+                <div class="card">
+                    <img src="/image/{{ value['photo'] }}" alt="{{ value['photo'] }}">
+                    <h4>{{ value['name'] }}</h4>
+                    <p>{{ value['description'] }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>

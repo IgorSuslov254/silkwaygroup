@@ -1,20 +1,11 @@
 <?php
+include_once "sw_module.php";
 
-class ModelExtensionModuleSwShippingInformation extends Model
+class ModelExtensionModuleSwShippingInformation extends ModelExtensionModuleSwModule
 {
-    /**
-     * @return array
-     */
-    public function get(): array
+    public function __construct($registry)
     {
-        return $this->db->query("
-            SELECT
-                *
-            FROM
-                `sw_shipping_information`
-            ORDER BY
-                `sort`
-            ASC 
-        ")->rows;
+        parent::__construct($registry);
+        $this->module_name = 'sw_shipping_information';
     }
 }
