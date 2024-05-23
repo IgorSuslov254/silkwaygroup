@@ -1,0 +1,147 @@
+#sw_benefit h2 {
+    text-align: center;
+    font-size: 128px;
+    font-weight: bold;
+    margin-top: 50px;
+    color: #F3F3F3;
+}
+#sw_benefit h3 {
+    font-size: 48px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: -50px;
+    color: #2F333A;
+}
+#sw_benefit > div > div {
+    display: flex;
+    justify-content: center;
+}
+#sw_benefit .card {
+    margin-top: 70px;
+    padding: 10px 20px 30px 20px;
+}
+#sw_benefit .card p {
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 28px;
+}
+#sw_benefit button {
+    margin-top: 50px;
+    border-radius: 5px;
+    text-transform: none;
+    font-size: 20px;
+    line-height: 26px;
+    padding: 30px 50px;
+}
+
+@media (max-width: 2100px) {
+    #sw_benefit h2 {
+        font-size: 115px;
+    }
+    #sw_benefit h3 {
+        font-size: 39px;
+    }
+    #sw_benefit .card p {
+        font-size: 18px;
+        line-height: 22px;
+    }
+    #sw_benefit button {
+        font-size: 18px;
+        line-height: 22px;
+    }
+}
+
+@media (max-width: 1600px) {
+    #sw_benefit h2 {
+        font-size: 110px;
+    }
+    #sw_benefit h3 {
+        font-size: 35px;
+    }
+    #sw_benefit .card {
+        margin-top: 50px;
+    }
+    #sw_benefit .card p {
+        font-size: 15px;
+        line-height: 19px;
+    }
+    #sw_benefit button {
+        margin-top: 30px;
+        font-size: 15px;
+        line-height: 19px;
+    }
+}
+
+@media (max-width: 1400px) {
+    #sw_benefit h2 {
+        font-size: 100px;
+        margin-top: 30px;
+    }
+    #sw_benefit h3 {
+        font-size: 30px;
+    }
+    #sw_benefit .card {
+        margin-top: 40px;
+    }
+    #sw_benefit button {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 1200px) {
+    #sw_benefit h2 {
+        font-size: 95px;
+    }
+    #sw_benefit h3 {
+        font-size: 27px;
+    }
+}
+
+@media (max-width: 992px) {
+    #sw_benefit h2 {
+        font-size: 82px;
+    }
+    #sw_benefit h3 {
+        font-size: 23px;
+        margin-top: -40px;
+    }
+}
+
+@media (max-width: 767px) {
+    #sw_benefit h2 {
+        font-size: 60px;
+    }
+    #sw_benefit h3 {
+        font-size: 18px;
+        margin-top: -30px;
+    }
+    #sw_benefit .card img {
+        width: 300px;
+    }
+}
+
+@media (max-width: 576px) {
+    #sw_benefit h2 {
+        font-size: 50px;
+    }
+    #sw_benefit h3 {
+        font-size: 13px;
+    }
+    #sw_benefit .card {
+        margin-top: 10px;
+        padding: 5px 10px 15px 10px;
+    }
+    #sw_benefit .card img {
+        width: 200px;
+    }
+    #sw_benefit .card p {
+        font-size: 10px;
+        line-height: 14px;
+    }
+    #sw_benefit button {
+        margin-top: 10px;
+        font-size: 10px;
+        line-height: 14px;
+        padding: 15px 30px;
+    }
+}
