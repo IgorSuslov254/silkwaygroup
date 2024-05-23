@@ -1,0 +1,17 @@
+<div id="sw_services" class="container">
+    <h2>{{ lang['heading_title'] }}</h2>
+    <h3>{{ lang['description'] }}</h3>
+    <div class="row">
+        {% for value in data %}
+            <div class="col-xs-12 col-sm-6 col-lg-4">
+                <div class="card">
+                    <h4>{{ value['name'] }}</h4>
+                    <p>{{ value['description'] }}</p>
+                    <div class="text-right">
+                        <button class="btn btn-default">{{ lang['button'] }}</button>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>

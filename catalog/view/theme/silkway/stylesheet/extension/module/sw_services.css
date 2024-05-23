@@ -1,0 +1,183 @@
+#sw_services h2 {
+    text-align: center;
+    font-size: 128px;
+    font-weight: bold;
+    margin-top: 50px;
+    color: #F3F3F3;
+}
+#sw_services h3 {
+    font-size: 48px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: -50px;
+    color: #2F333A;
+}
+#sw_services .card {
+    height: 270px;
+    display: grid;
+    align-content: space-between;
+    margin-top: 70px;
+    box-shadow: 0 0 10px 2px #00000036;
+    border-radius: 20px;
+    padding: 10px 20px 30px 20px;
+}
+#sw_services .card h4 {
+    font-size: 36px;
+    font-weight: bold;
+    line-height: 42px;
+}
+#sw_services .card p {
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 28px;
+}
+#sw_services .card button {
+    margin-top: 30px;
+    border-radius: 5px;
+    text-transform: none;
+    font-size: 20px;
+    line-height: 26px;
+}
+
+@media (max-width: 2100px) {
+    #sw_services h2 {
+        font-size: 115px;
+    }
+    #sw_services h3 {
+        font-size: 39px;
+    }
+    #sw_services .card h4 {
+        font-size: 28px;
+        line-height: 32px;
+    }
+    #sw_services .card p {
+        font-size: 18px;
+        line-height: 22px;
+    }
+    #sw_services .card button {
+        margin-top: 30px;
+        font-size: 18px;
+        line-height: 22px;
+    }
+}
+
+@media (max-width: 1600px) {
+    #sw_services h2 {
+        font-size: 110px;
+    }
+    #sw_services h3 {
+        font-size: 35px;
+    }
+    #sw_services .card {
+        margin-top: 50px;
+        height: 240px;
+    }
+    #sw_services .card h4 {
+        font-size: 22px;
+        line-height: 26px;
+    }
+    #sw_services .card p {
+        font-size: 15px;
+        line-height: 19px;
+    }
+    #sw_services .card button {
+        margin-top: 20px;
+        font-size: 15px;
+        line-height: 19px;
+    }
+}
+
+@media (max-width: 1400px) {
+    #sw_services h2 {
+        font-size: 100px;
+        margin-top: 30px;
+    }
+    #sw_services h3 {
+        font-size: 30px;
+    }
+    #sw_services .card {
+        margin-top: 40px;
+        height: 200px;
+    }
+    #sw_services .card h4 {
+        font-size: 18px;
+        line-height: 22px;
+    }
+    #sw_services .card p {
+        font-size: 12px;
+        line-height: 16px;
+    }
+    #sw_services .card button {
+        margin-top: 10px;
+        font-size: 12px;
+        line-height: 16px;
+    }
+}
+
+@media (max-width: 1200px) {
+    #sw_services h2 {
+        font-size: 95px;
+    }
+    #sw_services h3 {
+        font-size: 27px;
+    }
+}
+
+@media (max-width: 992px) {
+    #sw_services h2 {
+        font-size: 82px;
+    }
+    #sw_services h3 {
+        font-size: 23px;
+        margin-top: -40px;
+    }
+    #sw_services .card h4 {
+        font-size: 16px;
+        line-height: 20px;
+    }
+    #sw_services .card p {
+        font-size: 11px;
+        line-height: 15px;
+    }
+    #sw_services .card button {
+        font-size: 11px;
+        line-height: 15px;
+    }
+}
+
+@media (max-width: 767px) {
+    #sw_services h2 {
+        font-size: 60px;
+    }
+    #sw_services h3 {
+        font-size: 18px;
+        margin-top: -30px;
+    }
+    #sw_services .card {
+        height: 170px;
+    }
+}
+
+@media (max-width: 576px) {
+    #sw_services h2 {
+        font-size: 50px;
+    }
+    #sw_services h3 {
+        font-size: 13px;
+    }
+    #sw_services .card {
+        margin-top: 30px;
+    }
+    #sw_services .card h4 {
+        font-size: 15px;
+        line-height: 19px;
+    }
+    #sw_services .card p {
+        font-size: 10px;
+        line-height: 14px;
+    }
+    #sw_services .card button {
+        font-size: 10px;
+        line-height: 14px;
+    }
+}

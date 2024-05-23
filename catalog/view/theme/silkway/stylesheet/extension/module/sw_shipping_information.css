@@ -4,10 +4,14 @@
     margin-top: 60px;
 }
 #sw_shipping_information .cart {
-    max-width: 386px;
+    max-width: 450px;
     box-shadow: 0 0 10px 2px #00000036;
     border-radius: 20px;
     padding: 10px 20px 30px 20px;
+    display: flex;
+    flex-direction: column;
+    height: 740px;
+    justify-content: space-between;
 }
 #sw_shipping_information .cart h3 {
     font-size: 36px;
@@ -32,6 +36,9 @@
 }
 
 @media (max-width: 2100px) {
+    #sw_shipping_information .cart {
+        height: 655px;
+    }
     #sw_shipping_information .cart h3 {
         font-size: 28px;
         line-height: 32px;
@@ -51,6 +58,9 @@
 }
 
 @media (max-width: 1600px) {
+    #sw_shipping_information .cart {
+        height: 524px;
+    }
     #sw_shipping_information .cart h3 {
         font-size: 22px;
         line-height: 26px;
@@ -70,6 +80,9 @@
 }
 
 @media (max-width: 1400px) {
+    #sw_shipping_information .cart {
+         height: 435px;
+    }
     #sw_shipping_information .cart h3 {
         font-size: 18px;
         line-height: 22px;
@@ -93,6 +106,9 @@
 }
 
 @media (max-width: 992px) {
+    #sw_shipping_information .cart {
+        height: 404px;
+    }
     #sw_shipping_information .cart h3 {
         font-size: 16px;
         line-height: 20px;
@@ -108,10 +124,15 @@
 }
 
 @media (max-width: 767px) {
-
+    #sw_shipping_information .cart {
+         height: 428px;
+    }
 }
 
 @media (max-width: 576px) {
+    #sw_shipping_information .cart {
+        height: 385px;
+    }
     #sw_shipping_information .cart h3 {
         font-size: 15px;
         line-height: 19px;

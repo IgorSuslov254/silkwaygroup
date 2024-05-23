@@ -17,6 +17,11 @@
     text-align: center;
     padding: 10px 50px 40px 50px;
     border: 2px solid #F3F3F3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 317px;
+    justify-content: space-between;
 }
 #sw_about_us .card h4 {
     margin-top: 20px;
@@ -27,6 +32,9 @@
     font-size: 16px;
     margin-top: 40px;
 }
+#sw_about_us .card img {
+    width: 85px;
+}
 
 @media (max-width: 2100px) {
     #sw_about_us h2 {
@@ -34,6 +42,9 @@
     }
     #sw_about_us h3 {
         font-size: 39px;
+    }
+    #sw_about_us .card {
+        height: 285px;
     }
     #sw_about_us .card h4 {
         font-size: 17px;
@@ -57,6 +68,7 @@
     #sw_about_us .card {
         margin-top: 50px;
         padding: 10px 40px 30px 40px;
+        height: 248px;
     }
     #sw_about_us .card h4 {
         font-size: 14px;
@@ -78,6 +90,7 @@
     }
     #sw_about_us .card {
         margin-top: 40px;
+        height: 290px;
     }
     #sw_about_us .card img {
         width: 60px;
@@ -90,6 +103,9 @@
     }
     #sw_about_us h3 {
         font-size: 27px;
+    }
+    #sw_about_us .card {
+        height: 234px;
     }
     #sw_about_us .card h4 {
         margin-top: 15px;
@@ -104,6 +120,9 @@
         font-size: 23px;
         margin-top: -40px;
     }
+    #sw_about_us .card {
+        height: 280px;
+    }
     #sw_about_us .card h4 {
         margin-top: 10px;
     }
@@ -116,6 +135,9 @@
     #sw_about_us h3 {
         font-size: 18px;
         margin-top: -30px;
+    }
+    #sw_about_us .card {
+        height: 228px;
     }
 }
 
