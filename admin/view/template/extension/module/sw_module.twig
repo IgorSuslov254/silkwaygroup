@@ -43,85 +43,87 @@
         {% endfor %}
         <form id="create" class="hidden"></form>
 
-        <table class="table table-bordered table-hover">
-            <thead>
-            <tr>
-                {% for info in sw_module['info'] %}
-                    <td class="text-left">{{ info['Comment'] }}</td>
-                {% endfor %}
-                <td class="text-right">Действие</td>
-            </tr>
-            </thead>
-            <tbody>
-            {% for data in sw_module['data'] %}
-                <tr data-id="{{ data['id'] }}" data-sort="{{ data['sort'] }}" >
-                    {% for key, value in data %}
-                        <td class="text-left">
-                            {% if (sw_module['info'][key]['Type'] == 'int(11)' or sw_module['info'][key]['Type'] == 'int') %}
-                                {% if key == 'id' %}
-                                    {{ value }}
+        {% if sw_module['info'] is not empty %}
+            <table class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                    {% for info in sw_module['info'] %}
+                        <td class="text-left">{{ info['Comment'] }}</td>
+                    {% endfor %}
+                    <td class="text-right">Действие</td>
+                </tr>
+                </thead>
+                <tbody>
+                {% for data in sw_module['data'] %}
+                    <tr data-id="{{ data['id'] }}" data-sort="{{ data['sort'] }}" >
+                        {% for key, value in data %}
+                            <td class="text-left">
+                                {% if (sw_module['info'][key]['Type'] == 'int(11)' or sw_module['info'][key]['Type'] == 'int') %}
+                                    {% if key == 'id' %}
+                                        {{ value }}
+                                    {% else %}
+                                        <input type="number" name="{{ key }}" min="1" max="1000" form="{{ data['id'] }}" value="{{ value }}" required>
+                                    {% endif %}
                                 {% else %}
-                                    <input type="number" name="{{ key }}" min="1" max="1000" form="{{ data['id'] }}" value="{{ value }}" required>
+                                    {% if key == 'photo' %}
+
+                                        {% if value is empty %}
+                                            {% set value = 'no_image.png' %}
+                                        {% endif %}
+
+                                        <div>
+                                            <a href="#" id="thumb-image{{ data['id'] }}" data-toggle="image" class="img-thumbnail">
+                                                <img src="/image/{{ value }}" alt="" title="" data-placeholder="/image/no_image.png" width="100" />
+                                            </a>
+                                            <input type="hidden" name="{{ key }}" value="{{ value }}" id="input-image{{ data['id'] }}" form="{{ data['id'] }}" />
+                                        </div>
+                                    {% else %}
+                                        <input type="text" name="{{ key }}" maxlength="1000" form="{{ data['id'] }}" value="{{ value }}" required>
+                                    {% endif %}
+                                {% endif %}
+                            </td>
+                        {% endfor %}
+                        <td class="text-right">
+                            <button type="submit" form="{{ data['id'] }}" data-toggle="tooltip" title="" class="btn btn-info" data-original-title="{{ text_button_update }}">
+                                <i class="fa fa-pencil"></i>
+                            </button>
+                            <button data-id="{{ data['id'] }}" data-toggle="tooltip" title="" class="btn btn-warning button-delete-js" data-original-title="{{ text_button_delete }}">
+                                <i class="fa fa-trash-o"></i>
+                            </button>
+                        </td>
+                    </tr>
+                {% endfor %}
+
+                <tr data-name="create">
+                    {% for key, value in sw_module['info'] %}
+                        <td class="text-left">
+                            {% if (value['Type'] == 'int(11)' or value['Type'] == 'int') %}
+                                {% if key != 'id' %}
+                                    <input type="number" name="{{ key }}" min="1" max="1000" form="create" required>
                                 {% endif %}
                             {% else %}
                                 {% if key == 'photo' %}
-
-                                    {% if value is empty %}
-                                        {% set value = 'no_image.png' %}
-                                    {% endif %}
-
                                     <div>
-                                        <a href="#" id="thumb-image{{ data['id'] }}" data-toggle="image" class="img-thumbnail">
-                                            <img src="/image/{{ value }}" alt="" title="" data-placeholder="/image/no_image.png" width="100" />
+                                        <a href="#" id="thumb-image-create" data-toggle="image" class="img-thumbnail">
+                                            <img src="/image/no_image.png" alt="" title="" data-placeholder="/image/no_image.png" width="100" />
                                         </a>
-                                        <input type="hidden" name="{{ key }}" value="{{ value }}" id="input-image{{ data['id'] }}" form="{{ data['id'] }}" />
+                                        <input type="hidden" name="{{ key }}" value="" id="input-image-create" form="create" />
                                     </div>
                                 {% else %}
-                                    <input type="text" name="{{ key }}" maxlength="1000" form="{{ data['id'] }}" value="{{ value }}" required>
+                                    <input type="text" name="{{ key }}" maxlength="1000" form="create" required>
                                 {% endif %}
                             {% endif %}
                         </td>
                     {% endfor %}
                     <td class="text-right">
-                        <button type="submit" form="{{ data['id'] }}" data-toggle="tooltip" title="" class="btn btn-info" data-original-title="{{ text_button_update }}">
-                            <i class="fa fa-pencil"></i>
-                        </button>
-                        <button data-id="{{ data['id'] }}" data-toggle="tooltip" title="" class="btn btn-warning button-delete-js" data-original-title="{{ text_button_delete }}">
-                            <i class="fa fa-trash-o"></i>
+                        <button type="submit" form="create" data-toggle="tooltip" title="" class="btn btn-success" data-original-title="{{ text_button_create }}">
+                            <i class="fa fa-plus-circle"></i>
                         </button>
                     </td>
                 </tr>
-            {% endfor %}
-
-            <tr data-name="create">
-                {% for key, value in sw_module['info'] %}
-                    <td class="text-left">
-                        {% if (value['Type'] == 'int(11)' or value['Type'] == 'int') %}
-                            {% if key != 'id' %}
-                                <input type="number" name="{{ key }}" min="1" max="1000" form="create" required>
-                            {% endif %}
-                        {% else %}
-                            {% if key == 'photo' %}
-                                <div>
-                                    <a href="#" id="thumb-image-create" data-toggle="image" class="img-thumbnail">
-                                        <img src="/image/no_image.png" alt="" title="" data-placeholder="/image/no_image.png" width="100" />
-                                    </a>
-                                    <input type="hidden" name="{{ key }}" value="" id="input-image-create" form="create" />
-                                </div>
-                            {% else %}
-                                <input type="text" name="{{ key }}" maxlength="1000" form="create" required>
-                            {% endif %}
-                        {% endif %}
-                    </td>
-                {% endfor %}
-                <td class="text-right">
-                    <button type="submit" form="create" data-toggle="tooltip" title="" class="btn btn-success" data-original-title="{{ text_button_create }}">
-                        <i class="fa fa-plus-circle"></i>
-                    </button>
-                </td>
-            </tr>
-            </tbody>
-        </table>
+                </tbody>
+            </table>
+        {% endif %}
     </div>
 </div>
 
