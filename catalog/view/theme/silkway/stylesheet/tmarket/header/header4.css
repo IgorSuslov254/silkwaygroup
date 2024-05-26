@@ -176,6 +176,10 @@ header .navbar-silk-way .container-fluid .ul-top-items .li-top-item {
 header .navbar-silk-way .container-fluid .ul-top-items .li-top-item .a-top-link {
     background: none !important;
 }
+header .header-body .row {
+    margin: 0 !important;
+}
+
 
 @media (max-width: 2100px) {
     header .navbar-silk-way .container-fluid .navbar-collapse .pt-menu > .ul-top-items .li-top-item .a-top-link {
