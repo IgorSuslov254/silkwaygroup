@@ -17,23 +17,21 @@
     </div>
     <div class="row d-flex">
         <div class="col-xs-12 col-md-5 col-lg-4">
-            <div class="row">
-                {% for instruction in instructions %}
-                    <div class="col-xs-12 col-sm-6 col-md-12 p-0">
-                        <div class="card {{ instruction['class'] }}">
-                            {% if instruction['h4'] is not empty %}
-                                <h4>{{ instruction['h4'] }}</h4>
-                            {% endif %}
-                            {% if instruction['p'] is not empty %}
-                                <p>{{ instruction['p'] }}</p>
-                            {% endif %}
-                            {% if instruction['button'] is not empty %}
-                                <button class="btn btn-default">{{ instruction['button'] }}</button>
-                            {% endif %}
-                        </div>
+            {% for instruction in instructions %}
+                <div class="col-xs-12 col-sm-6 col-md-12 p-0">
+                    <div class="card {{ instruction['class'] }}">
+                        {% if instruction['h4'] is not empty %}
+                            <h4>{{ instruction['h4'] }}</h4>
+                        {% endif %}
+                        {% if instruction['p'] is not empty %}
+                            <p>{{ instruction['p'] }}</p>
+                        {% endif %}
+                        {% if instruction['button'] is not empty %}
+                            <button class="btn btn-default">{{ instruction['button'] }}</button>
+                        {% endif %}
                     </div>
-                {% endfor %}
-            </div>
+                </div>
+            {% endfor %}
         </div>
         <div class="col-xs-12 col-md-7 col-lg-8">
             <div class="you-tube">
