@@ -11,7 +11,7 @@ class ModelExtensionModuleSwCalculation extends ModelExtensionModuleSwModule
     /**
      * @var array|string[]
      */
-    protected array $db = ['sw_calculation', 'sw_calculation_telegram'];
+    protected array $data_base = ['sw_calculation', 'sw_calculation_telegram'];
 
     /**
      * @param $registry
@@ -30,30 +30,27 @@ class ModelExtensionModuleSwCalculation extends ModelExtensionModuleSwModule
         $db = $this->language->get('db');
 
         $this->db->query("
-            CREATE TABLE IF NOT EXISTS `{$this->module_name}`(
-                `id` INT NOT NULL AUTO_INCREMENT COMMENT '{$db['id']}',
-                `placeholder` TEXT COLLATE utf8mb4_general_ci NOT NULL COMMENT '{$db['placeholder']}',
-                `minlength` INT NOT NULL COMMENT '{$db['minlength']}',
-                `maxlength` INT NOT NULL COMMENT '{$db['maxlength']}',
-                `required` BOOLEAN NOT NULL COMMENT '{$db['required']}',
-                `type` TEXT COLLATE utf8mb4_general_ci NOT NULL COMMENT '{$db['type']}',
-                `mask` TEXT COLLATE utf8mb4_general_ci NOT NULL COMMENT '{$db['mask']}',
-                `sort` INT NOT NULL COMMENT '{$db['sort']}',
+            CREATE TABLE IF NOT EXISTS `sw_calculation`(
+                `id` INT NOT NULL AUTO_INCREMENT COMMENT '{$db['sw_calculation']['id']}',
+                `placeholder` TEXT COLLATE utf8mb4_general_ci NOT NULL COMMENT '{$db['sw_calculation']['placeholder']}',
+                `minlength` INT NOT NULL COMMENT '{$db['sw_calculation']['minlength']}',
+                `maxlength` INT NOT NULL COMMENT '{$db['sw_calculation']['maxlength']}',
+                `required` BOOLEAN NOT NULL COMMENT '{$db['sw_calculation']['required']}',
+                `type` TEXT COLLATE utf8mb4_general_ci NOT NULL COMMENT '{$db['sw_calculation']['type']}',
+                `mask` TEXT COLLATE utf8mb4_general_ci NOT NULL COMMENT '{$db['sw_calculation']['mask']}',
+                `sort` INT NOT NULL COMMENT '{$db['sw_calculation']['sort']}',
                 PRIMARY KEY(`id`)
-            ) ENGINE = MyISAM DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '{$db['comment']}';
+            ) ENGINE = MyISAM DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '{$db['sw_calculation']['comment']}';
         ");
 
         $this->db->query("
-            CREATE TABLE IF NOT EXISTS `{$this->module_name}`(
-                `id` INT NOT NULL AUTO_INCREMENT COMMENT '{$db['id']}',
-                `name` TEXT COLLATE utf8mb4_general_ci NOT NULL COMMENT '{$db['name']}',
-                `description` TEXT COLLATE utf8mb4_general_ci NOT NULL COMMENT '{$db['description']}',
-                `photo` TEXT COLLATE utf8mb4_general_ci NOT NULL COMMENT '{$db['photo']}',
-                `price` TEXT NOT NULL COMMENT '{$db['price']}',
-                `payment` TEXT NOT NULL COMMENT '{$db['payment']}',
-                `sort` INT NOT NULL COMMENT '{$db['sort']}',
+            CREATE TABLE IF NOT EXISTS `sw_calculation_telegram`(
+                `id` INT NOT NULL AUTO_INCREMENT COMMENT '{$db['sw_calculation_telegram']['id']}',
+                `token` TEXT COLLATE utf8mb4_general_ci NOT NULL COMMENT '{$db['sw_calculation_telegram']['token']}',
+                `chat_id` INT NOT NULL COMMENT '{$db['sw_calculation_telegram']['chat_id']}',
+                `sort` INT NOT NULL COMMENT '{$db['sw_calculation_telegram']['sort']}',
                 PRIMARY KEY(`id`)
-            ) ENGINE = MyISAM DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '{$db['comment']}';
+            ) ENGINE = MyISAM DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '{$db['sw_calculation_telegram']['comment']}';
         ");
     }
 }

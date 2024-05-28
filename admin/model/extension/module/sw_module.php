@@ -8,10 +8,16 @@ abstract class ModelExtensionModuleSwModule extends Model
     protected string $module_name;
 
     /**
+     * @var array|string[]
+     */
+    protected array $data_base;
+
+    /**
      * @param array $data
+     * @param string $table_name
      * @return int
      */
-    public function create(array $data = []): int
+    public function create(array $data = [], string $table_name = ''): int
     {
         $names = '`id`';
         $values = 'NULL';
@@ -23,7 +29,7 @@ abstract class ModelExtensionModuleSwModule extends Model
         }
 
         if ($this->db->query("
-            INSERT INTO `{$this->module_name}`({$names})
+            INSERT INTO `{$table_name}`({$names})
             VALUES($values);
         ")) {
             return $this->db->query("
@@ -37,9 +43,10 @@ abstract class ModelExtensionModuleSwModule extends Model
 
     /**
      * @param array $data
+     * @param string $table_name
      * @return int
      */
-    public function update(array $data = []): int
+    public function update(array $data = [], string $table_name = ''): int
     {
         $update = '';
         $i = 1;
@@ -50,7 +57,7 @@ abstract class ModelExtensionModuleSwModule extends Model
 
         return $this->db->query("
             UPDATE
-                `{$this->module_name}`
+                `{$table_name}`
             SET
                 {$update}
             WHERE
@@ -59,15 +66,16 @@ abstract class ModelExtensionModuleSwModule extends Model
     }
 
     /**
-     * @param int $id
+     * @param array $data
+     * @param string $table_name
      * @return int
      */
-    public function delete(array $data = []): int
+    public function delete(array $data = [], string $table_name = ''): int
     {
         return $this->db->query("
             DELETE
             FROM
-                {$this->module_name}
+                {$table_name}
             WHERE
                 `{$this->module_name}`.`id` = {$data['id']} 
         ");
@@ -80,26 +88,29 @@ abstract class ModelExtensionModuleSwModule extends Model
     {
         $response = [];
 
-        $query = $this->db->query("
-            SHOW FULL COLUMNS
-            FROM
-                {$this->module_name};
-        ");
+        foreach ($this->data_base as $data_base) {
+            $query = $this->db->query("
+                SHOW FULL COLUMNS
+                FROM
+                    {$data_base};
+            ");
 
-        foreach ($query->rows as $value) {
-            $response['info'][$value['Field']] = $value;
+            foreach ($query->rows as $value) {
+                $response[$data_base]['info'][$value['Field']] = $value;
+            }
+
+            $query = $this->db->query("
+                SELECT
+                    *
+                FROM
+                    `{$data_base}`
+                ORDER BY
+                    `sort`
+                ASC 
+            ");
+
+            $response[$data_base]['data'] = $query->rows;
         }
-
-        $query = $this->db->query("
-            SELECT
-                *
-            FROM
-                `{$this->module_name}`
-            ORDER BY
-                `sort`
-            ASC 
-        ");
-        $response['data'] = $query->rows;
 
         return $response;
     }
@@ -114,9 +125,11 @@ abstract class ModelExtensionModuleSwModule extends Model
      */
     public function uninstall(): void
     {
-        $this->db->query("
-            DROP TABLE IF EXISTS
-                `{$this->module_name}`
-        ");
+        foreach ($this->data_base as $data_base) {
+            $this->db->query("
+                DROP TABLE IF EXISTS
+                    `{$data_base}`
+            ");
+        }
     }
 }
