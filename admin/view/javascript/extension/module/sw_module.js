@@ -13,7 +13,7 @@ $(document).ready(function () {
 
             let submit = $(this);
 
-            if (submit.attr('id') === 'create') {
+            if (submit.hasClass('create')) {
                 createTd(submit);
             } else {
                 sendData(submit.serialize()  + '&id=' + submit.attr('id') + '&method=update', cud_link).then(data => {
@@ -38,6 +38,16 @@ $(document).ready(function () {
 
             return false;
         });
+
+    $('#content .nav > li > a').click(function () {
+        $('#content .nav > li').removeClass('active');
+        $('#content table').hide();
+
+        $(this).parents('li').addClass('active');
+        $('#content table[data-id="'+ $(this).data('action') +'"]').show();
+
+        return false;
+    });
 });
 
 /**
@@ -57,35 +67,36 @@ function createTd(submit)
         dataObj[dataArr.name] = dataArr.value;
     })
 
-    $('#content > .container-fluid table tr').each(function () {
+    $('#content > .container-fluid table[data-id="'+ submit.attr('id') +'"] tr').each(function () {
         if (dataObj.sort >= $(this).data('sort')) afterElem = $(this);
     });
 
-    sendData(submit.serialize()  + '&id=' + submit.attr('id') + '&method=create', cud_link).then(data => {
+    sendData(submit.serialize()  + '&id=' + submit.attr('id') + '&method=create' + '&table_name=' + submit.attr('id'), cud_link).then(data => {
         $('.loader-block').before(data.response).addClass('hidden');
 
-        elem = $('#content > .container-fluid table tr[data-name="create"]');
+        elem = $('#content > .container-fluid table[data-id="'+ submit.attr('id') +'"] tr[data-name="create"]');
         createElem = elem.clone(true);
         createElem
             .removeAttr('data-name')
             .attr({
-                'data-id': data.id,
+                'data-id': submit.attr('id') + data.id,
                 'data-sort': dataObj.sort
             })
             .hide()
             .find('td:first-child')
             .text(data.id);
-        createElem.find('input').attr('form', data.id);
-        createElem.find('td:last-child').replaceWith('<td class="text-right">' +
-            '<button type="submit" form="'+ data.id +'" data-toggle="tooltip" title="" class="btn btn-info" data-original-title="'+ text_button_update +'">' +
-            '<i class="fa fa-pencil"></i>' +
-            '</button>' +
-            '<button data-id="'+ data.id +'" data-toggle="tooltip" title="" class="btn btn-warning button-delete-js" data-original-title="'+ text_button_delete +'">' +
-            '<i class="fa fa-trash-o"></i>' +
-            '</button>' +
+        createElem.find('input').attr('form', submit.attr('id') + data.id);
+        createElem.find('td:last-child').replaceWith(
+            '<td class="text-right">' +
+                '<button type="submit" form="'+ submit.attr('id') + data.id +'" data-toggle="tooltip" title="" class="btn btn-info" data-original-title="'+ text_button_update +'">' +
+                    '<i class="fa fa-pencil"></i>' +
+                '</button>' +
+                '<button data-id="'+ submit.attr('id') + data.id +'" data-toggle="tooltip" title="" class="btn btn-warning button-delete-js" data-original-title="'+ text_button_delete +'">' +
+                    '<i class="fa fa-trash-o"></i>' +
+                '</button>' +
             '</td>');
-        createElem.find('a[id="thumb-image-create"]').attr('id', 'thumb-image' + data.id);
-        createElem.find('input[id="input-image-create"]').attr('id', 'input-image' + data.id);
+        createElem.find('a[id="thumb-image-create"]').attr('id', 'thumb-image' + submit.attr('id') + data.id);
+        createElem.find('input[id="input-image-create"]').attr('id', 'input-image' + submit.attr('id') + data.id);
 
         if (afterElem === undefined) {
             elem.before(createElem);
@@ -95,10 +106,10 @@ function createTd(submit)
 
         createElem.fadeIn('slow');
 
-        $("form[id=\"create\"]").trigger("reset");
-        $("a[id=\"thumb-image-create\"] > img").attr('src', $('a[id="thumb-image-create"] > img').data('placeholder'));
+        $('form[id="'+ submit.attr('id') +'"]').trigger('reset');
+        $('a[id="thumb-image-'+ submit.attr('id') +'"] > img').attr('src', $('a[id="thumb-image-'+ submit.attr('id') +'"] > img').data('placeholder'));
 
-        $('form[id="create"]').before('<form id="'+ data.id +'" class="hidden"></form>');
+        $('form[id="'+ submit.attr('id') +'"]').before('<form id="'+ submit.attr('id') + data.id +'" class="hidden"></form>');
     });
 }
 

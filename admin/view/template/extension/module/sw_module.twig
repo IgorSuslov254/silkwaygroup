@@ -40,12 +40,14 @@
 
         <ul class="nav nav-tabs">
             {% for key, value in sw_module %}
-                <li role="presentation" class="active"><a href="#">{{ key }}</a></li>
+                <li
+                    {% if loop.first %}
+                        class="active"
+                    {% endif %}
+                >
+                    <a href="#" data-action="{{ key }}">{{ key }}</a>
+                </li>
             {% endfor %}
-
-{#            <li role="presentation" class="active"><a href="#">Home</a></li>#}
-{#            <li role="presentation"><a href="#">Profile</a></li>#}
-{#            <li role="presentation"><a href="#">Messages</a></li>#}
         </ul>
 
         {% for key_table, value_table in sw_module %}
@@ -56,7 +58,7 @@
             <form id="{{ key_table }}" class="hidden create"></form>
 
             {% if value_table['info'] is not empty %}
-                <table class="table table-bordered table-hover">
+                <table class="table table-bordered table-hover {% if loop.index > 1 %} sw-hidden {% endif %}" data-id="{{ key_table }}">
                     <thead>
                         <tr>
                             {% for info in value_table['info'] %}
@@ -67,7 +69,7 @@
                     </thead>
                     <tbody>
                         {% for data in value_table['data'] %}
-                            <tr data-id="{{ data['id'] }}" data-sort="{{ data['sort'] }}" >
+                            <tr data-id="{{ key_table ~ data['id'] }}" data-sort="{{ data['sort'] }}" >
                                 {% for key, value in data %}
                                     <td class="text-left">
                                         {% if (sw_module[key_table]['info'][key]['Type'] == 'int(11)' or sw_module[key_table]['info'][key]['Type'] == 'int') %}
@@ -111,24 +113,24 @@
                                 <td class="text-left">
                                     {% if (value['Type'] == 'int(11)' or value['Type'] == 'int') %}
                                         {% if key != 'id' %}
-                                            <input type="number" name="{{ key_table ~ key }}" min="1" max="1000" form="create" required>
+                                            <input type="number" name="{{ key }}" min="1" max="1000" form="{{ key_table }}" required>
                                         {% endif %}
                                     {% else %}
                                         {% if key == 'photo' %}
                                             <div>
-                                                <a href="#" id="thumb-image-create" data-toggle="image" class="img-thumbnail">
+                                                <a href="#" id="thumb-image-create{{ key_table }}" data-toggle="image" class="img-thumbnail">
                                                     <img src="/image/no_image.png" alt="" title="" data-placeholder="/image/no_image.png" width="100" />
                                                 </a>
-                                                <input type="hidden" name="{{ key_table ~ key }}" value="" id="{{ key_table }}-input-image-create" form="create" />
+                                                <input type="hidden" name="{{ key_table ~ key }}" value="" id="input-image-create{{ key_table }}" form="{{ key_table }}" />
                                             </div>
                                         {% else %}
-                                            <input type="text" name="{{ key_table ~ key }}" maxlength="1000" form="create" required>
+                                            <input type="text" name="{{ key }}" maxlength="1000" form="{{ key_table }}" required>
                                         {% endif %}
                                     {% endif %}
                                 </td>
                             {% endfor %}
                             <td class="text-right">
-                                <button type="submit" form="key_table ~ create" data-toggle="tooltip" title="" class="btn btn-success" data-original-title="{{ text_button_create }}">
+                                <button type="submit" form="{{ key_table }}" data-toggle="tooltip" title="" class="btn btn-success" data-original-title="{{ text_button_create }}">
                                     <i class="fa fa-plus-circle"></i>
                                 </button>
                             </td>

@@ -54,3 +54,6 @@ table input {
     left: 0;
     width: 100%;
 }
+.sw-hidden {
+    display: none;
+}
