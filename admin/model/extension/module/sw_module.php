@@ -61,7 +61,7 @@ abstract class ModelExtensionModuleSwModule extends Model
             SET
                 {$update}
             WHERE
-                `{$this->module_name}`.`id` = {$data['id']}; 
+                `{$table_name}`.`id` = {$data['id']}; 
         ");
     }
 
@@ -77,7 +77,7 @@ abstract class ModelExtensionModuleSwModule extends Model
             FROM
                 {$table_name}
             WHERE
-                `{$this->module_name}`.`id` = {$data['id']} 
+                `{$table_name}`.`id` = {$data['id']} 
         ");
     }
 

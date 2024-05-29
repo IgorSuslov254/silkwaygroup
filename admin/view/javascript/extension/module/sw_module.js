@@ -16,7 +16,7 @@ $(document).ready(function () {
             if (submit.hasClass('create')) {
                 createTd(submit);
             } else {
-                sendData(submit.serialize()  + '&id=' + submit.attr('id') + '&method=update', cud_link).then(data => {
+                sendData(submit.serialize()  + '&id=' + submit.data('id') + '&method=update' + '&table_name=' + submit.data('table'), cud_link).then(data => {
                     $('.loader-block').before(data.response).addClass('hidden');
                 });
             }
@@ -30,10 +30,15 @@ $(document).ready(function () {
 
             sendData({
                 'id': elem.data('id'),
-                'method': 'delete'
+                'method': 'delete',
+                'table_name': elem.data('table')
             }, cud_link).then(data => {
                 $('.loader-block').before(data.response).addClass('hidden');
-                $('#content > .container-fluid table tr[data-id="'+ elem.data('id') +'"]').remove();
+
+                console.log(elem.data('table') + elem.data('id'));
+
+                $('#content > .container-fluid table tr[data-id="'+ elem.data('table') + elem.data('id') +'"]').remove();
+                $('#content > .container-fluid form[id="'+ elem.data('table') + elem.data('id') +'"]').remove();
             });
 
             return false;
@@ -91,7 +96,7 @@ function createTd(submit)
                 '<button type="submit" form="'+ submit.attr('id') + data.id +'" data-toggle="tooltip" title="" class="btn btn-info" data-original-title="'+ text_button_update +'">' +
                     '<i class="fa fa-pencil"></i>' +
                 '</button>' +
-                '<button data-id="'+ submit.attr('id') + data.id +'" data-toggle="tooltip" title="" class="btn btn-warning button-delete-js" data-original-title="'+ text_button_delete +'">' +
+                '<button data-id="'+ data.id +'" data-table="'+ submit.attr('id') +'" data-toggle="tooltip" title="" class="btn btn-warning button-delete-js" data-original-title="'+ text_button_delete +'">' +
                     '<i class="fa fa-trash-o"></i>' +
                 '</button>' +
             '</td>');
@@ -109,7 +114,7 @@ function createTd(submit)
         $('form[id="'+ submit.attr('id') +'"]').trigger('reset');
         $('a[id="thumb-image-'+ submit.attr('id') +'"] > img').attr('src', $('a[id="thumb-image-'+ submit.attr('id') +'"] > img').data('placeholder'));
 
-        $('form[id="'+ submit.attr('id') +'"]').before('<form id="'+ submit.attr('id') + data.id +'" class="hidden"></form>');
+        $('form[id="'+ submit.attr('id') +'"]').before('<form id="'+ submit.attr('id') + data.id +'" data-table="'+ submit.attr('id') +'" data-id="'+ data.id +'" class="hidden"></form>');
     });
 }
 
