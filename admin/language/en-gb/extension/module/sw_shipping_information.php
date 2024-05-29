@@ -12,14 +12,16 @@ $_['text_button_update'] = 'Change';
 $_['text_button_delete'] = 'Remove';
 $_['text_button_create'] = 'Add';
 $_['db'] = [
-    'id' => 'ID',
-    'name' => 'name',
-    'description' => 'description',
-    'photo' => 'photo',
-    'price' => 'price',
-    'payment' => 'payment',
-    'sort' => 'sort',
-    'comment' => $_['heading_title']
+    'sw_shipping_information' => [
+        'id' => 'ID',
+        'name' => 'name',
+        'description' => 'description',
+        'photo' => 'photo',
+        'price' => 'price',
+        'payment' => 'payment',
+        'sort' => 'sort',
+        'comment' => $_['heading_title']
+    ]
 ];
 
 // Error

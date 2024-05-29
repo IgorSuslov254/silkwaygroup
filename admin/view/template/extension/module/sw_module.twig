@@ -76,7 +76,7 @@
                                             {% if key == 'id' %}
                                                 {{ value }}
                                             {% else %}
-                                                <input type="number" name="{{ key }}" min="1" max="1000" form="{{ key_table ~ data['id'] }}" value="{{ value }}" required>
+                                                <input type="number" name="{{ key }}" form="{{ key_table ~ data['id'] }}" value="{{ value }}" required>
                                             {% endif %}
                                         {% else %}
                                             {% if key == 'photo' %}
@@ -113,7 +113,7 @@
                                 <td class="text-left">
                                     {% if (value['Type'] == 'int(11)' or value['Type'] == 'int') %}
                                         {% if key != 'id' %}
-                                            <input type="number" name="{{ key }}" min="1" max="1000" form="{{ key_table }}" required>
+                                            <input type="number" name="{{ key }}" form="{{ key_table }}" required>
                                         {% endif %}
                                     {% else %}
                                         {% if key == 'photo' %}
@@ -121,7 +121,7 @@
                                                 <a href="#" id="thumb-image-create{{ key_table }}" data-toggle="image" class="img-thumbnail">
                                                     <img src="/image/no_image.png" alt="" title="" data-placeholder="/image/no_image.png" width="100" />
                                                 </a>
-                                                <input type="hidden" name="{{ key_table ~ key }}" value="" id="input-image-create{{ key_table }}" form="{{ key_table }}" />
+                                                <input type="hidden" name="{{ key }}" value="" id="input-image-create{{ key_table }}" form="{{ key_table }}" />
                                             </div>
                                         {% else %}
                                             <input type="text" name="{{ key }}" maxlength="1000" form="{{ key_table }}" required>

@@ -13,12 +13,14 @@ $_['text_button_delete'] = 'Remove';
 $_['text_button_create'] = 'Add';
 
 $_['db'] = [
-    'id' => 'ID',
-    'photo' => 'photo',
-    'name' => 'name',
-    'description' => 'description',
-    'sort' => 'sort',
-    'comment' => $_['heading_title']
+    'sw_about_us' => [
+        'id' => 'ID',
+        'photo' => 'photo',
+        'name' => 'name',
+        'description' => 'description',
+        'sort' => 'sort',
+        'comment' => $_['heading_title']
+    ]
 ];
 
 // Error

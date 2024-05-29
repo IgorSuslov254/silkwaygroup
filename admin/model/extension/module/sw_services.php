@@ -4,12 +4,21 @@ include_once "sw_module.php";
 class ModelExtensionModuleSwServices extends ModelExtensionModuleSwModule
 {
     /**
+     * @var string
+     */
+    protected string $module_name = "sw_services";
+
+    /**
+     * @var array|string[]
+     */
+    protected array $data_base = ['sw_services'];
+
+    /**
      * @param $registry
      */
     public function __construct($registry)
     {
         $this->registry = $registry;
-        $this->module_name = 'sw_services';
     }
 
     /**

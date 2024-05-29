@@ -4,12 +4,15 @@ include_once "sw_module.php";
 class ControllerExtensionModuleSwShippingInformation extends ControllerExtensionModuleSwModule
 {
     /**
+     * @var string
+     */
+    protected string $module_name = "sw_shipping_information";
+
+    /**
      * @param $registry
      */
     public function __construct($registry)
     {
         $this->registry = $registry;
-        $this->url_module = 'extension/module/sw_shipping_information';
-        $this->module_name = 'sw_shipping_information';
     }
 }

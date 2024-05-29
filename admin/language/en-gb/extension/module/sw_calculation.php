@@ -1,7 +1,7 @@
 <?php
 
 // Heading
-$_['heading_title'] = 'Services';
+$_['heading_title'] = 'Calculation';
 
 // Common
 $_['entry_status']   = 'Status';
@@ -13,13 +13,24 @@ $_['text_button_delete'] = 'Remove';
 $_['text_button_create'] = 'Add';
 
 $_['db'] = [
-    'sw_services' => [
+    'sw_calculation' => [
         'id' => 'ID',
-        'name' => 'name',
-        'description' => 'description',
+        'placeholder' => 'placeholder',
+        'minlength' => 'minlength',
+        'maxlength' => 'maxlength',
+        'required' => 'required',
+        'type' => 'type',
+        'mask' => 'mask',
         'sort' => 'sort',
-        'comment' => $_['heading_title']
-    ]
+        'comment' => 'comment'
+    ],
+    'sw_calculation_telegram' => [
+        'id' => 'ID',
+        'token' => 'token',
+        'chat_id' => 'chat_id',
+        'sort' => 'sort',
+        'comment' => 'comment'
+    ],
 ];
 
 // Error

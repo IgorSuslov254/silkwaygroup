@@ -4,12 +4,21 @@ include_once "sw_module.php";
 class ModelExtensionModuleSwShippingInformation extends ModelExtensionModuleSwModule
 {
     /**
+     * @var string
+     */
+    protected string $module_name = "sw_shipping_information";
+
+    /**
+     * @var array|string[]
+     */
+    protected array $data_base = ['sw_shipping_information'];
+
+    /**
      * @param $registry
      */
     public function __construct($registry)
     {
         $this->registry = $registry;
-        $this->module_name = 'sw_shipping_information';
     }
 
     /**
