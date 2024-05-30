@@ -29,8 +29,7 @@
     margin-top: 50px;
     border-radius: 5px;
     text-transform: none;
-    font-size: 20px;
-    line-height: 26px;
+    font-size: 16px;
     padding: 30px 50px;
 }
 
@@ -46,8 +45,7 @@
         line-height: 22px;
     }
     #sw_benefit button {
-        font-size: 18px;
-        line-height: 22px;
+        font-size: 14px;
     }
 }
 
@@ -67,8 +65,8 @@
     }
     #sw_benefit button {
         margin-top: 30px;
-        font-size: 15px;
-        line-height: 19px;
+        padding: 15px 30px;
+        font-size: 12px;
     }
 }
 
@@ -141,7 +139,6 @@
     #sw_benefit button {
         margin-top: 10px;
         font-size: 10px;
-        line-height: 14px;
-        padding: 15px 30px;
+        padding: 10px 20px;
     }
 }

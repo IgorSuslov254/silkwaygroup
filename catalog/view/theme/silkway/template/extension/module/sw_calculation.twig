@@ -1,0 +1,19 @@
+<div id="sw_calculation" class="container-fluid">
+    <h2>{{ lang['heading_title'] }}</h2>
+    <h3>{{ lang['description'] }}</h3>
+    <form class="row">
+        {% for value in data['sw_calculation'] %}
+            <div class="col-xs-12 col-sm-6 col-lg-4">
+                <input
+                    type="{{ value['type'] }}"
+                    placeholder=".col-xs-2"
+                    class="form-control"
+                >
+            </div>
+        {% endfor %}
+
+        <div class="text-center">
+            <button type="submit" class="btn btn-default">{{ lang['button'] }}</button>
+        </div>
+    </form>
+</div>

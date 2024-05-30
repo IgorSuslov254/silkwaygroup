@@ -131,7 +131,7 @@
 
 @media (max-width: 576px) {
     #sw_shipping_information .cart {
-        height: 385px;
+        height: auto;
     }
     #sw_shipping_information .cart h3 {
         font-size: 15px;

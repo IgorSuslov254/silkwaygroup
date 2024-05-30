@@ -1,12 +1,12 @@
 <?php
 include_once "sw_module.php";
 
-class ControllerExtensionModuleSwBenefit extends ControllerExtensionModuleSwModule
+class ControllerExtensionModuleSwCalculation extends ControllerExtensionModuleSwModule
 {
     /**
      * @var string
      */
-    protected string $module_name = "sw_benefit";
+    protected string $module_name = "sw_calculation";
 
     public function __construct($registry)
     {

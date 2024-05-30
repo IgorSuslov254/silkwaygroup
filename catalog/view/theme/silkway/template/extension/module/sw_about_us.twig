@@ -1,8 +1,8 @@
-<div id="sw_about_us" class="container">
+<div id="sw_about_us" class="container-fluid">
     <h2>{{ lang['heading_title'] }}</h2>
     <h3>{{ lang['description'] }}</h3>
     <div class="row">
-        {% for value in data %}
+        {% for value in data['sw_about_us'] %}
             <div class="col-xs-12 col-sm-6 col-lg-4">
                 <div class="card">
                     <img src="/image/{{ value['photo'] }}" alt="{{ value['photo'] }}">
