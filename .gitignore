@@ -145,6 +145,9 @@ image/
 system/*
 !system/modification.xml
 !system/*.ocmod.xml
+!system/library
+system/library/*
+!system/library/sw*
 #
 
 .htaccess
