@@ -15,6 +15,8 @@ class ControllerExtensionModuleSwCalculation extends ControllerExtensionModuleSw
     {
         $this->registry = $registry;
         $this->links['send_telegram_link'] = $this->url->link("extension/module/{$this->module_name}/sendTelegram", '', true);
+
+        if (empty($this->document->getScripts()['https://unpkg.com/imask'])) $this->document->addScript('https://unpkg.com/imask');
     }
 
     public function sendTelegram()

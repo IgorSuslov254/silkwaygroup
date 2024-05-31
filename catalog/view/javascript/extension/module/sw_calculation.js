@@ -27,4 +27,13 @@ $(document).ready(function () {
 
         return false;
     });
+
+    setMask($('#sw_calculation input[name="phone"]'));
 });
+
+function setMask (elem)
+{
+    IMask(elem[0], {
+        mask: elem.data('mask')
+    });
+}
