@@ -23,6 +23,20 @@
     font-size: 16px;
     padding: 20px 80px;
 }
+#sw_calculation button.btn-success {
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+}
+#sw_calculation button.btn-danger {
+    color: #fff;
+    background-color: #c9302c;
+    border-color: #ac2925;
+}
+#sw_calculation button.btn-default[disabled] {
+    background-color: rgb(8 187 238 / 50%);
+    border-color: rgb(8 187 238 / 50%);
+}
 
 
 @media (max-width: 2100px) {
