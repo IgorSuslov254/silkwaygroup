@@ -2,7 +2,7 @@
     text-align: center;
     font-size: 128px;
     font-weight: bold;
-    margin-top: 50px;
+    margin-top: 100px;
     color: #F3F3F3;
 }
 #sw_services h3 {
@@ -90,7 +90,7 @@
 @media (max-width: 1400px) {
     #sw_services h2 {
         font-size: 100px;
-        margin-top: 30px;
+        margin-top: 60px;
     }
     #sw_services h3 {
         font-size: 30px;
@@ -160,10 +160,11 @@
 
 @media (max-width: 576px) {
     #sw_services h2 {
-        font-size: 50px;
+        font-size: 30px;
     }
     #sw_services h3 {
         font-size: 13px;
+        margin-top: -20px;
     }
     #sw_services .card {
         margin-top: 30px;
