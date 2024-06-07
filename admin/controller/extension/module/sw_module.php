@@ -146,6 +146,8 @@ abstract class ControllerExtensionModuleSwModule extends Controller
             $this->model_setting_extension->uninstall('module', $this->module_name);
             $this->model_setting_module->deleteModulesByCode($this->module_name);
 
+            $this->uninstall();
+
             die(str_replace('$error', $error, $this->language->get('alert_danger')));
         }
     }
