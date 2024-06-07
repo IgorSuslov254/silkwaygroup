@@ -26,6 +26,7 @@ $_['db'] = [
         'id_sw_calc_route' => 'Route ID',
         'id_sw_calc_cloth_type' => 'Clothing type ID',
         'price' => 'Price',
+        'density' => 'Density',
         'sort' => 'Sort',
         'comment' => 'Summary table'
     ],

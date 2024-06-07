@@ -10,7 +10,7 @@ abstract class ControllerExtensionModuleSwModule extends Controller
     /**
      * @var array
      */
-    private array $data;
+    protected array $data;
 
     /**
      * @return void
@@ -41,7 +41,7 @@ abstract class ControllerExtensionModuleSwModule extends Controller
      * @param array $links
      * @return void
      */
-    private function setLinks(array $links = []): void
+    protected function setLinks(array $links = []): void
     {
         foreach ($links as $link) {
             $this->data["{$link}_link"] = $this->url->link("extension/module/{$this->module_name}/". $link .'&user_token=' . $this->session->data['user_token'], '', true);
