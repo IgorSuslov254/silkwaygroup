@@ -1,88 +1,67 @@
-const get_url_params = getUrlParams();
+const get_url_params = swCalcGetUrlParams();
 
 $(document).ready(function () {
-    sendData({'entity': 'id_sw_calc_route'}, '/admin/index.php?route=extension/module/sw_calc/getRouteAndClothType&user_token=' + get_url_params['user_token']).then(data => {
+    swCalcSendData({'entity': 'id_sw_calc_route'}, '/admin/index.php?route=extension/module/sw_calc/getRouteAndClothType&user_token=' + get_url_params['user_token']).then(response => {
         $('input[name="id_sw_calc_route"]').each(function () {
-            setSelect($(this), data['response']['sw_calc_route'], $(this).val());
+            swCalcCreateSelect($(this), response['sw_calc_route']);
         });
 
         $('input[name="id_sw_calc_cloth_type"]').each(function () {
-            setSelect($(this), data['response']['sw_calc_cloth_type'], $(this).val());
+            swCalcCreateSelect($(this), response['sw_calc_cloth_type']);
         });
     });
 
-    $('body')
-        .on('click', 'select[name="id_sw_calc_route"]', function () {
-            sendData({'entity': 'id_sw_calc_route'}, '/admin/index.php?route=extension/module/sw_calc/getSelect&user_token=' + get_url_params['user_token']).then(data => {
-                setSelect($(this), data['response'], undefined);
-            });
-
-            return false;
-        })
-        .on('click', 'select[name="id_sw_calc_cloth_type"]', function () {
-            sendData({'entity': 'id_sw_calc_cloth_type'}, '/admin/index.php?route=extension/module/sw_calc/getSelect&user_token=' + get_url_params['user_token']).then(data => {
-                setSelect($(this), data['response'], undefined);
-            });
-
-            return false;
-        })
+    $('body').on('change', 'select[name="id_sw_calc_route"], select[name="id_sw_calc_cloth_type"]', function () {
+        $(this).find('option[value="'+ $(this).val() +'"]').attr('selected', '');
+    });
 });
 
-function setSelect(elem, data, value = undefined)
+/**
+ * @param elem
+ * @param entity_elems
+ */
+function swCalcCreateSelect(elem, entity_elems)
 {
-    if (value !== undefined) {
-        let new_data = {};
-        new_data[value] = data[value];
-        data = new_data;
-    } else {
-        if (data[elem.val()] === undefined) {
-            data[0] = {
-                'id': elem.val(),
-                'name': elem.text()
-            }
-        }
+    elem.replaceWith(
+        swCalcBuildSelect(entity_elems, elem.val(), elem)
+    );
+}
+
+/**
+ * @param data_for_build_select
+ * @param id_selected
+ * @param elem
+ * @return {string}
+ */
+function swCalcBuildSelect(data_for_build_select, id_selected, elem)
+{
+    return '' +
+        '<select name="'+ elem.attr('name') +'" form="'+ elem.attr('form') +'" class="loader-select" required>' +
+            swCalcBuildOption(data_for_build_select, id_selected) +
+        '</select>';
+}
+
+/**
+ * @param data_for_build_select
+ * @param id_selected
+ * @return {string}
+ */
+function swCalcBuildOption(data_for_build_select, id_selected)
+{
+    let option = '';
+    for (let key in data_for_build_select) {
+        const selected = (key === id_selected) ? 'selected' : '';
+
+        option += '<option value="'+ data_for_build_select[key]['id'] +'" '+ selected +' >'+ data_for_build_select[key]['name'] +'</option>';
     }
 
-    if (value === '') {
-        data = {
-            0: {
-                'id': '',
-                'name': 'Выбере значение'
-            }
-        }
-    }
-
-    if (value !== undefined) {
-        let select = '<select name="'+ elem.attr('name') +'" form="'+ elem.attr('form') +'">';
-
-        for (let key in data) {
-            select += '<option value="'+ data[key]['id'] +'" selected>'+ data[key]['name'] +'</option>';
-        }
-
-        select += '</select>'
-
-        elem.replaceWith(select);
-    } else {
-        let select = '';
-
-        for (let key in data) {
-            if (elem.val() === key) {
-                select += '<option value="'+ data[key]['id'] +'" selected>'+ data[key]['name'] +'</option>';
-            } else {
-                select += '<option value="'+ data[key]['id'] +'">'+ data[key]['name'] +'</option>';
-            }
-        }
-
-        elem.html(select);
-    }
-
-
+    return option;
 }
 
 /**
  * @return {{}}
  */
-function getUrlParams()
+function swCalcGetUrlParams()
 {
     return window
         .location
@@ -104,7 +83,7 @@ function getUrlParams()
  * @param url
  * @return {Promise<unknown>}
  */
-async function sendData(data, url)
+async function swCalcSendData(data, url)
 {
     return new Promise((resolve) => {
         $.ajax({
@@ -112,8 +91,8 @@ async function sendData(data, url)
             method: 'post',
             dataType: 'json',
             data: data,
-            success: function(data){
-                resolve(data);
+            success: function(response){
+                resolve(response);
             }
         });
     })

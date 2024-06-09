@@ -49,9 +49,10 @@ $_['install_error'] = "Ошибка при активации модуля '{$_[
 $_['uninstall_error'] = "Ошибка при удалении модуля '{$_['heading_title']}': ";
 $_['enable_error'] = "Ошибка при включении модуля '{$_['heading_title']}': ";
 $_['disabled_error'] = "Ошибка при выключении модуля '{$_['heading_title']}': ";
-$_['update_error'] = "Ошибка при обновлении данных";
-$_['create_error'] = "Ошибка при добавлении данных";
-$_['delete_error'] = "Ошибка при удалении данных";
+$_['update_error'] = "Ошибка при обновлении данных: ";
+$_['create_error'] = "Ошибка при добавлении данных: ";
+$_['create_duplicate_entry_error'] = "Такая запись уже существует";
+$_['delete_error'] = "Ошибка при удалении данных: ";
 $_['error_create_table'] = 'Ошибка создание таблицы в БД';
 $_['alert_danger'] = '
     <div class="alert alert-danger alert-dismissible"><i class="fa fa-exclamation-circle"></i>

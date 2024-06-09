@@ -49,9 +49,10 @@ $_['install_error'] = "Error when activating the module '{$_['heading_title']}':
 $_['uninstall_error'] = "Error deleting the module '{$_['heading_title']}': ";
 $_['enable_error'] = "Error when enabling the module '{$_['heading_title']}': ";
 $_['disabled_error'] = "Error when turning off the module '{$_['heading_title']}': ";
-$_['update_error'] = "Error updating data";
-$_['create_error'] = "Error when adding data";
-$_['delete_error'] = "Error deleting data";
+$_['update_error'] = "Error updating data: ";
+$_['create_error'] = "Error when adding data: ";
+$_['create_duplicate_entry_error'] = "Such a record already exists";
+$_['delete_error'] = "Error deleting data: ";
 $_['error_create_table'] = 'Error creating a table in the database';
 $_['alert_danger'] = '
     <div class="alert alert-danger alert-dismissible"><i class="fa fa-exclamation-circle"></i>

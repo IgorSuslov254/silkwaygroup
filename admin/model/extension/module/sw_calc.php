@@ -73,7 +73,8 @@ class ModelExtensionModuleSwCalc extends ModelExtensionModuleSwModule
                 PRIMARY KEY(`id`),
                 UNIQUE(
                     `id_sw_calc_route`,
-                    `id_sw_calc_cloth_type`
+                    `id_sw_calc_cloth_type`,
+                    `density`
                 ),
                 FOREIGN KEY(`id_sw_calc_cloth_type`) REFERENCES `sw_calc_cloth_type`(`id`) ON DELETE CASCADE ON UPDATE CASCADE,
                 FOREIGN KEY(`id_sw_calc_route`) REFERENCES `sw_calc_route`(`id`) ON DELETE CASCADE ON UPDATE CASCADE

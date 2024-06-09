@@ -65,8 +65,17 @@ abstract class ControllerExtensionModuleSwModule extends Controller
 
             if (!$res) throw new Exception("");
         } catch (Exception $e) {
+            $error = $e->getMessage();
+
+            if (strpos($e->getMessage(), 'Duplicate entry') !== false) {
+                $error = $this->language->get("{$method}_duplicate_entry_error");
+            }
+
             $this->response->setOutput(json_encode(
-                ['response' => str_replace('$error', $this->language->get("{$method}_error") . $e->getMessage(), $this->language->get('alert_danger'))]
+                [
+                    'status' => 'error',
+                    'response' => str_replace('$error', $this->language->get("{$method}_error") . $error, $this->language->get('alert_danger'))
+                ]
             ));
             return;
         }

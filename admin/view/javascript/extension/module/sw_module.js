@@ -79,6 +79,8 @@ function createTd(submit)
     sendData(submit.serialize()  + '&id=' + submit.attr('id') + '&method=create' + '&table_name=' + submit.attr('id'), cud_link).then(data => {
         $('.loader-block').before(data.response).addClass('hidden');
 
+        if (data.status === 'error') return false;
+
         elem = $('#content > .container-fluid table[data-id="'+ submit.attr('id') +'"] tr[data-name="create"]');
         createElem = elem.clone(true);
         createElem
@@ -91,6 +93,7 @@ function createTd(submit)
             .find('td:first-child')
             .text(data.id);
         createElem.find('input').attr('form', submit.attr('id') + data.id);
+        createElem.find('select').attr('form', submit.attr('id') + data.id);
         createElem.find('td:last-child').replaceWith(
             '<td class="text-right">' +
                 '<button type="submit" form="'+ submit.attr('id') + data.id +'" data-toggle="tooltip" title="" class="btn btn-info" data-original-title="'+ text_button_update +'">' +

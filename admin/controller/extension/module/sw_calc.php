@@ -33,6 +33,11 @@ class ControllerExtensionModuleSwCalc extends ControllerExtensionModuleSwModule
         $entities = ['sw_calc_route', 'sw_calc_cloth_type'];
 
         foreach ($entities as $entity) {
+            $res[$entity][0] = [
+                'id' => '',
+                'name' => 'Выбере значение'
+            ];
+
             foreach ($data[$entity]['data'] as $key => $value) {
                 $res[$entity][$value['id']] = [
                     'id' => $value['id'],
@@ -41,57 +46,6 @@ class ControllerExtensionModuleSwCalc extends ControllerExtensionModuleSwModule
             }
         }
 
-        $this->response->setOutput(json_encode(
-            [
-                'response' => $res
-            ]
-        ));
-    }
-
-    /**
-     * @return void
-     */
-    public function getSelect()
-    {
-        $this->load->model("extension/module/{$this->module_name}");
-        $data = $this->{"model_extension_module_{$this->module_name}"}->get();
-
-        $entity = $this->request->post['entity'];
-        $entities = [
-            'id_sw_calc_route' => [
-                'choice' => 'sw_calc_route',
-                'no_choice' =>'sw_calc_cloth_type'
-            ],
-            'id_sw_calc_cloth_type' => [
-                'choice' => 'sw_calc_cloth_type',
-                'no_choice' =>'sw_calc_route'
-            ]
-        ];
-
-        $entity_count = [];
-        foreach ($data['sw_calc_price']['data'] as $sw_calc_price) {
-            if (empty($entity_count[$sw_calc_price[$entity]])) {
-                $entity_count[$sw_calc_price[$entity]] = 1;
-            } else {
-                $entity_count[$sw_calc_price[$entity]] += 1;
-            }
-        }
-
-        foreach ($data[$entities[$entity]['choice']]['data'] as $key => $value) {
-            if (!empty($entity_count[$value['id']])) {
-                if ($entity_count[$value['id']] == count($data[$entities[$entity]['no_choice']]['data'])) unset($data[$entities[$entity]['choice']]['data'][$key]);
-            }
-        }
-
-        $res = [];
-        foreach ($data[$entities[$entity]['choice']]['data'] as $key => $value) {
-            $res[$value['id']] = $value;
-        }
-
-        $this->response->setOutput(json_encode(
-            [
-                'response' => $res
-            ]
-        ));
+        $this->response->setOutput(json_encode($res));
     }
 }
