@@ -35,8 +35,6 @@ $(document).ready(function () {
             }, cud_link).then(data => {
                 $('.loader-block').before(data.response).addClass('hidden');
 
-                console.log(elem.data('table') + elem.data('id'));
-
                 $('#content > .container-fluid table tr[data-id="'+ elem.data('table') + elem.data('id') +'"]').remove();
                 $('#content > .container-fluid form[id="'+ elem.data('table') + elem.data('id') +'"]').remove();
             });

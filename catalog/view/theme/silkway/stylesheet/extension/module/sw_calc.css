@@ -1,0 +1,160 @@
+#sw_calc {
+    padding-top: 100px;
+    position: relative;
+}
+#sw_calc img {
+    width: 100%;
+}
+#sw_calc .body-banner {
+    position: absolute;
+    top: 50%;
+    text-align: center;
+    transform: translateY(-50%);
+    padding: 0 15px;
+    left: 50px;
+}
+#sw_calc #sw-calc-modal .modal-body {
+    padding: 15px 15px 35px 15px;
+}
+#sw_calc #sw-calc-modal .modal-body input,
+#sw_calc #sw-calc-modal .modal-body select {
+    margin-top: 20px;
+    background: rgb(8 187 238 / 15%);
+}
+#sw_calc #sw-calc-modal .modal-footer > p {
+    display: inline-block;
+    margin: 10px 5px;
+    float: left;
+    font-size: 20px;
+    transform: translateX(-150%);
+    animation: ani 0.5s forwards;
+}
+#sw_calc .body-banner p {
+    font-size: 24px;
+    line-height: 30px;
+    color: white;
+    padding: 0;
+}
+#sw_calc .body-banner button {
+    margin-top: 80px;
+    font-size: 20px;
+    text-transform: none;
+    font-weight: normal;
+    padding: 15px 20px;
+    background: none;
+    border: 2px solid white;
+    border-radius: 5px;
+}
+#sw_calc .modal-footer button {
+    margin-top: 10px;
+}
+
+@media (max-width: 2100px) {
+    #sw_calc .body-banner {
+        transform: translateY(-40%);
+    }
+    #sw_calc .body-banner p {
+        font-size: 23px;
+        line-height: 29px;
+    }
+    #sw_calc .body-banner button {
+        margin-top: 75px;
+        font-size: 19px;
+    }
+}
+
+@media (max-width: 1600px) {
+    #sw_calc .body-banner {
+        transform: translateY(-40%);
+        left: 30px;
+    }
+    #sw_calc .body-banner p {
+        font-size: 22px;
+        line-height: 28px;
+    }
+    #sw_calc .body-banner button {
+        margin-top: 70px;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 1400px) {
+    #sw_calc {
+        padding-top: 60px;
+    }
+    #sw_calc .body-banner {
+        transform: translateY(-40%);
+    }
+    #sw_calc .body-banner p {
+        font-size: 21px;
+        line-height: 27px;
+    }
+    #sw_calc .body-banner button {
+        margin-top: 65px;
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 1200px) {
+    #sw_calc .body-banner {
+        transform: translateY(-30%);
+        left: 15px;
+    }
+    #sw_calc .body-banner p {
+        font-size: 20px;
+        line-height: 26px;
+    }
+    #sw_calc .body-banner button {
+        margin-top: 60px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 992px) {
+    #sw_calc .body-banner {
+        transform: translateY(-30%);
+        left: 15px;
+    }
+    #sw_calc .body-banner p {
+        font-size: 19px;
+        line-height: 25px;
+    }
+    #sw_calc .body-banner button {
+        margin-top: 55px;
+        font-size: 15px;
+        padding: 10px 15px;
+    }
+}
+
+@media (max-width: 767px) {
+    #sw_calc .body-banner {
+        transform: translateY(-30%);
+        left: 15px;
+    }
+    #sw_calc .body-banner p {
+        font-size: 14px;
+        line-height: 20px;
+    }
+    #sw_calc .body-banner button {
+        margin-top: 30px;
+        font-size: 12px;
+        padding: 10px 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    #sw_calc .body-banner {
+        top: 40%;
+        transform: none;
+        left: 15px;
+    }
+    #sw_calc .body-banner p {
+        font-size: 12px;
+        line-height: 16px;
+    }
+    #sw_calc .body-banner button {
+        margin-top: 10px;
+        font-size: 10px;
+        padding: 5px 10px;
+    }
+}

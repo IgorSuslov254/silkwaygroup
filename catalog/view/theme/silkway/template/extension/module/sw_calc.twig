@@ -1,0 +1,67 @@
+<div id="sw_calc" class="container-fluid">
+    <img src="image/{{ data['sw_calc'][0]['photo'] }}" alt="{{ data['sw_calc'][0]['photo'] }}">
+    <div class="body-banner">
+        <p>
+            Если вам нужна примерная стоимость доставки,<br>
+            Вы можете самостоятельно рассчитать её на калькуляторе.
+        </p>
+        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#sw-calc-modal">Рассчитать доставку</button>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="sw-calc-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <form class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Рассчитать доставку</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6 col-lg-4">
+                                <input name="width" type="number" placeholder="Ширина коробки" min="1" max="5000" required class="form-control">
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-lg-4">
+                                <input name="length" type="number" placeholder="Длина коробки" min="1" max="5000"  required class="form-control">
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-lg-4">
+                                <input name="depth" type="number" placeholder="Глубина коробки" min="1" max="5000"  required class="form-control">
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-lg-4">
+                                <input name="weight" type="number" placeholder="Вес коробки" min="1" max="5000"  required class="form-control">
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-lg-4">
+                                <select name="cloth_type" class="form-control" required>
+                                    <option value="">Тип груза</option>
+
+                                    {% for cloth_type in data['sw_calc_cloth_type'] %}
+                                        <option value="{{ cloth_type['id'] }}">{{ cloth_type['name'] }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-lg-4">
+                                <select name="route" class="form-control" required>
+                                    <option value="">Маршрут</option>
+
+                                    {% for calc_route in data['sw_calc_route'] %}
+                                        <option value="{{ calc_route['id'] }}">{{ calc_route['name'] }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <p class="hidden" data-text-load="Производится рассчёт..." data-text-answer="Приблизительная стоимость доставки: " data-text-error="Ошибка рассчёта"></p>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+                    <button type="submit" class="btn btn-primary">Рассчитать</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    const links_calc = {{ links }};
+</script>
