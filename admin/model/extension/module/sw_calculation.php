@@ -40,7 +40,7 @@ class ModelExtensionModuleSwCalculation extends ModelExtensionModuleSwModule
                 `mask` TEXT COLLATE utf8mb4_general_ci NOT NULL COMMENT '{$db['sw_calculation']['mask']}',
                 `sort` INT NOT NULL COMMENT '{$db['sw_calculation']['sort']}',
                 PRIMARY KEY(`id`)
-            ) ENGINE = MyISAM DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '{$db['sw_calculation']['comment']}';
+            ) ENGINE = INNODB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '{$db['sw_calculation']['comment']}';
         ");
 
         $this->db->query("
@@ -50,7 +50,7 @@ class ModelExtensionModuleSwCalculation extends ModelExtensionModuleSwModule
                 `chat_id` INT NOT NULL COMMENT '{$db['sw_calculation_telegram']['chat_id']}',
                 `sort` INT NOT NULL COMMENT '{$db['sw_calculation_telegram']['sort']}',
                 PRIMARY KEY(`id`)
-            ) ENGINE = MyISAM DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '{$db['sw_calculation_telegram']['comment']}';
+            ) ENGINE = INNODB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '{$db['sw_calculation_telegram']['comment']}';
         ");
     }
 }

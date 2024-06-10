@@ -58,7 +58,7 @@ class ModelExtensionModuleSwCalc extends ModelExtensionModuleSwModule
                 `photo` TEXT COLLATE utf8mb4_general_ci NOT NULL COMMENT '{$db['sw_calc']['photo']}',
                 `sort` INT NOT NULL COMMENT '{$db['sw_calc']['sort']}',
                 PRIMARY KEY(`id`)
-            ) ENGINE = MyISAM DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '{$db['sw_calc']['comment']}';
+            ) ENGINE = INNODB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '{$db['sw_calc']['comment']}';
         ");
         $this->isErrorCreateTable('sw_calc', $this->language->get('error_create_table'));
 

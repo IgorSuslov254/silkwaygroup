@@ -36,7 +36,7 @@ class ModelExtensionModuleSwServices extends ModelExtensionModuleSwModule
             `description` TEXT COLLATE utf8mb4_general_ci NOT NULL COMMENT '{$db['description']}',
             `sort` INT NOT NULL COMMENT '{$db['sort']}',
             PRIMARY KEY(`id`)
-        ) ENGINE = MyISAM DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '{$db['comment']}';
+        ) ENGINE = INNODB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '{$db['comment']}';
         ");
     }
 }
