@@ -220,4 +220,15 @@ $_['text_about_us']      = [
         </operation>
     </file>
 
+    <file path="catalog/controller/common/position2.php">
+        <operation>
+            <search>
+                <![CDATA[$route = 'tmarket/responsive/mobile';]]>
+            </search>
+            <add position="replace">
+                <![CDATA[$route = 'common/home';]]>
+            </add>
+        </operation>
+    </file>
+
 </modification>
