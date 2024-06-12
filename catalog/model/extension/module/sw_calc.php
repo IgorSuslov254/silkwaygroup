@@ -28,7 +28,7 @@ class ModelExtensionModuleSwCalc extends ModelExtensionModuleSwModule
             FROM
                 `sw_calc_price`
             WHERE
-                `id_sw_calc_route` = {$id_sw_calc_route} AND `id_sw_calc_cloth_type` = {$id_sw_calc_cloth_type} AND `density` = {$density}
+                `id_sw_calc_route` = {$id_sw_calc_route} AND `id_sw_calc_cloth_type` = {$id_sw_calc_cloth_type} AND `density_from` <= {$density} AND `density_to` > {$density};
         ")->rows;
 
         if (empty($res)) throw new Exception('no density price');

@@ -67,14 +67,16 @@ class ModelExtensionModuleSwCalc extends ModelExtensionModuleSwModule
                 `id` INT NOT NULL AUTO_INCREMENT COMMENT '{$db['sw_calc_price']['id']}',
                 `id_sw_calc_route` INT NOT NULL COMMENT '{$db['sw_calc_price']['id_sw_calc_route']}',
                 `id_sw_calc_cloth_type` INT NOT NULL COMMENT '{$db['sw_calc_price']['id_sw_calc_cloth_type']}',
-                `density` INT NOT NULL COMMENT '{$db['sw_calc_price']['density']}',
+                `density_from` INT NOT NULL COMMENT '{$db['sw_calc_price']['density_from']}',
+                `density_to` INT NOT NULL COMMENT '{$db['sw_calc_price']['density_to']}',
                 `price` INT NOT NULL COMMENT '{$db['sw_calc_price']['price']}',
                 `sort` INT NOT NULL COMMENT '{$db['sw_calc_price']['sort']}',
                 PRIMARY KEY(`id`),
                 UNIQUE(
                     `id_sw_calc_route`,
                     `id_sw_calc_cloth_type`,
-                    `density`
+                    `density_from`,
+                    `density_to`
                 ),
                 FOREIGN KEY(`id_sw_calc_cloth_type`) REFERENCES `sw_calc_cloth_type`(`id`) ON DELETE CASCADE ON UPDATE CASCADE,
                 FOREIGN KEY(`id_sw_calc_route`) REFERENCES `sw_calc_route`(`id`) ON DELETE CASCADE ON UPDATE CASCADE

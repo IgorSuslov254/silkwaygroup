@@ -46,7 +46,7 @@ $_['form'] = [
     'p' => [
         'text_load' => 'The calculation is being made...',
         'text_answer' => 'Approximate shipping cost: ',
-        'text_error' => 'Calculation error'
+        'text_error' => 'Calculation is not possible according to these parameters'
     ],
     'buttons' => [
         'submit' => [
