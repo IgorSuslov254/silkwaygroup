@@ -17,6 +17,7 @@ $_['db'] = [
         'id' => 'ИД',
         'name' => 'Название',
         'description' => 'Описание',
+        'photo' => 'Фото',
         'sort' => 'Сортировка',
         'comment' => $_['heading_title']
     ]

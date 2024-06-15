@@ -34,6 +34,7 @@ class ModelExtensionModuleSwServices extends ModelExtensionModuleSwModule
             `id` INT NOT NULL AUTO_INCREMENT COMMENT '{$db['id']}',
             `name` TEXT COLLATE utf8mb4_general_ci NOT NULL COMMENT '{$db['name']}',
             `description` TEXT COLLATE utf8mb4_general_ci NOT NULL COMMENT '{$db['description']}',
+            `photo` TEXT COLLATE utf8mb4_general_ci NOT NULL COMMENT '{$db['photo']}',
             `sort` INT NOT NULL COMMENT '{$db['sort']}',
             PRIMARY KEY(`id`)
         ) ENGINE = INNODB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '{$db['comment']}';

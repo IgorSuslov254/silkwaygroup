@@ -113,8 +113,13 @@ function createTd(submit)
         createElem.fadeIn('slow');
 
         $('form[id="'+ submit.attr('id') +'"]').trigger('reset');
-        $('a[id="thumb-image-'+ submit.attr('id') +'"] > img').attr('src', $('a[id="thumb-image-'+ submit.attr('id') +'"] > img').data('placeholder'));
+        $('tr[data-name="create"] #thumb-image-createsw_services + input[name="photo"]').val('');
 
+        const reset_img = $('tr[data-name="create"] #thumb-image-createsw_services > img');
+        reset_img.attr('src', reset_img.data('placeholder'));
+
+
+        $('a[id="thumb-image-'+ submit.attr('id') +'"] > img').attr('src', $('a[id="thumb-image-'+ submit.attr('id') +'"] > img').data('placeholder'));
         $('form[id="'+ submit.attr('id') +'"]').before('<form id="'+ submit.attr('id') + data.id +'" data-table="'+ submit.attr('id') +'" data-id="'+ data.id +'" class="hidden"></form>');
     });
 }

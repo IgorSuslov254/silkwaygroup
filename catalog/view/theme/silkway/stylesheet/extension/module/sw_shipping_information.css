@@ -1,3 +1,7 @@
+#sw_shipping_information > div {
+    display: flex;
+    flex-wrap: wrap;
+}
 #sw_shipping_information > div > div {
     display: flex;
     justify-content: center;
@@ -10,7 +14,6 @@
     padding: 10px 20px 30px 20px;
     display: flex;
     flex-direction: column;
-    height: 740px;
     justify-content: space-between;
 }
 #sw_shipping_information .cart h3 {
@@ -36,9 +39,6 @@
 }
 
 @media (max-width: 2100px) {
-    #sw_shipping_information .cart {
-        height: 655px;
-    }
     #sw_shipping_information .cart h3 {
         font-size: 28px;
         line-height: 32px;
@@ -58,9 +58,6 @@
 }
 
 @media (max-width: 1600px) {
-    #sw_shipping_information .cart {
-        height: 524px;
-    }
     #sw_shipping_information .cart h3 {
         font-size: 22px;
         line-height: 26px;
@@ -82,9 +79,6 @@
 @media (max-width: 1400px) {
     #sw_shipping_information > div > div {
         margin-top: 60px;
-    }
-    #sw_shipping_information .cart {
-         height: 435px;
     }
     #sw_shipping_information .cart h3 {
         font-size: 18px;
@@ -109,9 +103,6 @@
 }
 
 @media (max-width: 992px) {
-    #sw_shipping_information .cart {
-        height: 404px;
-    }
     #sw_shipping_information .cart h3 {
         font-size: 16px;
         line-height: 20px;
@@ -127,14 +118,20 @@
 }
 
 @media (max-width: 767px) {
-    #sw_shipping_information .cart {
-         height: 428px;
-    }
 }
 
 @media (max-width: 576px) {
+    #sw_shipping_information > div {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: scroll;
+    }
+    #sw_shipping_information > div > div {
+        width: 100%;
+    }
     #sw_shipping_information .cart {
-        height: auto;
+        margin-bottom: 20px;
+        width: 250px;
     }
     #sw_shipping_information .cart h3 {
         font-size: 15px;

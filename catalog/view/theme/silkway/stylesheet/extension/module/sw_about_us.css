@@ -1,3 +1,10 @@
+#sw_about_us > div {
+    display: flex;
+    flex-wrap: wrap;
+}
+#sw_about_us > div > div {
+    margin-top: 70px;
+}
 #sw_about_us h2 {
     text-align: center;
     font-size: 128px;
@@ -13,14 +20,13 @@
     color: #2F333A;
 }
 #sw_about_us .card {
-    margin-top: 70px;
+    height: 100%;
     text-align: center;
     padding: 10px 50px 40px 50px;
     border: 2px solid #F3F3F3;
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 317px;
     justify-content: space-between;
 }
 #sw_about_us .card h4 {
@@ -43,9 +49,6 @@
     #sw_about_us h3 {
         font-size: 39px;
     }
-    #sw_about_us .card {
-        height: 285px;
-    }
     #sw_about_us .card h4 {
         font-size: 17px;
     }
@@ -65,10 +68,11 @@
     #sw_about_us h3 {
         font-size: 35px;
     }
-    #sw_about_us .card {
+    #sw_about_us > div > div {
         margin-top: 50px;
+    }
+    #sw_about_us .card {
         padding: 10px 40px 30px 40px;
-        height: 248px;
     }
     #sw_about_us .card h4 {
         font-size: 14px;
@@ -88,9 +92,8 @@
     #sw_about_us h3 {
         font-size: 30px;
     }
-    #sw_about_us .card {
+    #sw_about_us > div > div {
         margin-top: 40px;
-        height: 290px;
     }
     #sw_about_us .card img {
         width: 60px;
@@ -103,9 +106,6 @@
     }
     #sw_about_us h3 {
         font-size: 27px;
-    }
-    #sw_about_us .card {
-        height: 234px;
     }
     #sw_about_us .card h4 {
         margin-top: 15px;
@@ -120,9 +120,6 @@
         font-size: 23px;
         margin-top: -40px;
     }
-    #sw_about_us .card {
-        height: 280px;
-    }
     #sw_about_us .card h4 {
         margin-top: 10px;
     }
@@ -136,9 +133,6 @@
         font-size: 18px;
         margin-top: -30px;
     }
-    #sw_about_us .card {
-        height: 228px;
-    }
 }
 
 @media (max-width: 576px) {
@@ -149,14 +143,26 @@
         font-size: 13px;
         margin-top: -20px;
     }
+    #sw_about_us > div {
+        overflow-x: scroll;
+    }
     #sw_about_us .card img {
         width: 50px;
     }
     #sw_about_us .card p {
         margin-top: 20px;
     }
-    #sw_about_us .card {
+    #sw_about_us > div {
+        display: flex;
+        flex-wrap: nowrap;
+    }
+    #sw_about_us > div > div {
         margin-top: 30px;
+        margin-bottom: 20px;
+        width: 100%;
+    }
+    #sw_about_us .card {
         padding: 10px 30px 20px 30px;
+        width: 300px;
     }
 }

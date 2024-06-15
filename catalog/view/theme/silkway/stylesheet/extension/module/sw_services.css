@@ -12,14 +12,31 @@
     margin-top: -50px;
     color: #2F333A;
 }
+#sw_services > div {
+    display: flex;
+    flex-wrap: wrap;
+}
+#sw_services > div > div {
+    margin-top: 70px;
+}
 #sw_services .card {
-    height: 270px;
+    height: 100%;
     display: grid;
     align-content: space-between;
-    margin-top: 70px;
     box-shadow: 0 0 10px 2px #00000036;
     border-radius: 20px;
     padding: 10px 20px 30px 20px;
+}
+#sw_services .card .bottom-card {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+#sw_services .card .bottom-card.justify-content-end {
+    justify-content: flex-end;
 }
 #sw_services .card h4 {
     font-size: 36px;
@@ -68,9 +85,8 @@
     #sw_services h3 {
         font-size: 35px;
     }
-    #sw_services .card {
+    #sw_services > div > div {
         margin-top: 50px;
-        height: 240px;
     }
     #sw_services .card h4 {
         font-size: 22px;
@@ -95,9 +111,8 @@
     #sw_services h3 {
         font-size: 30px;
     }
-    #sw_services .card {
+    #sw_services > div > div {
         margin-top: 40px;
-        height: 200px;
     }
     #sw_services .card h4 {
         font-size: 18px;
@@ -153,9 +168,6 @@
         font-size: 18px;
         margin-top: -30px;
     }
-    #sw_services .card {
-        height: 170px;
-    }
 }
 
 @media (max-width: 576px) {
@@ -166,7 +178,7 @@
         font-size: 13px;
         margin-top: -20px;
     }
-    #sw_services .card {
+    #sw_services > div > div {
         margin-top: 30px;
     }
     #sw_services .card h4 {
@@ -179,6 +191,6 @@
     }
     #sw_services .card button {
         font-size: 10px;
-        line-height: 14px;
+        padding: 7px 20px;
     }
 }

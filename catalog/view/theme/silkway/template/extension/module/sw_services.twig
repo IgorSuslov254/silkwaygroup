@@ -3,11 +3,21 @@
     <h3>{{ lang['description'] }}</h3>
     <div class="row">
         {% for value in data['sw_services'] %}
-            <div class="col-xs-12 col-sm-6 col-lg-4">
+            <div class="col-xs-6 col-sm-6 col-lg-4">
                 <div class="card">
                     <h4>{{ value['name'] }}</h4>
                     <p>{{ value['description'] }}</p>
-                    <div class="text-right">
+                    <div
+                        class="
+                            bottom-card
+                            {% if value['photo'] is empty %}
+                                justify-content-end
+                            {% endif %}
+                        "
+                    >
+                        {% if value['photo'] is not empty %}
+                            <img src="/image/{{ value['photo'] }}" alt="{{ value['photo'] }}">
+                        {% endif %}
                         <button class="btn btn-default">{{ lang['button'] }}</button>
                     </div>
                 </div>
