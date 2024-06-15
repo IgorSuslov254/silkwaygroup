@@ -1,17 +1,17 @@
 <?php
 include_once "sw_module.php";
 
-class ModelExtensionModuleSwProcess extends ModelExtensionModuleSwModule
+class ModelExtensionModuleSwOurPartners extends ModelExtensionModuleSwModule
 {
     /**
      * @var string
      */
-    protected string $module_name = "sw_process";
+    protected string $module_name = "sw_our_partners";
 
     /**
      * @var array|string[]
      */
-    protected array $data_base = ['sw_process'];
+    protected array $data_base = ['sw_our_partners'];
 
     /**
      * @param $registry
