@@ -21,7 +21,6 @@
     transform:scale(0.8);
 }
 #sw_pttestimonial .card {
-    /*height: 270px;*/
     display: grid;
     align-content: space-between;
     margin-top: 70px;
@@ -39,6 +38,7 @@
 }
 #sw_pttestimonial .card .card-header img {
     height: 120px;
+    border-radius: 100%;
 }
 #sw_pttestimonial .card .card-header .rating-result span {
     padding: 0;
@@ -219,9 +219,6 @@
     #sw_pttestimonial h3 {
         font-size: 18px;
         margin-top: -30px;
-    }
-    #sw_pttestimonial .card {
-        /*height: 170px;*/
     }
 }
 
