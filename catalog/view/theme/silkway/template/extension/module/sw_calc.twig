@@ -41,6 +41,14 @@
                                     {% endfor %}
                                 </select>
                             </div>
+
+                            {% for checkbox in lang['form']['checkboxes'] %}
+                                <div class="col-xs-12">
+                                    <label>
+                                        <input name="{{ checkbox['name'] }}" type="{{ checkbox['type'] }}"> {{ checkbox['placeholder'] }}
+                                    </label>
+                                </div>
+                            {% endfor %}
                         </div>
                     </div>
                 </div>

@@ -1,3 +1,17 @@
+#sw-calc-modal h2 {
+    text-align: center;
+    font-size: 70px;
+    font-weight: bold;
+    color: #F3F3F3;
+}
+#sw-calc-modal h3 {
+    font-size: 23px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: -35px;
+    margin-bottom: 0;
+    color: #2F333A;
+}
 #sw_calc {
     padding-top: 100px;
     position: relative;
@@ -20,6 +34,11 @@
 #sw_calc #sw-calc-modal .modal-body select {
     margin-top: 20px;
     background: rgb(8 187 238 / 15%);
+}
+#sw_calc #sw-calc-modal .modal-body input[type="checkbox"] {
+    position: relative;
+    top: 2px;
+    margin-right: 5px;
 }
 #sw_calc #sw-calc-modal .modal-footer > p {
     display: inline-block;
@@ -111,6 +130,13 @@
 }
 
 @media (max-width: 992px) {
+    #sw-calc-modal h2 {
+        font-size: 45px;
+    }
+    #sw-calc-modal h3 {
+        font-size: 18px;
+        margin-top: -25px;
+    }
     #sw_calc .body-banner {
         transform: translateY(-30%);
         left: 15px;
@@ -156,5 +182,26 @@
         margin-top: 10px;
         font-size: 10px;
         padding: 5px 10px;
+    }
+    #sw-calc-modal h2 {
+        font-size: 30px;
+    }
+    #sw-calc-modal h3 {
+        font-size: 13px;
+        margin-top: -15px;
+    }
+    #sw-calc-modal .modal-body {
+        padding: 15px 0 35px 0;
+    }
+    #sw-calc-modal .col-xs-12 {
+        padding: 0;
+    }
+    #sw-calc-modal .modal-footer button {
+        font-size: 10px;
+        padding: 5px 20px;
+    }
+    #sw-calc-modal .modal-body input,
+    #sw-calc-modal .modal-body select {
+        font-size: 12px;
     }
 }

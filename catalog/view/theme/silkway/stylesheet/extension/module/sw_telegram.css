@@ -1,3 +1,17 @@
+#sw-telegram-modal h2 {
+    text-align: center;
+    font-size: 82px;
+    font-weight: bold;
+    color: #F3F3F3;
+}
+#sw-telegram-modal h3 {
+    font-size: 23px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: -35px;
+    margin-bottom: 0;
+    color: #2F333A;
+}
 #sw-telegram-modal .modal-body {
     padding: 15px 15px 35px 15px;
 }
@@ -12,4 +26,58 @@
 }
 #sw-telegram-modal .modal-footer button {
     margin-top: 10px;
+}
+
+@media (max-width: 2100px) {
+
+}
+
+@media (max-width: 1600px) {
+
+}
+
+@media (max-width: 1400px) {
+
+}
+
+@media (max-width: 1200px) {
+
+}
+
+@media (max-width: 992px) {
+    #sw-telegram-modal h2 {
+        font-size: 60px;
+    }
+    #sw-telegram-modal h3 {
+        font-size: 18px;
+        margin-top: -25px;
+    }
+}
+
+@media (max-width: 767px) {
+
+}
+
+@media (max-width: 576px) {
+    #sw-telegram-modal h2 {
+        font-size: 30px;
+    }
+    #sw-telegram-modal h3 {
+        font-size: 13px;
+        margin-top: -15px;
+    }
+    #sw-telegram-modal .modal-body {
+        padding: 15px 0 35px 0;
+    }
+    #sw-telegram-modal .col-xs-12 {
+        padding: 0;
+    }
+    #sw-telegram-modal .modal-footer button {
+        font-size: 10px;
+        padding: 5px 20px;
+    }
+    #sw-telegram-modal .modal-body input,
+    #sw-telegram-modal .modal-body select {
+        font-size: 12px;
+    }
 }

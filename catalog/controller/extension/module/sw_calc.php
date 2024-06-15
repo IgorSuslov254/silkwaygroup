@@ -21,9 +21,13 @@ class ControllerExtensionModuleSwCalc extends ControllerExtensionModuleSwModule
     {
         $this->response->addHeader('Content-Type: application/json');
 
-        $density = $this->request->post['width'] * $this->request->post['length'] * $this->request->post['depth'] / 1000000 * $this->request->post['weight'];
-
         try {
+            if ($this->isPostEmpty()) throw new Exception('no valid params');
+
+            if (!empty($this->request->post['is-box']) && $this->request->post['is-box'] == 'on') $this->request->post['weight'] = round($this->request->post['weight'] * 1.1);
+
+            $density = $this->request->post['width'] * $this->request->post['length'] * $this->request->post['depth'] / 1000000 * $this->request->post['weight'];
+
             $this->load->model("extension/module/{$this->module_name}");
             $density_price = $this->{"model_extension_module_{$this->module_name}"}->getDensityPrice($this->request->post['route'], $this->request->post['cloth_type'], $density) ?? 0;
 
@@ -43,5 +47,14 @@ class ControllerExtensionModuleSwCalc extends ControllerExtensionModuleSwModule
             'status' => 'success',
             'price' => $price
         ]));
+    }
+
+    private function isPostEmpty(): bool
+    {
+        foreach ($this->request->post as $value) {
+            if (empty($value)) return true;
+        }
+
+        return false;
     }
 }

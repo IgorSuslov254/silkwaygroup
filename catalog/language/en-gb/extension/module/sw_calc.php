@@ -43,6 +43,13 @@ $_['form'] = [
             'default_value' => 'route',
         ]
     ],
+    'checkboxes' => [
+        [
+            'name' => 'is-box',
+            'type' => 'checkbox',
+            'placeholder' => 'Add a crate (it will add about 10% to the weight of the cargo, and increase the safety of delivery)'
+        ]
+    ],
     'p' => [
         'text_load' => 'The calculation is being made...',
         'text_answer' => 'Approximate shipping cost: ',
