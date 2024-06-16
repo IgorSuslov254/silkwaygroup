@@ -6,12 +6,12 @@ class ModelExtensionModuleSwOurPartners extends ModelExtensionModuleSwModule
     /**
      * @var string
      */
-    protected string $module_name = "sw_our_partners";
+    protected string $module_name = "sw_our_partners.php.php";
 
     /**
      * @var array|string[]
      */
-    protected array $data_base = ['sw_our_partners'];
+    protected array $data_base = ['sw_our_partners.php.php'];
 
     /**
      * @param $registry

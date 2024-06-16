@@ -6,7 +6,7 @@ class ControllerExtensionModuleSwOurPartners extends ControllerExtensionModuleSw
     /**
      * @var string
      */
-    protected string $module_name = "sw_our_partners";
+    protected string $module_name = "sw_our_partners.php.php";
 
     /**
      * @param $registry

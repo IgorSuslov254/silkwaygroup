@@ -214,11 +214,14 @@
 
 @media (max-width: 767px) {
     #sw_pttestimonial h2 {
-        font-size: 60px;
+        font-size: 45px;
     }
     #sw_pttestimonial h3 {
         font-size: 18px;
-        margin-top: -30px;
+        margin-top: -24px;
+    }
+    .testimonial-module .swiper-container {
+        margin-top: -40px !important;
     }
 }
 
