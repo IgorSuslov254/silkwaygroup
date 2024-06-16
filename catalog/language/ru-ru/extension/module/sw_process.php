@@ -45,7 +45,7 @@ $_['instructions'] = [
         'class' => 'no-card'
     ]
 ];
-$_['you_tube'] = '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/xwCzMUMwynw?si=qkxcOU-3WCtbxpqw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';
+$_['video'] = '/image/catalog/sw_/process/process';
 
 // Error
 $_['get_error'] = "Ошибка загрузи данных модуля: \"{$_['heading_title']}\" ";
