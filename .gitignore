@@ -1,4 +1,187 @@
-*
+#admin
+admin/*
 
-!.gitignore
-!README.md
+#controller
+!admin/controller
+admin/controller/*
+!admin/controller/extension
+admin/controller/extension/*
+!admin/controller/extension/shipping
+admin/controller/extension/shipping/*
+!admin/controller/extension/shipping/sw_*
+!admin/controller/extension/module
+admin/controller/extension/module/*
+!admin/controller/extension/module/sw_*
+# /controller
+
+#language
+!admin/language
+admin/language/*
+#ru-ru
+!admin/language/ru-ru
+admin/language/ru-ru/*
+!admin/language/ru-ru/extension
+admin/language/ru-ru/extension/*
+!admin/language/ru-ru/extension/shipping
+admin/language/ru-ru/extension/shipping/*
+!admin/language/ru-ru/extension/shipping/sw_*
+!admin/language/ru-ru/extension/module
+admin/language/ru-ru/extension/module/*
+!admin/language/ru-ru/extension/module/sw_*
+# /ru-ru
+#en-gb
+!admin/language/en-gb
+admin/language/en-gb/*
+!admin/language/en-gb/extension
+admin/language/en-gb/extension/*
+!admin/language/en-gb/extension/shipping
+admin/language/en-gb/extension/shipping/*
+!admin/language/en-gb/extension/shipping/sw_*
+!admin/language/en-gb/extension/module
+admin/language/en-gb/extension/module/*
+!admin/language/en-gb/extension/module/sw_*
+# /en-gb /language
+
+# model
+!admin/model
+admin/model/*
+!admin/model/extension
+admin/model/extension/*
+!admin/model/extension/shipping
+admin/model/extension/shipping/*
+!admin/model/extension/shipping/sw_*
+!admin/model/extension/module
+admin/model/extension/module/*
+!admin/model/extension/module/sw_*
+# /model
+
+# view
+!admin/view
+admin/view/*
+# js
+!admin/view/javascript
+admin/view/javascript/*
+!admin/view/javascript/extension
+admin/view/javascript/extension/*
+!admin/view/javascript/extension/module
+admin/view/javascript/extension/module/*
+!admin/view/javascript/extension/module/sw_*
+# /js
+# css
+!admin/view/stylesheet
+admin/view/stylesheet/*
+!admin/view/stylesheet/extension
+admin/view/stylesheet/extension/*
+!admin/view/stylesheet/extension/module
+admin/view/stylesheet/extension/module/*
+!admin/view/stylesheet/extension/module/sw_*
+# /css
+# template
+!admin/view/template
+admin/view/template/*
+!admin/view/template/extension
+admin/view/template/extension/*
+!admin/view/template/extension/shipping
+admin/view/template/extension/shipping/*
+!admin/view/template/extension/shipping/sw_*
+!admin/view/template/extension/module
+admin/view/template/extension/module/*
+!admin/view/template/extension/module/sw_*
+# /template /view /admin
+
+#catalog
+catalog/*
+
+#controller
+!catalog/controller
+catalog/controller/*
+!catalog/controller/extension
+catalog/controller/extension/*
+!catalog/controller/extension/shipping
+catalog/controller/extension/shipping/*
+!catalog/controller/extension/shipping/sw_*
+!catalog/controller/extension/module
+catalog/controller/extension/module/*
+!catalog/controller/extension/module/sw_*
+# /controller
+
+#language
+!catalog/language
+catalog/language/*
+#ru-ru
+!catalog/language/ru-ru
+catalog/language/ru-ru/*
+!catalog/language/ru-ru/extension
+catalog/language/ru-ru/extension/*
+!catalog/language/ru-ru/extension/shipping
+catalog/language/ru-ru/extension/shipping/*
+!catalog/language/ru-ru/extension/shipping/sw_*
+!catalog/language/ru-ru/extension/module
+catalog/language/ru-ru/extension/module/*
+!catalog/language/ru-ru/extension/module/sw_*
+# /ru-ru
+#en-gb
+!catalog/language/en-gb
+catalog/language/en-gb/*
+!catalog/language/en-gb/extension
+catalog/language/en-gb/extension/*
+!catalog/language/en-gb/extension/shipping
+catalog/language/en-gb/extension/shipping/*
+!catalog/language/en-gb/extension/shipping/sw_*
+!catalog/language/en-gb/extension/module
+catalog/language/en-gb/extension/module/*
+!catalog/language/en-gb/extension/module/sw_*
+# /en-gb /language
+
+# model
+!catalog/model
+catalog/model/*
+!catalog/model/extension
+catalog/model/extension/*
+!catalog/model/extension/shipping
+catalog/model/extension/shipping/*
+!catalog/model/extension/shipping/sw_*
+!catalog/model/extension/module
+catalog/model/extension/module/*
+!catalog/model/extension/module/sw_*
+# /model
+
+# view
+!catalog/view
+catalog/view/*
+# js
+!catalog/view/javascript
+catalog/view/javascript/*
+!catalog/view/javascript/extension
+catalog/view/javascript/extension/*
+!catalog/view/javascript/extension/module
+catalog/view/javascript/extension/module/*
+!catalog/view/javascript/extension/module/sw_*
+# /js
+# template
+!catalog/view/theme
+catalog/view/theme/*
+!catalog/view/theme/silkway
+# /template /view /catalog
+
+#image
+image/
+#
+
+#system
+system/*
+!system/modification.xml
+!system/*.ocmod.xml
+!system/library
+system/library/*
+!system/library/sw*
+#
+
+.htaccess
+config.php
+index.php
+php.ini
+robots.txt
+.DS_Store
+.idea/
+

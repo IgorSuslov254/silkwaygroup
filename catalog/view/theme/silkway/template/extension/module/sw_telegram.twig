@@ -1,0 +1,31 @@
+<div class="modal fade" id="sw-telegram-modal" tabindex="-1" role="dialog" aria-labelledby="sw-telegram-modal-label">
+    <div class="modal-dialog modal-lg" role="document">
+        <form class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h2 class="modal-title" id="sw-telegram-modal-label"></h2>
+                <h3></h3>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row">
+                        {% for form in lang['form'] %}
+                            <div class="col-xs-12">
+                                <input type="{{ form['type'] }}" name="{{ form['name'] }}" placeholder="{{ form['placeholder'] }}" minlength="{{ form['minlength'] }}" maxlength="{{ form['maxlength'] }}" required>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">{{ lang['button_close'] }}</button>
+                <button type="submit" class="btn btn-default" data-text="{{ lang['button'] }}" data-loading-text="{{ lang['button_loading_text'] }}" data-success="{{ lang['button_success'] }}" data-error="{{ lang['button_error'] }}">{{ lang['button'] }}</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    const sw_telegram_links = JSON.parse('{{ links }}');
+    const sw_telegram = JSON.parse('{{ data['sw_telegram']|json_encode() }}');
+</script>

@@ -1,0 +1,51 @@
+<div id="sw_process" class="container-fluid">
+    <h2>{{ h2 }}</h2>
+    <h3>{{ h3 }}</h3>
+    <div class="row">
+        {% for advantag in advantages %}
+            <div class="col-xs-{{ advantag['xs'] }} col-md-{{ advantag['md'] }} col-lg-{{ advantag['lg'] }}">
+                <div class="card">
+                    {% if advantag['h4'] is not empty %}
+                        <h4>{{ advantag['h4'] }}</h4>
+                    {% endif %}
+                    {% if advantag['p'] is not empty %}
+                        <p>{{ advantag['p'] }}</p>
+                    {% endif %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <div class="row d-flex">
+        <div class="col-xs-12 col-md-5 col-lg-4">
+            {% for instruction in instructions %}
+                <div class="col-xs-12 col-sm-6 col-md-12 p-0">
+                    <div class="card {{ instruction['class'] }}">
+                        {% if instruction['h4'] is not empty %}
+                            <h4>{{ instruction['h4'] }}</h4>
+                        {% endif %}
+                        {% if instruction['p'] is not empty %}
+                            <p>{{ instruction['p'] }}</p>
+                        {% endif %}
+                        {% if instruction['button'] is not empty %}
+                            <button class="btn btn-default">{{ instruction['button'] }}</button>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="col-xs-12 col-md-7 col-lg-8">
+            <div class="you-tube">
+                <video controls>
+                    <source src="{{ lang['video'] }}.webm" type="video/webm" />
+                    <source src="{{ lang['video'] }}.mp4" type="video/mp4" />
+
+                    Download the
+                    <a href="{{ lang['video'] }}.webm">WEBM</a>
+                    or
+                    <a href="{{ lang['video'] }}.mp4">MP4</a>
+                    video.
+                </video>
+            </div>
+        </div>
+    </div>
+</div>

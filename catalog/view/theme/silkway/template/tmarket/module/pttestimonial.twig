@@ -1,0 +1,84 @@
+<div id="sw_pttestimonial" class="testimonial-module">
+    <div class="container-fluid">
+        <h2>ОТЗЫВЫ КЛИЕНТОВ</h2>
+        <h3>О нас говорят</h3>
+    </div>
+
+    <div class="swiper-viewport container-fluid">
+
+		<div class="swiper-container testimonial-slides ">
+            <div class="swiper-wrapper">
+                {% for testimonial in testimonials %}
+                    
+					<div class="testimonial-content swiper-slide">
+                        <div class="card">
+                            <div class="card-header">
+                                <img src="{{ testimonial.image }}" alt="{{ testimonial.customer_name }}">
+                                <div class="rating-result">
+                                    {% for i in 1..5 %}
+                                        <span
+                                            {% if i <= testimonial['rating'] %}
+                                                class="active"
+                                            {% endif %}
+                                        ></span>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            <p>{{ testimonial.content }}</p>
+                            <h4>{{ testimonial.customer_name }}</h4>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+		
+        {% if slide.pagination %}
+            <div class="swiper-pagination testimonial-pagination"></div>
+        {% endif %}
+
+        {% if slide.navigation %}
+            <div class="swiper-pager">
+                <div class="swiper-button-next swiper-testimonial-button-next"></div>
+                <div class="swiper-button-prev swiper-testimonial-button-prev"></div>
+            </div>
+        {% endif %}
+    </div>
+</div>
+
+<script type="text/javascript">
+    var testimonial_slides = $(".testimonial-slides").swiper({
+        spaceBetween: 0,
+        {% if slide.pagination %}
+        pagination: '.testimonial-pagination',
+        paginationClickable: true,
+        {% endif %}
+        {% if slide.navigation %}
+        nextButton: '.swiper-testimonial-button-next',
+        prevButton: '.swiper-testimonial-button-prev',
+        {% endif %}
+        speed: {% if slide.speed %} {{ slide.speed }} {% else %} 300 {% endif %},
+        slidesPerView: {{ slide.items }},
+        slidesPerColumn: {{ slide.rows }},
+        autoplay: {% if slide.auto %} 3000 {% else %} false {% endif %},
+        loop: true,
+		breakpoints: {
+			1199: {
+				slidesPerView: 3
+			},
+			991: {
+				slidesPerView: 2
+			},
+			767: {
+				slidesPerView: 1
+			},
+			479: {
+				slidesPerView: 1
+			},
+			374: {
+				slidesPerView: 1
+			}
+		}
+    });
+
+    
+</script>

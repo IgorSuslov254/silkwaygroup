@@ -1,0 +1,543 @@
+header {
+    background-image:  linear-gradient( rgba(0,0,0,.5), rgba(0,0,0,.5) ), url("../../../../../../../image/catalog/silkway/first page.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+header.not-main {
+    background: #26292e;
+}
+header .header-body h1{
+    margin-top: 50px;
+    color: white;
+    font-size: 74px;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 140px;
+}
+header .header-body > div > p {
+    font-size: 20px;
+    color: white;
+    margin-top: 30px;
+    line-height: 40px;
+}
+header .header-body > div > button {
+    margin-top: 50px;
+    padding: 25px 60px;
+    font-size: 16px;
+    text-transform: none;
+    font-weight: bold;
+}
+header .header-body > div > .about-us {
+    margin-top: 115px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 40px;
+    border-top: 1px solid rgb(235 235 240 / 20%);
+    border-right: 1px solid rgb(235 235 240 / 20%);
+}
+header .header-body > div > .about-us > div {
+    padding: 30px 50px;
+    border-left: 1px solid rgb(235 235 240 / 20%);
+}
+header .header-body > div > .about-us > div > p {
+    font-size: 16px;
+    color: white;
+    margin-top: 30px;
+}
+header .navbar-silk-way {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    border: none;
+    border-bottom: 1px solid rgb(235 235 240 / 20%);
+}
+header .navbar-silk-way .container-fluid > .row {
+    display: flex;
+    align-items: center;
+    height: 94px;
+}
+header .navbar-silk-way .container-fluid .navbar-header {
+    margin: 0 30px;
+}
+header .navbar-silk-way .container-fluid .navbar-collapse {
+    display: flex !important;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    height: 100% !important;
+}
+header .navbar-silk-way .container-fluid .navbar-collapse:before {
+    height: 100%;
+    width: 1px;
+    border-left: 1px solid rgb(235 235 240 / 20%);
+}
+header .navbar-silk-way .container-fluid .navbar-collapse:after {
+    display: none;
+}
+header .navbar-silk-way .container-fluid .navbar-collapse #search input{
+    background: rgb(217 217 217 / 40%);
+    color: white;
+    border: 1px solid rgb(235 235 240 / 20%);
+    border-right: none;
+    border-radius: 4px 0 0 4px;
+}
+header .navbar-silk-way .container-fluid .navbar-collapse #search > span > button {
+    height: 45px;
+    background: rgb(217 217 217 / 40%);
+    color: white;
+    border: 1px solid rgb(235 235 240 / 20%);
+    border-left: none;
+    margin-left: 0;
+    padding: 10px 6px;
+    border-radius: 0 4px 4px 0;
+}
+header .navbar-silk-way .container-fluid .navbar-collapse #search input::placeholder {
+    color: rgb(255 255 255 / 70%);
+}
+header .navbar-silk-way .container-fluid .navbar-collapse .pt-menu {
+    width: 35%;
+    background: none !important;
+    padding-left: 30px;
+}
+header .navbar-silk-way .container-fluid .navbar-collapse .pt-menu > .ul-top-items {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-start;
+}
+header .navbar-silk-way .container-fluid .navbar-collapse .pt-menu > .ul-top-items .li-top-item .a-top-link {
+    color: white !important;
+}
+header .navbar-silk-way .container-fluid .navbar-collapse .pt-menu > .ul-top-items .li-top-item .a-top-link:hover {
+    color: var(--button-bg-hover-color) !important;
+    transition: 0.2s;
+}
+header .navbar-silk-way .container-fluid .navbar-collapse .pt-menu > .ul-top-items .li-top-item:hover .a-top-link i {
+    color: var(--button-bg-hover-color) !important;
+    background: none !important;
+    transition: 0.2s;
+}
+header .navbar-silk-way .container-fluid .navbar-collapse .pt-menu .mega-menu-container{
+    width: 40% !important;
+    display: none;
+    position: absolute;
+    left: 0;
+    margin-top: 18px;
+    border-radius: 5px;
+    z-index: 100;
+    box-shadow: 0 0 5px 2px #0000005c;
+    transform: translateX(-150%);
+    animation: ani 0.5s forwards;
+}
+header .navbar-silk-way .container-fluid .navbar-collapse .navbar-left {
+    width: 35%;
+}
+header .navbar-silk-way .container-fluid .navbar-collapse .navbar-right {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    width: 30%;
+    justify-content: flex-end;
+}
+header .navbar-silk-way .container-fluid .navbar-collapse .navbar-right > a {
+    padding: 10px 80px;
+    font-weight: bold;
+    font-size: 16px;
+    text-transform: none;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    border-radius: 0;
+}
+header .navbar-silk-way .container-fluid .navbar-collapse .navbar-right .nav .dropdown > a {
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+}
+header .navbar-silk-way .container-fluid .navbar-collapse .navbar-right .nav .dropdown > a[aria-expanded = "true"] {
+    color: var(--button-bg-hover-color);
+    transition: 0.3s;
+}
+header .navbar-silk-way .container-fluid .navbar-collapse .navbar-right .nav .dropdown.open > a {
+    background: none;
+}
+header .navbar-silk-way .container-fluid .navbar-collapse .navbar-nav > li {
+    float: none;
+    margin-right: 30px;
+}
+header .navbar-silk-way .container-fluid .navbar-collapse .navbar-left #search {
+    width: 100%;
+}
+header .navbar-silk-way .container-fluid .ul-top-items .li-top-item {
+    list-style-type: none;
+    float: none !important;
+}
+header .navbar-silk-way .container-fluid .ul-top-items .li-top-item .a-top-link {
+    background: none !important;
+}
+header .header-body .row {
+    margin: 0 !important;
+}
+
+
+@media (max-width: 2100px) {
+    header .navbar-silk-way .container-fluid .navbar-collapse .pt-menu > .ul-top-items .li-top-item .a-top-link {
+        font-size: 14px !important;
+    }
+    header .navbar-silk-way .container-fluid .navbar-collapse .navbar-right .nav .dropdown > a {
+        font-size: 14px;
+    }
+    header .navbar-silk-way .container-fluid .navbar-collapse .navbar-right > a {
+        padding: 10px 60px;
+        font-size: 14px;
+    }
+    header .navbar-silk-way .container-fluid .navbar-collapse .pt-menu {
+        width: 40%;
+    }
+    header .navbar-silk-way .container-fluid .navbar-collapse .navbar-left {
+        width: 30%;
+    }
+    header .header-body h1 {
+        margin-top: 40px;
+        font-size: 64px;
+        line-height: 110px;
+    }
+    header .header-body > div > p {
+        font-size: 16px;
+        margin-top: 25px;
+        line-height: 30px;
+    }
+    header .header-body > div > button {
+        margin-top: 40px;
+        padding: 18px 42px;
+        font-size: 14px;
+    }
+    header .header-body > div > .about-us {
+        margin-top: 95px;
+        gap: 20px;
+    }
+    header .header-body > div > .about-us > div {
+        padding: 20px 40px;
+    }
+    header .navbar-silk-way .container-fluid .navbar-collapse .pt-menu .mega-menu-container {
+        width: 50% !important;
+    }
+    header .header-body > div > .about-us > div > p {
+        font-size: 14px;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 1600px) {
+    header .navbar-silk-way .container-fluid .navbar-collapse .navbar-right {
+        width: 30%;
+    }
+    header .navbar-silk-way .container-fluid .navbar-collapse .navbar-right > a {
+        padding: 10px 40px;
+    }
+    header .navbar-silk-way .container-fluid .navbar-header {
+        margin: 0 0 0 30px;
+    }
+    header .navbar-silk-way .container-fluid .navbar-collapse .pt-menu {
+        width: 45%;
+    }
+    header .navbar-silk-way .container-fluid .navbar-collapse .pt-menu {
+        padding-left: 20px;
+    }
+    header .navbar-silk-way .container-fluid .navbar-collapse .navbar-left {
+        width: 25%;
+    }
+    header .navbar-silk-way .container-fluid .navbar-collapse .pt-menu .mega-menu-container {
+        width: 52% !important;
+        margin-top: 15px;
+    }
+    header .header-body h1 {
+        margin-top: 30px;
+        font-size: 56px;
+        line-height: 100px;
+    }
+    header .header-body > div > p {
+        font-size: 14px;
+        margin-top: 20px;
+        line-height: 28px;
+    }
+    header .header-body > div > button {
+        margin-top: 30px;
+    }
+    header .header-body > div > .about-us {
+        margin-top: 80px;
+        gap: 10px;
+    }
+    header .header-body > div > .about-us > div > p {
+        font-size: 12px;
+        margin-top: 15px;
+    }
+}
+
+@media (max-width: 1400px) {
+    header .navbar-silk-way .container-fluid > .row {
+        height: 75px;
+    }
+    header .navbar-silk-way .container-fluid .navbar-collapse .pt-menu {
+        padding-left: 10px;
+    }
+    header .navbar-silk-way .container-fluid .navbar-collapse .pt-menu > .ul-top-items .li-top-item .a-top-link {
+        font-size: 12px !important;
+    }
+    header .navbar-silk-way .container-fluid .navbar-collapse .navbar-right .nav .dropdown > a {
+        font-size: 12px;
+    }
+    header .navbar-silk-way .container-fluid .navbar-collapse .navbar-right > a {
+        padding: 10px 30px;
+        font-size: 12px;
+    }
+    header .navbar-silk-way .container-fluid .navbar-collapse .pt-menu {
+        width: 48%;
+        display: block !important;
+    }
+    header .navbar-silk-way .container-fluid .navbar-collapse .navbar-left {
+        width: 21%;
+    }
+    header .navbar-silk-way .container-fluid .navbar-collapse .navbar-right {
+        width: 31%;
+    }
+    header .navbar-silk-way .container-fluid .navbar-collapse .pt-menu .mega-menu-container {
+        width: 55% !important;
+        margin-top: 10px;
+    }
+    header .header-body h1 {
+        margin-top: 20px;
+        font-size: 49px;
+        line-height: 90px;
+    }
+    header .header-body > div > button {
+        margin-top: 30px;
+        font-size: 12px;
+        padding: 15px 39px;
+    }
+    header .header-body > div > .about-us {
+        margin-top: 65px;
+    }
+    header .header-body > div > .about-us > div {
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 1200px) {
+    header .navbar-silk-way .container-fluid .navbar-collapse .pt-menu {
+        width: 60%;
+        display: block !important;
+    }
+    header .navbar-silk-way .container-fluid .navbar-collapse .navbar-left {
+        display: none;
+    }
+    header .navbar-silk-way .container-fluid .navbar-collapse .navbar-right {
+        width: 40%;
+    }
+    header .navbar-silk-way .container-fluid .navbar-collapse .pt-menu .mega-menu-container {
+        width: 65% !important;
+    }
+    header .header-body h1 {
+        margin-top: 15px;
+        font-size: 41px;
+        line-height: 75px;
+    }
+    header .header-body > div > .about-us {
+        gap: 0;
+    }
+    header .header-body > div > .about-us > div {
+        padding: 10px 15px;
+    }
+    header .header-body > div > .about-us > div > p {
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 992px) {
+    header .navbar-silk-way .container-fluid > .row {
+        height: 60px;
+    }
+    header .navbar-silk-way .container-fluid .navbar-collapse .navbar-right > a {
+        display: none;
+    }
+    header .navbar-silk-way .container-fluid .navbar-collapse .navbar-nav > li {
+        margin-right: 10px;
+    }
+    header .navbar-silk-way .container-fluid .navbar-collapse .navbar-right {
+        width: 21%;
+    }
+    .navbar-collapse.collapse {
+        padding-left: 0;
+    }
+    header .navbar-silk-way .container-fluid .navbar-collapse .pt-menu {
+        width: 79%;
+    }
+    header .navbar-silk-way .container-fluid .navbar-header {
+        margin: 0 0 0 10px;
+    }
+    header .navbar-silk-way .container-fluid .navbar-collapse .pt-menu .mega-menu-container {
+        width: 100% !important;
+    }
+    header .header-body h1 {
+        margin-top: 10px;
+        font-size: 33px;
+        line-height: 65px;
+    }
+    header .header-body > div > .about-us {
+        grid-template-columns: repeat(3, 1fr);
+        border: none;
+    }
+    header .header-body > div > .about-us > div {
+        border: 1px solid rgb(235 235 240 / 20%);
+    }
+    header .navbar-silk-way .container-fluid .navbar-collapse:before {
+        display: none;
+    }
+}
+
+@media (max-width: 767px) {
+    header .navbar-silk-way .container-fluid .navbar-header {
+        display: flex;
+        flex-direction: row-reverse;
+        width: 40%;
+        justify-content: flex-end;
+    }
+    header .navbar-silk-way .container-fluid .navbar-header > button {
+        background: rgb(217 217 217 / 40%);
+        padding: 10px;
+        margin: 8px 15px;
+    }
+    header .navbar-silk-way .container-fluid .navbar-header > button:hover {
+        border: 1px solid rgb(235 235 240 / 20%);
+    }
+    header .navbar-silk-way .container-fluid .navbar-header > button > .icon-bar {
+        background: white;
+    }
+    header .navbar-silk-way .container-fluid .navbar-collapse .pt-menu {
+        display: none !important;
+    }
+    header .navbar-silk-way .container-fluid .navbar-collapse {
+        width: 60%;
+    }
+    header .navbar-silk-way .container-fluid .navbar-collapse .navbar-right {
+        width: 100%;
+    }
+    header .navbar-silk-way .container-fluid .navbar-collapse .navbar-right > a {
+         display: flex;
+    }
+    header .navbar-silk-way .container-fluid .navbar-collapse {
+        justify-content: flex-end;
+    }
+    header .navbar-silk-way .container-fluid .navbar-collapse .navbar-right > #top-links > ul > .open .dropdown-menu {
+        position: absolute !important;
+        float: left !important;
+        border: 1px solid rgba(0, 0, 0, .15) !important;
+        border-radius: 4px !important;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, .175) !important;
+        background-color: #fff !important;
+    }
+    header .navbar-silk-way .container-fluid .navbar-collapse.collapse.in {
+        position: absolute;
+        top: 0;
+        background: rgb(38 41 46);
+        width: 100%;
+        box-shadow: 0 0 8px 2px rgb(0 0 0 / 40%);
+        height: fit-content !important;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        padding: 70px 15px;
+        z-index: 1000;
+        transform: translateY(-150%);
+        animation: top 0.5s forwards;
+    }
+    header .navbar-silk-way .container-fluid .navbar-collapse.collapse.in .navbar-right {
+        justify-content: flex-start;
+    }
+    header .navbar-silk-way .container-fluid .navbar-collapse.collapse.in .pt-menu {
+        display: block !important;
+        width: 100%;
+    }
+    header .navbar-silk-way .container-fluid .navbar-collapse.collapse.in .navbar-left {
+        display: block;
+        width: 100%;
+        border: none;
+        margin: 20px 0;
+    }
+    header .navbar-silk-way .container-fluid .navbar-collapse.collapse.in .pt-menu {
+        padding-left: 0;
+    }
+    header .navbar-silk-way .container-fluid .navbar-collapse.collapse.in .pt-menu .mega-menu-container {
+        margin-top: 5px;
+    }
+    header .navbar-silk-way .container-fluid .navbar-collapse.collapse.in .navbar-right {
+         justify-content: space-between;
+    }
+    header .navbar-silk-way .container-fluid .navbar-collapse.collapse.in .pt-menu > .ul-top-items {
+        justify-content: space-between;
+    }
+    header .navbar-silk-way .container-fluid .navbar-header > button[aria-expanded="true"] {
+        position: absolute;
+        z-index: 10000;
+        margin-left: calc(50% - 15px);
+        transition: 1s;
+    }
+    header .header-body h1 {
+        margin-top: 0;
+        font-size: 25px;
+        line-height: 55px;
+    }
+}
+
+@media (max-width: 576px) {
+    header .navbar-silk-way .container-fluid .navbar-collapse .navbar-right,
+    header .navbar-silk-way .container-fluid .navbar-collapse {
+        display: none !important;
+    }
+    header .navbar-silk-way .container-fluid .navbar-header {
+        width: 100%;
+        justify-content: space-between;
+    }
+    header .header-body h1 {
+        font-size: 16px;
+        line-height: 35px;
+    }
+    header .header-body > div > .about-us {
+        display: none;
+    }
+    header {
+        padding-bottom: 20px;
+    }
+    header .navbar-silk-way .container-fluid .navbar-collapse.collapse.in {
+        display: block !important;
+    }
+    header .navbar-silk-way .container-fluid .navbar-header > button[aria-expanded="true"] {
+         position: relative;
+    }
+    header .navbar-silk-way .container-fluid .navbar-collapse.collapse.in .pt-menu > .ul-top-items {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    header .navbar-silk-way .container-fluid .navbar-collapse.collapse.in .navbar-right {
+        display: flex !important;
+        width: auto;
+    }
+}
+
+@keyframes ani {
+    0% {
+        transform: translateX(-150%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes top {
+    0% {
+        transform: translateY(-150%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}

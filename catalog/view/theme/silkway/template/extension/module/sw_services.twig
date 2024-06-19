@@ -1,0 +1,27 @@
+<div id="sw_services" class="container-fluid">
+    <h2>{{ lang['heading_title'] }}</h2>
+    <h3>{{ lang['description'] }}</h3>
+    <div class="row">
+        {% for value in data['sw_services'] %}
+            <div class="col-xs-6 col-sm-6 col-lg-4">
+                <div class="card">
+                    <h4>{{ value['name'] }}</h4>
+                    <p>{{ value['description'] }}</p>
+                    <div
+                        class="
+                            bottom-card
+                            {% if value['photo'] is empty %}
+                                justify-content-end
+                            {% endif %}
+                        "
+                    >
+                        {% if value['photo'] is not empty %}
+                            <img src="/image/{{ value['photo'] }}" alt="{{ value['photo'] }}">
+                        {% endif %}
+                        <button class="btn btn-default">{{ lang['button'] }}</button>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>

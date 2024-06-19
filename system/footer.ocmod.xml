@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modification>
+    <name>Modification pttestimonial></name>
+    <code>5</code>
+    <version>1.0</version>
+    <author>Suslov Igor</author>
+    <link>igirsuslov@gmail.com</link>
+
+    <file path="catalog/controller/common/footer.php">
+        <operation>
+            <search>
+                <![CDATA[$this->load->language('common/footer');]]>
+            </search>
+            <add position="replace">
+                <![CDATA[$data['lang'] = $this->load->language('common/footer');]]>
+            </add>
+        </operation>
+    </file>
+
+    <file path="catalog/language/ru-ru/common/footer.php">
+        <operation>
+            <search>
+                <![CDATA[$_['text_powered'] = ' %s &copy; %s';]]>
+            </search>
+            <add position="after">
+                <![CDATA[$_['sw_description'] = 'silk way - это команда специалистов, созданная чтобы помочь тебе подобрать товар для твоего бизнеса, закупить и доставить';
+$_['sw_button'] = 'Оставить заявку';
+$_['sw_connection'] = 'Свяжитесь с нами';
+$_['sw_phone'] = '+7 911 956-96-07';
+$_['sw_email'] = 'anton@silkwaygroup.ru';
+$_['sw_wechat'] = '1111';
+$_['sw_wa'] = '79119569607';
+$_['sw_telegram'] = 'Anton_eremenko';
+$_['sw_vk'] = 'VK id';
+$_['sw_services'] = [
+    'name' => 'Услуги',
+    'value' => [
+        [
+            'href' => '#',
+            'text' => 'Рассчитать стоимость'
+        ],
+        [
+            'href' => '#',
+            'text' => 'Поиск поставщика в Китае'
+        ],
+        [
+            'href' => '#',
+            'text' => 'Выкуп товара с Алибаба'
+        ],
+        [
+            'href' => '#',
+            'text' => 'Выкуп товара с ТаоБао'
+        ],
+        [
+            'href' => '#',
+            'text' => 'Выкуп товара с Poison'
+        ],
+    ]
+];
+$_['sw_products'] = [
+    'name' => 'Товары',
+    'value' => [
+        [
+            'href' => '#',
+            'text' => 'Доставка обуви'
+        ],
+        [
+            'href' => '#',
+            'text' => 'Доставка одежды'
+        ],
+        [
+            'href' => '#',
+            'text' => 'Доставка оборудования'
+        ],
+        [
+            'href' => '#',
+            'text' => 'Доставка запчастей'
+        ],
+        [
+            'href' => '#',
+            'text' => 'Доставка станков'
+        ],
+        [
+            'href' => '#',
+            'text' => 'Доставка мебели'
+        ],
+    ]
+];]]>
+            </add>
+        </operation>
+    </file>
+
+    <file path="catalog/language/en-gb/common/footer.php">
+        <operation>
+            <search>
+                <![CDATA[$_['text_powered']      = 'Powered By <a href="http://www.opencart.com">OpenCart</a><br /> %s &copy; %s';]]>
+            </search>
+            <add position="after">
+                <![CDATA[$_['sw_description'] = 'silk way is a team of specialists created to help you choose a product for your business, purchase and deliver';
+$_['sw_button'] = 'Submit your application';
+$_['sw_connection'] = 'Contact us';
+$_['sw_phone'] = '+7 911 956-96-07';
+$_['sw_email'] = 'anton@silkwaygroup.ru';
+$_['sw_wechat'] = '1111';
+$_['sw_wa'] = '79119569607';
+$_['sw_telegram'] = 'Anton_eremenko';
+$_['sw_vk'] = 'VK id';
+$_['sw_services'] = [
+    'name' => 'Services',
+    'value' => [
+        [
+            'href' => '#',
+            'text' => 'Calculate the cost'
+        ],
+        [
+            'href' => '#',
+            'text' => 'Search for a Supplier in China'
+        ],
+        [
+            'href' => '#',
+            'text' => 'Purchase of goods from Alibaba'
+        ],
+        [
+            'href' => '#',
+            'text' => 'Purchase of goods from TaoBao'
+        ],
+        [
+            'href' => '#',
+            'text' => 'Purchase of goods from Poison'
+        ],
+    ]
+];
+$_['sw_products'] = [
+    'name' => 'Products',
+    'value' => [
+        [
+            'href' => '#',
+            'text' => 'Shoe delivery'
+        ],
+        [
+            'href' => '#',
+            'text' => 'Clothing delivery'
+        ],
+        [
+            'href' => '#',
+            'text' => 'Equipment delivery'
+        ],
+        [
+            'href' => '#',
+            'text' => 'Spare parts delivery'
+        ],
+        [
+            'href' => '#',
+            'text' => 'Machine tool delivery'
+        ],
+        [
+            'href' => '#',
+            'text' => 'Furniture delivery'
+        ],
+    ]
+];]]>
+            </add>
+        </operation>
+    </file>
+
+</modification>

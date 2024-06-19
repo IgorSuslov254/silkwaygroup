@@ -1,0 +1,27 @@
+<div id="sw_our_partners">
+    <h2>{{ lang['h2'] }}</h2>
+    <h3>{{ lang['h3'] }}</h3>
+
+    <div class="container-fluid">
+        <div class="row content-top">
+            <h2>{{ lang['content_top_h2'] }}</h2>
+            <p>{{ lang['content_top_p'] }}</p>
+            <div>
+                <button type="button" class="btn btn-default">{{ lang['content_top_button'] }}</button>
+                <svg width="152" height="39" viewBox="0 0 152 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 17.2363C47.4602 1.25163 142.504 -16.9742 151 38" stroke="white" stroke-width="2"/>
+                </svg>
+                <p>{{ lang['content_top_div_p'] }}</p>
+            </div>
+        </div>
+        <div class="row content-bottom">
+            {% for content_bottom_card in lang['content_bottom_card'] %}
+                <div class="hidden-xs col-sm-4 col-md-4 col-lg-4">
+                    <div class="card">
+                        <p>{{ content_bottom_card['p'] }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

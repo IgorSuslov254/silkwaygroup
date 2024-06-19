@@ -1,0 +1,67 @@
+<div id="sw_calc" class="container-fluid">
+    <img src="image/{{ data['sw_calc'][0]['photo'] }}" alt="{{ data['sw_calc'][0]['photo'] }}">
+    <div class="body-banner">
+        <p>{{ lang['text_banner'] }}</p>
+        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#sw-calc-modal">{{ lang['text_button_banner'] }}</button>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="sw-calc-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <form class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h2 class="modal-title">Рассчитать доставку</h2>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row">
+
+                            {% for input in lang['form']['inputs'] %}
+                                <div class="col-xs-12 col-sm-6 col-lg-4">
+                                    <input name="{{ input['name'] }}" type="{{ input['type'] }}" placeholder="{{ input['placeholder'] }}" min="{{ input['min'] }}" max="{{ input['max'] }}" required class="form-control">
+                                </div>
+                            {% endfor %}
+
+                            <div class="col-xs-12 col-sm-6 col-lg-4">
+                                <select name="{{ lang['form']['selects']['cloth_type']['name'] }}" class="form-control" required>
+                                    <option value="">{{ lang['form']['selects']['cloth_type']['default_value'] }}</option>
+
+                                    {% for cloth_type in data['sw_calc_cloth_type'] %}
+                                        <option value="{{ cloth_type['id'] }}">{{ cloth_type['name'] }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-lg-4">
+                                <select name="{{ lang['form']['selects']['route']['name'] }}" class="form-control" required>
+                                    <option value="">{{ lang['form']['selects']['route']['default_value'] }}</option>
+
+                                    {% for calc_route in data['sw_calc_route'] %}
+                                        <option value="{{ calc_route['id'] }}">{{ calc_route['name'] }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+
+                            {% for checkbox in lang['form']['checkboxes'] %}
+                                <div class="col-xs-12">
+                                    <label>
+                                        <input name="{{ checkbox['name'] }}" type="{{ checkbox['type'] }}"> {{ checkbox['placeholder'] }}
+                                    </label>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <p class="hidden" data-text-load="{{ lang['form']['p']['text_load'] }}" data-text-answer="{{ lang['form']['p']['text_answer'] }}" data-text-error="{{ lang['form']['p']['text_error'] }}"></p>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">{{ lang['form']['buttons']['close']['text'] }}</button>
+                    <button type="submit" class="btn btn-primary">{{ lang['form']['buttons']['submit']['text'] }}</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    const links_calc = {{ links }};
+</script>
