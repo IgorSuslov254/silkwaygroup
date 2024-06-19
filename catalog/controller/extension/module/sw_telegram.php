@@ -1,5 +1,6 @@
 <?php
 include_once "sw_module.php";
+include_once DIR_SYSTEM . "library/SwTelegram.php";
 
 class ControllerExtensionModuleSwTelegram extends ControllerExtensionModuleSwModule
 {
