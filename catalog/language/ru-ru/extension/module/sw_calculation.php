@@ -1,7 +1,7 @@
 <?php
 
 // Heading
-$_['heading_title'] = 'Просчет';
+$_['heading_title'] = 'Расчёт';
 
 // Common
 $_['description'] = 'Заполните форму ниже и мы рассчитаем стоимость доставки';
