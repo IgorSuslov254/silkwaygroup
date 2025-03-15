@@ -1240,3 +1240,9 @@ h2.price{margin:0;}
 .user_m{border: 3px solid #ddd; border-radius: 8px;padding:2rem 1rem;margin-bottom: 2rem;text-align: center;min-height: 11rem; vertical-align: middle;}
 .user_m:hover{border: 2px solid #ff4747;}
 .user_m i{font-size: 3rem; color: #222;}
+
+#quickcheckoutconfirm .payment > p,
+#quickcheckoutconfirm .well.well-sm > p:nth-child(2)
+{
+	display: none;
+}

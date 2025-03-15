@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modification>
+    <name>Modification Default</name>
+    <code>bank_transfer</code>
+    <version>1.1</version>
+    <author>OpenCart Ltd</author>
+    <link>http://www.opencart.com</link>
+
+<!--    <file path="catalog/view/theme/default/template/extension/payment/bank_transfer.twig">-->
+<!--        <operation>-->
+<!--            <search regex="true">-->
+<!--                <![CDATA[<p>{{ bank }}</p>]]>-->
+<!--            </search>-->
+<!--            <add position="replace">-->
+<!--                <![CDATA[test]]>-->
+<!--            </add>-->
+<!--        </operation>-->
+<!--    </file>-->
+
+</modification>
