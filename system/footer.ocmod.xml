@@ -27,10 +27,14 @@
 $_['sw_button'] = 'Оставить заявку';
 $_['sw_connection'] = 'Свяжитесь с нами';
 $_['sw_phone'] = '+7 911 956-96-07';
+$_['sw_phone_2'] = '+7 928 417-96-50';
 $_['sw_email'] = 'anton@silkwaygroup.ru';
+$_['sw_email_2'] = 'dmitry@silkwaygroup.ru';
 $_['sw_wechat'] = '1111';
 $_['sw_wa'] = '79119569607';
-$_['sw_telegram'] = 'Anton_eremenko';
+$_['sw_wa_2'] = '79284179650';
+$_['sw_telegram'] = 'https://t.me/+ezUBUIXXAUY0MjUy';
+$_['sw_telegram_name'] = 'SILK WAY';
 $_['sw_vk'] = 'VK id';
 $_['sw_services'] = [
     'name' => 'Услуги',

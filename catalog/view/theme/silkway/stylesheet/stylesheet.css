@@ -1246,3 +1246,12 @@ h2.price{margin:0;}
 {
 	display: none;
 }
+
+footer .footer-contact-us p {
+	display: grid !important;
+	grid-template-columns: 15% 85% !important;
+	align-items: center !important;
+}
+footer .footer-contact-us p > svg {
+	grid-row: span 2 !important;
+}
