@@ -26,27 +26,32 @@
 					{{ position2 }}
 					<div class="navbar-form navbar-left">{{ search }}</div>
 					<ul class="nav navbar-nav navbar-right">
-						<li id="top-links" class="nav header-dropdown">
-							<ul class="list-inline">
-								<li class="dropdown">
-									<a href="{{ account }}" title="{{ text_account }}" class="dropdown-toggle" data-toggle="dropdown">
-										<span>{{ text_account }}</span>
-									</a>
-									<ul class="dropdown-menu dropdown-menu-right pt-account">
-										{% if logged %}
-											<li><a href="{{ account }}">{{ text_account }}</a></li>
-											<li><a href="{{ order }}">{{ text_order }}</a></li>
-											<li><a href="{{ transaction }}">{{ text_transaction }}</a></li>
-											<li><a href="{{ download }}">{{ text_download }}</a></li>
-											<li><a id="pt-logout-link" href="{{ logout }}">{{ text_logout }}</a></li>
-										{% else %}
-											<li><a id="pt-register-link" href="{{ register }}">{{ text_register }}</a></li>
-											<li><a id="pt-login-link" href="{{ login }}">{{ text_login }}</a></li>
-										{% endif %}
-									</ul>
-								</li>
-							</ul>
-						</li>
+						<div>
+							<li id="top-links" class="nav header-dropdown">
+								<ul class="list-inline">
+									<li class="dropdown">
+										<a href="{{ account }}" title="{{ text_account }}" class="dropdown-toggle" data-toggle="dropdown">
+											<i class="ion-android-person icons"></i>
+											<span>{{ text_account }}</span>
+											<i class="icon-right ion-ios-arrow-down"></i>
+										</a>
+										<ul class="dropdown-menu dropdown-menu-right pt-account">
+											{% if logged %}
+												<li><a href="{{ account }}">{{ text_account }}</a></li>
+												<li><a href="{{ order }}">{{ text_order }}</a></li>
+												<li><a href="{{ transaction }}">{{ text_transaction }}</a></li>
+												<li><a href="{{ download }}">{{ text_download }}</a></li>
+												<li><a id="pt-logout-link" href="{{ logout }}">{{ text_logout }}</a></li>
+											{% else %}
+												<li><a id="pt-register-link" href="{{ register }}">{{ text_register }}</a></li>
+												<li><a id="pt-login-link" href="{{ login }}">{{ text_login }}</a></li>
+											{% endif %}
+										</ul>
+									</li>
+								</ul>
+							</li>
+							{% if header_cart %}{{ cart }}{% endif %}
+						</div>
 						<a href="{{ home }}index.php?route=account/order" class="btn btn-default btn-lg">{{ text_track_shipment }}</a>
 					</ul>
 				</div><!-- /.navbar-collapse -->

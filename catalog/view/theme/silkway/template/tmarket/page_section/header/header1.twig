@@ -17,7 +17,12 @@
 				</li>
 				<li id="top-links" class="nav header-dropdown">
 				  <ul class="list-inline">
-					<li class="dropdown"><a href="{{ account }}" title="{{ text_account }}" class="dropdown-toggle" data-toggle="dropdown"><i class="ion-android-person icons"></i> <span class="hidden-xs">{{ text_account }}</span> <i class="icon-right ion-ios-arrow-down"></i></a>
+					<li class="dropdown">
+						<a href="{{ account }}" title="{{ text_account }}" class="dropdown-toggle" data-toggle="dropdown">
+							<i class="ion-android-person icons"></i>
+							<span class="hidden-xs">{{ text_account }}</span>
+							<i class="icon-right ion-ios-arrow-down"></i>
+						</a>
 					  <ul class="dropdown-menu dropdown-menu-right pt-account">
 						{% if logged %}
 						<li><a href="{{ account }}">{{ text_account }}</a></li>

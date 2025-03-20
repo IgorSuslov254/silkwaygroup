@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modification>
+    <name>Modification customer></name>
+    <code>extend_address_length</code>
+    <version>1</version>
+    <author>Suslov Igor</author>
+    <link>igirsuslov@gmail.com</link>
+
+    <file path="catalog/view/theme/silkway/template/product/product.twig">
+        <operation>
+            <search>
+                <![CDATA[{{ price }}]]>
+            </search>
+            <add position="after">
+                <![CDATA[<p style="color:red;">*Цена зависит от курса и может отличаться. Актуальную цену запрашивайте у менеджера.</p>]]>
+            </add>
+        </operation>
+    </file>
+
+    <file path="catalog/view/theme/silkway/template/tmarket/quickview/product.twig">
+        <operation>
+            <search>
+                <![CDATA[{{ price }}]]>
+            </search>
+            <add position="after">
+                <![CDATA[<p style="color:red;">*Цена зависит от курса и может отличаться. Актуальную цену запрашивайте у менеджера.</p>]]>
+            </add>
+        </operation>
+    </file>
+
+</modification>
