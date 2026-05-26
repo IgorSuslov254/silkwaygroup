@@ -46,6 +46,7 @@ catalog/view/theme/*/stylesheet/*.min.css
 
 # config
 config.php
+admin/config.php
 
 # =========================
 # Backups / archives
