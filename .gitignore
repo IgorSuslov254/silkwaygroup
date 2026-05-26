@@ -44,6 +44,9 @@ image/cache/*
 catalog/view/javascript/*.min.js
 catalog/view/theme/*/stylesheet/*.min.css
 
+# config
+config.php
+
 # =========================
 # Backups / archives
 # =========================
