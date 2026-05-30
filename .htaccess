@@ -43,6 +43,15 @@ RewriteRule ^system/download/(.*) index.php?route=error/not_found [L]
 #RewriteCond %{THE_REQUEST} \s/+index\.php[?\s] [NC]
 #RewriteRule ^index\.php$ / [R=301,L]
 
+# Убираем слеш в конце query string
+RewriteCond %{QUERY_STRING} ^(.*)/$
+RewriteRule ^ %{REQUEST_URI}?%1 [R=301,L]
+
+# Убираем trailing slash
+RewriteCond %{REQUEST_URI} .+/$
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.+)/$ /$1 [R=301,L]
+
 # OpenCart SEO URL
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d

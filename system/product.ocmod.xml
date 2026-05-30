@@ -28,4 +28,44 @@
         </operation>
     </file>
 
+    <file path="catalog/controller/product/product.php">
+        <!-- Добавляем use -->
+        <operation>
+            <search><![CDATA[<?php]]></search>
+            <add position="after">
+                <![CDATA[
+use Silkway\System\Library\{
+    SeoRedirectService,
+    UrlService,
+    RequestService,
+    ResponseService,
+    ConfigService
+};
+                ]]>
+            </add>
+        </operation>
+
+        <!-- Вставляем SEO redirect -->
+        <operation>
+            <search><![CDATA[$this->load->model('catalog/product');]]></search>
+            <add position="after">
+                <![CDATA[
+        /* 301 redirect SEO */
+        $urlService = new UrlService($this->db);
+        $requestService = new RequestService($this->request);
+        $responseService = new ResponseService($this->response);
+        $configService = new ConfigService($this->config);
+
+        $seoRedirectService = new SeoRedirectService(
+            $urlService,
+            $requestService,
+            $responseService,
+            $configService
+        );
+
+        $seoRedirectService->redirectProductToCanonical();
+        /* /301 redirect SEO */]]>
+            </add>
+        </operation>
+    </file>
 </modification>
