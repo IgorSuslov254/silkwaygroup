@@ -6,7 +6,10 @@ use Dotenv\Dotenv;
 
 class Bootstrap
 {
-    public static function run()
+    /**
+     * @return void
+     */
+    public static function run(): void
     {
         $dotenv = Dotenv::createImmutable(__DIR__ . '/../');
         $dotenv->load();
