@@ -13,29 +13,26 @@ if (is_file(__DIR__ . '/../../../storage/vendor/autoload.php')) {
 
 use Silkway\System\Library\StringNormalizerService;
 
-class Migration20260531002GenerateProductSeoUrls extends Migration
+class Migration20260608001GenerateCategorySeoUrls extends Migration
 {
     /**
      * @return void
      */
     public function up(): void
     {
-        $products = $this->db->query("
+        $categories = $this->db->query("
             SELECT
-                `p`.`product_id`,
-                `pd`.`language_id`,
-                `pd`.`name`
+                `c`.`category_id`,
+                `cd`.`language_id`,
+                `cd`.`name`
             FROM
-                `oc_product` `p`
-            INNER JOIN `oc_product_description` `pd` ON
-                `pd`.`product_id` = `p`.`product_id`
+                `oc_category` `c`
+            INNER JOIN `oc_category_description` `cd` ON
+                `cd`.`category_id` = `c`.`category_id`
             LEFT JOIN `oc_seo_url` `su` ON
-                `su`.`query` = CONCAT('product_id=', `p`.`product_id`)
+                `su`.`query` = CONCAT('category_id=', `c`.`category_id`) AND `su`.`language_id` = `cd`.`language_id`
             WHERE
-                `su`.`seo_url_id` IS NULL
-            ORDER BY
-                `p`.`product_id`
-            DESC
+                `su`.`keyword` IS NULL
         ")->rows;
 
         $seoUrlsArray = $this->db->query("
@@ -52,7 +49,7 @@ class Migration20260531002GenerateProductSeoUrls extends Migration
             FROM
                 `oc_seo_url`
             WHERE
-                `query` LIKE '%product_id%'
+                `query` LIKE '%category_id%'
         ")->rows;
 
         $seoUrls = [];
@@ -62,29 +59,28 @@ class Migration20260531002GenerateProductSeoUrls extends Migration
 
         $insertRows = [];
 
-        foreach ($products as $product) {
-            $keyword = StringNormalizerService::toSeoKeyword($product['name']);
+        foreach ($categories as $category) {
+            $keyword = StringNormalizerService::toSeoKeyword($category['name']);
 
             if (!$keyword) {
                 continue;
             }
 
-            $seoUrl = '0-' . (int)$product['language_id'] . $this->db->escape($keyword);
+            $seoUrl = '0-' . (int)$category['language_id'] . '-' . $this->db->escape($keyword);
 
             if (in_array($seoUrl, $seoUrls, true)) {
-                $keyword .= '-' . (int)$product['product_id'];
-                $seoUrl = '0-' . (int)$product['language_id'] . $this->db->escape($keyword);
+                $keyword .= '-' . (int)$category['category_id'];
+                $seoUrl = '0-' . (int)$category['language_id'] . '-' . $this->db->escape($keyword);
             }
 
             $seoUrls[] = $seoUrl;
 
             $insertRows[] = sprintf(
-                "(0, %d, 'product_id=%d', '%s')",
-                (int)$product['language_id'],
-                (int)$product['product_id'],
+                "(0, %d, 'category_id=%d', '%s')",
+                (int)$category['language_id'],
+                (int)$category['category_id'],
                 $this->db->escape($keyword)
             );
-
         }
 
         if (!empty($insertRows)) {
@@ -118,7 +114,8 @@ class Migration20260531002GenerateProductSeoUrls extends Migration
 }
 
 $action = strtolower($argv[1] ?? '');
-$migration = new Migration20260531002GenerateProductSeoUrls();
+
+$migration = new Migration20260608001GenerateCategorySeoUrls();
 
 if (!method_exists($migration, $action)) {
     var_dump('Available actions: up, down');

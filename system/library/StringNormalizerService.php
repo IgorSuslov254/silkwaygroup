@@ -11,11 +11,10 @@ class StringNormalizerService
     public static function toSeoKeyword(string $value): string
     {
         $value = mb_strtolower($value);
-
         $value = preg_replace('/[^a-zа-яё0-9\s]+/iu', ' ', $value);
-
         $value = preg_replace('/\s+/u', '_', trim($value));
+        $value = trim($value, '_');
 
-        return trim($value, '_');
+        return strtolower($value);
     }
 }
