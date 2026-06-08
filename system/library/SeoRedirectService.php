@@ -58,4 +58,24 @@ class SeoRedirectService
             $this->responseService->redirect301($redirectUrl);
         }
     }
+
+    /**
+     * @return void
+     */
+    public function redirectCategoryCanonical(): void
+    {
+        $languageId = $this->configService->getLanguageId(); 
+        $categoryId = $this->requestService->getCategoryId();
+        $seoCategoryUrl = $this->urlService->getSeoUrl("category_id=$categoryId", $languageId);
+        $route = $this->requestService->get_Route_();
+
+        $redirectUrl = '';
+        if ($seoCategoryUrl && ($seoCategoryUrl !== $route)) {
+            $redirectUrl = $this->requestService->getRedirectUrl($seoCategoryUrl);
+        }
+
+        if ($redirectUrl) {
+            $this->responseService->redirect301($redirectUrl);
+        }
+    }
 }
