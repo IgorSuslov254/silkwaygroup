@@ -175,7 +175,7 @@ class ControllerExtensionModulePtmenu extends Controller
                                             if ($category_info) {
                                                 $type = $widget['type'];
                                                 $title = $category_info['name'];
-                                                $link = $this->url->link('product/category', 'path=' . $top_item['category_id'] . '_' . $category_id, true);
+                                                $link = $this->url->link('product/category', 'path=' . $category_id, true);
                                                 $w_cols = $widget['cols'];
 
                                                 if($widget['show_image']) {
