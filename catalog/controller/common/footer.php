@@ -1,6 +1,8 @@
 <?php
 class ControllerCommonFooter extends Controller {
 	public function index() {
+        $data['sw_telegram_model'] = $this->load->controller('extension/module/sw_telegram');
+
 		$this->load->language('common/footer');
 
 		$this->load->model('catalog/information');
