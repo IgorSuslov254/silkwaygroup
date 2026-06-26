@@ -7,6 +7,11 @@ class ControllerProductManufacturer extends Controller {
 
 		$this->document->setTitle($this->language->get('heading_title'));
 
+        $this->document->addLink(
+            $this->url->link('product/manufacturer', '', true),
+            'canonical'
+        );
+
 		$data['breadcrumbs'] = array();
 
 		$data['breadcrumbs'][] = array(

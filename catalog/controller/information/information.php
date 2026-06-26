@@ -5,6 +5,11 @@ class ControllerInformationInformation extends Controller {
 
 		$this->load->model('catalog/information');
 
+        $this->document->addLink(
+            $this->url->link('information/information', 'information_id=4', true),
+            'canonical'
+        );
+
 		$data['breadcrumbs'] = array();
 
 		$data['breadcrumbs'][] = array(
