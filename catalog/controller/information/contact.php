@@ -27,6 +27,11 @@ class ControllerInformationContact extends Controller {
 			$this->response->redirect($this->url->link('information/contact/success'));
 		}
 
+        $this->document->addLink(
+            $this->url->link('information/contact', '', true),
+            'canonical'
+        );
+
 		$data['breadcrumbs'] = array();
 
 		$data['breadcrumbs'][] = array(
