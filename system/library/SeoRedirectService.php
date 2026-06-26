@@ -8,23 +8,27 @@ class SeoRedirectService
     private RequestService $requestService;
     private ResponseService $responseService;
     private ConfigService $configService;
+    private CatalogProductService $catalogProductService;
 
     /**
      * @param UrlService $urlService
      * @param RequestService $requestService
      * @param ResponseService $responseService
      * @param ConfigService $configService
+     * @param CatalogProductService $catalogProductService
      */
     public function __construct(
         UrlService $urlService,
         RequestService $requestService,
         ResponseService $responseService,
-        ConfigService $configService
+        ConfigService $configService,
+        CatalogProductService $catalogProductService
     ) {
         $this->urlService = $urlService;
         $this->requestService = $requestService;
         $this->responseService = $responseService;
         $this->configService = $configService;
+        $this->catalogProductService = $catalogProductService;
     }
 
     /**
@@ -35,6 +39,10 @@ class SeoRedirectService
         $languageId = $this->configService->getLanguageId();
         $categoryId = $this->requestService->getCategoryId();
         $productId = $this->requestService->getProductId();
+
+        if ($categoryId === 0 && !empty($productId)) {
+            $categoryId = $this->catalogProductService->getCategoryForProductId($productId);
+        }
 
         $seoCategoryUrl = $this->urlService->getSeoUrl("category_id=$categoryId", $languageId);
         $seoProductUrl = $this->urlService->getSeoUrl("product_id=$productId", $languageId);
