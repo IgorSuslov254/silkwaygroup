@@ -39,7 +39,8 @@ use Silkway\System\Library\{
     UrlService,
     RequestService,
     ResponseService,
-    ConfigService
+    ConfigService,
+    CatalogProductService
 };
                 ]]>
             </add>
@@ -55,12 +56,14 @@ use Silkway\System\Library\{
         $requestService = new RequestService($this->request);
         $responseService = new ResponseService($this->response);
         $configService = new ConfigService($this->config);
+        $catalogProductService = new CatalogProductService($this->model_catalog_product);
 
         $seoRedirectService = new SeoRedirectService(
             $urlService,
             $requestService,
             $responseService,
-            $configService
+            $configService,
+            $catalogProductService
         );
 
         $seoRedirectService->redirectProductToCanonical();
