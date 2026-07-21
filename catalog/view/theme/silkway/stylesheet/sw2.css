@@ -1,0 +1,234 @@
+:root {
+    --sw2-color-gold: #C8A86E;
+    --sw2-color-white: #DCDCDC;
+    --sw2-color-black: #11273A;
+    --sw2-color-lite-black: #4D5F6F;
+    --sw2-h1-fs: 64px;
+    --sw2-h2-fs: 20px;
+}
+.sw2-color-white {
+    color: var(--sw2-color-white);
+}
+.sw2-color-black {
+    color: var(--sw2-color-black);
+}
+.sw2-color-gold {
+    color: var(--sw2-color-gold);
+}
+.sw2-h1 {
+    font-size: var(--sw2-h1-fs);
+}
+.sw2-h2 {
+    font-size: var(--sw2-h2-fs);
+}
+.sw2-button-gold {
+    padding: 23px 27px;
+    background: var(--sw2-color-gold);
+    border: 0;
+    text-transform: uppercase;
+    color: var(--sw2-color-black);
+}
+.sw2-button-gold:hover {
+    background: linear-gradient(to bottom, #feb47b, var(--sw2-color-gold));
+    color: var(--sw2-color-black);
+}
+.sw2-button-gold:active {
+    background: #DED2BA;
+}
+.sw2-button-black {
+    padding: 22px 26px;
+    background: var(--sw2-color-black);
+    text-transform: uppercase;
+    color: var(--sw2-color-gold);
+    border: 1px solid var(--sw2-color-gold);
+}
+.sw2-button-black:hover {
+    background: #203E5B;
+    color: var(--sw2-color-gold);
+}
+
+
+/* ===========================
+DISPLAY
+=========================== */
+
+.sw2_d-block {
+    display: block;
+}
+
+.sw2_d-inline {
+    display: inline;
+}
+
+.sw2_d-inline-block {
+    display: inline-block;
+}
+
+.sw2_d-flex {
+    display: flex;
+}
+
+.sw2_d-inline-flex {
+    display: inline-flex;
+}
+
+.sw2_d-grid {
+    display: grid;
+}
+
+.sw2_d-none {
+    display: none;
+}
+
+
+/* ===========================
+   FLEX DIRECTION
+   =========================== */
+
+.sw2_flex-row {
+    flex-direction: row;
+}
+
+.sw2_flex-column {
+    flex-direction: column;
+}
+
+.sw2_flex-row-reverse {
+    flex-direction: row-reverse;
+}
+
+.sw2_flex-column-reverse {
+    flex-direction: column-reverse;
+}
+
+
+/* ===========================
+   JUSTIFY CONTENT
+   =========================== */
+
+.sw2_justify-start {
+    justify-content: flex-start;
+}
+
+.sw2_justify-center {
+    justify-content: center;
+}
+
+.sw2_justify-end {
+    justify-content: flex-end;
+}
+
+.sw2_justify-between {
+    justify-content: space-between;
+}
+
+.sw2_justify-around {
+    justify-content: space-around;
+}
+
+.sw2_justify-evenly {
+    justify-content: space-evenly;
+}
+
+
+/* ===========================
+   ALIGN ITEMS
+   =========================== */
+
+.sw2_items-start {
+    align-items: flex-start;
+}
+
+.sw2_items-center {
+    align-items: center;
+}
+
+.sw2_items-end {
+    align-items: flex-end;
+}
+
+.sw2_items-stretch {
+    align-items: stretch;
+}
+
+.sw2_items-baseline {
+    align-items: baseline;
+}
+
+
+/* ===========================
+   ALIGN SELF
+   =========================== */
+
+.sw2_self-start {
+    align-self: flex-start;
+}
+
+.sw2_self-center {
+    align-self: center;
+}
+
+.sw2_self-end {
+    align-self: flex-end;
+}
+
+.sw2_self-stretch {
+    align-self: stretch;
+}
+
+
+/* ===========================
+   FLEX WRAP
+   =========================== */
+
+.sw2_flex-wrap {
+    flex-wrap: wrap;
+}
+
+.sw2_flex-nowrap {
+    flex-wrap: nowrap;
+}
+
+.sw2_flex-wrap-reverse {
+    flex-wrap: wrap-reverse;
+}
+
+
+/* ===========================
+   GRID
+   =========================== */
+
+.sw2_grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.sw2_grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.sw2_grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.sw2_grid-auto {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+
+/* ===========================
+   GAP
+   =========================== */
+
+.sw2_gap-5  { gap: 5px; }
+.sw2_gap-10 { gap: 10px; }
+.sw2_gap-15 { gap: 15px; }
+.sw2_gap-20 { gap: 20px; }
+.sw2_gap-30 { gap: 30px; }
+.sw2_gap-40 { gap: 40px; }
+
+
+/* ===========================
+   fs
+   =========================== */
+
+.sw2_fs-12 { font-size: 12px }
