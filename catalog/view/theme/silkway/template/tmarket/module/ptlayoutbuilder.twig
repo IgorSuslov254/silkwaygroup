@@ -1,7 +1,7 @@
 {% if widgets %}
     {% for rows in widgets %}
     <div class="main-row {{ rows.class }}">
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
                 {% for main_col in rows.main_cols %}
                 <div class="main-col col-sm-12 col-md-{{ main_col.format }}">
