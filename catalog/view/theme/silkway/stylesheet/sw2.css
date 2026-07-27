@@ -7,6 +7,10 @@
     --sw2-h2-fs: 20px;
 }
 
+.color-white {
+    color: white;
+}
+
 .sw2-color-white {
     color: var(--sw2-color-white);
 }
@@ -25,6 +29,10 @@
 
 .sw2-h2 {
     font-size: var(--sw2-h2-fs);
+}
+
+.sw2-font-style-italic {
+    font-style: italic;
 }
 
 .sw2-button-gold {
@@ -56,6 +64,15 @@
     background: #203E5B;
     color: var(--sw2-color-gold);
 }
+
+.sw2-font-current-page {
+    background-image: url("/image/staticpage/logistics 1.svg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
 
 
 /* ===========================
