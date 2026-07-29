@@ -3,8 +3,24 @@
     --sw2-color-white: #DCDCDC;
     --sw2-color-black: #11273A;
     --sw2-color-lite-black: #4D5F6F;
-    --sw2-h1-fs: 64px;
+    --sw2-h1-fs: 96px;
     --sw2-h2-fs: 20px;
+    --sw2-p-fs: 12px;
+    --sds-typography-body-font-family: Family Sans;
+}
+
+h1, h2, h3, p, span {
+    font-family: Georgia !important;
+}
+
+.sw2-p-title {
+    font-family: var(--sds-typography-body-font-family) !important;
+    font-size: var(--sw2-p-fs);
+    font-style: normal;
+    font-weight: 600;
+    line-height: 140%; /* 16.8px */
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
 }
 
 .color-white {
@@ -25,22 +41,51 @@
 
 .sw2-h1 {
     font-size: var(--sw2-h1-fs);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 90px; /* 93.75% */
+    letter-spacing: -1.92px;
 }
 
 .sw2-h2 {
+    font-family: var(--sds-typography-body-font-family) !important;
     font-size: var(--sw2-h2-fs);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 140%; /* 28px */
 }
 
 .sw2-font-style-italic {
     font-style: italic;
 }
 
+.sw2-bt-gray {
+    border-top: 1px #3F505F solid;
+}
+
+.sw2-bb-white {
+    border-bottom: 1px var(--sw2-color-white) solid;
+}
+
+.sw2-br-white {
+    border-right: 1px var(--sw2-color-white) solid;
+}
+
 .sw2-button-gold {
     padding: 23px 27px;
     background: var(--sw2-color-gold);
     border: 0;
-    text-transform: uppercase;
+
     color: var(--sw2-color-black);
+    text-align: center;
+
+    /* SW/button-large */
+    font-family: Inter !important;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140%; /* 19.6px */
+    text-transform: uppercase;
 }
 
 .sw2-button-gold:hover {
@@ -58,6 +103,14 @@
     text-transform: uppercase;
     color: var(--sw2-color-gold);
     border: 1px solid var(--sw2-color-gold);
+    text-align: center;
+
+    /* SW/button-large */
+    font-family: Inter !important;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140%; /* 19.6px */
 }
 
 .sw2-button-black:hover {
@@ -73,6 +126,43 @@
     background-attachment: fixed;
 }
 
+.sw2-about-us-card {
+    padding: 40px 25px;
+    font-style: normal;
+}
+
+.sw2-about-us-card .p-1 {
+    color: var(--sw2-color-black);
+
+    /* H3_numbers */
+    font-size: 50px;
+
+    font-weight: 400;
+    line-height: 90px; /* 180% */
+    letter-spacing: -1px;
+}
+
+.sw2-about-us-card .p-2 {
+    color: var(--sw2-color-black);
+
+    /* SW/H6 */
+    font-family: var(--sds-typography-body-font-family) !important;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 140%; /* 16.8px */
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+}
+
+.sw2-about-us-card .p-3 {
+    color: #4A5A68;
+
+    /* Body Smaller */
+    font-family: var(--sds-typography-body-font-family) !important;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 100%; /* 12px */
+}
 
 
 /* ===========================
