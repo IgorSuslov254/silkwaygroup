@@ -35,6 +35,10 @@ h1, h2, h3, p, span {
     color: var(--sw2-color-black);
 }
 
+.sw2-color-lite-black {
+    color: var(--sw2-color-lite-black);
+}
+
 .sw2-color-gold {
     color: var(--sw2-color-gold);
 }
@@ -116,6 +120,25 @@ h1, h2, h3, p, span {
 .sw2-button-black:hover {
     background: #203E5B;
     color: var(--sw2-color-gold);
+}
+
+.sw2-button-white {
+    background: #FFF;
+    height: 41px;
+    color: #203E5B;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: 1px solid #DCDCDC;
+    padding: 0 45px;
+}
+
+.sw2-button-white:hover {
+    color: #0E1C2B;
+    background-color: #F6F7F9;
+    border: 1px solid #DCDCDC;
 }
 
 .sw2-font-current-page {
