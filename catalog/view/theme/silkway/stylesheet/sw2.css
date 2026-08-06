@@ -187,6 +187,107 @@ h1, h2, h3, p, span {
     line-height: 100%; /* 12px */
 }
 
+.sw2-service-card {
+    height: 315px;
+    padding: 28px 33px;
+}
+
+.sw2-service-card p {
+    color: var(--sw2-color-gold);
+    font-family: Family Sans;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 140%; /* 15.4px */
+    letter-spacing: 1.1px;
+    text-transform: uppercase;
+}
+
+.sw2-service-card h3 {
+    color: #FFF;
+
+    /* SW/H4 */
+    font-family: Georgia;
+    font-size: 34px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%; /* 34px */
+    letter-spacing: -0.68px;
+}
+
+.sw2-service-card h4 {
+    color: #A6ACB4;
+
+    /* SW/card-text */
+    font-family: Family Sans;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 140%; /* 18.2px */
+}
+
+.sw2-service-card button {
+    color: #C8A86E;
+
+    /* SW/button-large */
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140%; /* 19.6px */
+    text-transform: uppercase;
+
+    background: none;
+    border: none;
+}
+
+.sw2-service-card button {
+    background: none !important;
+    border: none !important;
+}
+
+.sw2-service-card-f1 {
+    background-image: url("/image/staticpage/01_search.svg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.sw2-service-card-f2 {
+    background-image: url("/image/staticpage/02_search.svg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.sw2-service-card-f3 {
+    background-image: url("/image/staticpage/03_search.svg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.sw2-service-card-f4 {
+    background-image: url("/image/staticpage/04_search.svg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.sw2-service-card-f5 {
+    background-image: url("/image/staticpage/05_search.svg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.sw2-service-card-f6 {
+    background-image: url("/image/staticpage/06_search.svg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 
 /* ===========================
 DISPLAY
@@ -425,16 +526,16 @@ DISPLAY
     margin: 3rem;
 }
 
+.sw2_m-8 {
+    margin: 5rem;
+}
+
+.sw2_m-9 {
+    margin: 7rem;
+}
+
 .sw2_m-10 {
     margin: 17rem;
-}
-
-.sw2_m-9 {
-    margin: 8rem;
-}
-
-.sw2_m-9 {
-    margin: 6rem;
 }
 
 .sw2_mt-0 {
