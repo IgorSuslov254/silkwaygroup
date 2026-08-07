@@ -108,3 +108,75 @@
     background: #203E5B;
     color: var(--sw2-color-gold);
 }
+
+
+/* ===========================
+   07_Why-us (why_us.html)
+   =========================== */
+
+.sw2_claude-why-us-section {
+    background: #F6F7F9;
+}
+
+.sw2_claude-why-us-eyebrow {
+    color: #203E5B;
+}
+
+.sw2_claude-why-us-heading {
+    font-family: Georgia;
+    font-size: 62px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 0.9;
+    letter-spacing: -1.24px;
+    margin: 0;
+}
+
+.sw2_claude-why-us-subtitle {
+    font-family: Family Sans !important;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.4;
+    margin: 24px 0 0;
+}
+
+.sw2_claude-why-us-card {
+    background: #FFF;
+    border: 1px solid var(--sw2-color-white);
+    border-radius: 2px;
+    height: 297px;
+    padding: 32px 30px;
+}
+
+.sw2_claude-why-us-card-icon {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 28px;
+}
+
+.sw2_claude-why-us-card-icon svg {
+    display: block;
+}
+
+.sw2_claude-why-us-card-title {
+    color: var(--sw2-color-black);
+    font-family: Georgia;
+    font-size: 23px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -0.46px;
+    margin: 16px 0 0;
+}
+
+.sw2_claude-why-us-card-desc {
+    color: #4A5A68;
+    font-family: Family Sans !important;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5;
+    margin: 12px 0 0;
+}
