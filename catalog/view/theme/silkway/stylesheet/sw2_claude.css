@@ -180,3 +180,230 @@
     line-height: 1.5;
     margin: 12px 0 0;
 }
+
+
+/* ===========================
+   10_Projects (projects.html)
+   =========================== */
+
+.sw2_claude-projects-section {
+    background: #F6F7F9;
+}
+
+.sw2_claude-projects-card {
+    background: #FFF;
+    border: 1px solid var(--sw2-color-white);
+    padding: 36px 40px;
+    height: 380px;
+}
+
+.sw2_claude-projects-card-title {
+    color: #203E5B;
+    font-family: Georgia;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    margin: 8px 0 0;
+}
+
+.sw2_claude-projects-card-desc {
+    color: #6C727C;
+    font-family: Family Sans !important;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5;
+    margin: 24px 0 0;
+}
+
+.sw2_claude-projects-card-list {
+    list-style: none;
+    margin: 24px 0 0;
+    padding: 0;
+}
+
+.sw2_claude-projects-card-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    color: #6C727C;
+    font-family: Family Sans !important;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.8;
+}
+
+.sw2_claude-projects-card-list li svg {
+    flex: 0 0 auto;
+    margin-top: 5px;
+}
+
+
+/* ===========================
+   11_Refs (refs.html)
+   =========================== */
+
+.sw2_claude-refs-card {
+    background: #FFF;
+    border: 1px solid var(--sw2-color-white);
+    height: 362px;
+    padding: 10px 32px 25px;
+}
+
+.sw2_claude-refs-card-quote-mark {
+    color: var(--sw2-color-gold);
+    font-family: Georgia;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 90px;
+    letter-spacing: -1px;
+    margin: 0;
+}
+
+.sw2_claude-refs-card-text {
+    color: #203E5B;
+    font-family: var(--sds-typography-body-font-family) !important;
+    font-size: 16px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.4;
+    margin: 0;
+}
+
+.sw2_claude-refs-card-divider {
+    border: 0;
+    border-top: 1px solid var(--sw2-color-white);
+    margin: 25px 0 14px;
+}
+
+.sw2_claude-refs-card-name {
+    color: #203E5B;
+    font-family: Family Sans !important;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.4;
+    margin: 0;
+}
+
+.sw2_claude-refs-card-company {
+    color: #BBB;
+    font-family: Family Sans !important;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1;
+    margin: 4px 0 0;
+}
+
+.sw2_claude-refs-heading {
+    color: #203E5B;
+    font-family: Georgia;
+    font-size: 23px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -0.46px;
+    text-align: center;
+    margin: 0;
+}
+
+.sw2_claude-refs-logo {
+    width: 180px;
+    height: 180px;
+    object-fit: contain;
+    opacity: 0.6;
+}
+
+
+/* ===========================
+   Blog (blog.html)
+   =========================== */
+
+.sw2_claude-blog-section {
+    background: #F6F7F9;
+}
+
+.sw2_claude-blog-heading {
+    font-family: Georgia;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 90px;
+    letter-spacing: -1px;
+    margin: 0;
+}
+
+.sw2_claude-blog-all-btn {
+    background: #F6F7F9;
+    border: 1px solid var(--sw2-color-white);
+    color: #6C727C;
+    font-family: Inter !important;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140%;
+    text-transform: uppercase;
+    padding: 11px 24px;
+}
+
+.sw2_claude-blog-all-btn:hover {
+    background: #FFF;
+    color: var(--sw2-color-black);
+}
+
+.sw2_claude-blog-card-image {
+    display: block;
+    width: 100%;
+    height: 267px;
+    object-fit: cover;
+    border-radius: 2px;
+}
+
+.sw2_claude-blog-badge {
+    display: inline-block;
+    background: #F6F7F9;
+    border: 1px solid var(--sw2-color-white);
+    color: #A6ACB4;
+    font-family: Inter !important;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140%;
+    text-transform: uppercase;
+    padding: 4px 14px;
+    margin-top: 20px;
+}
+
+.sw2_claude-blog-card-date {
+    color: #A6ACB4;
+    font-family: var(--sds-typography-body-font-family) !important;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.2;
+    margin: 12px 0 0;
+}
+
+.sw2_claude-blog-card-title {
+    color: #203E5B;
+    font-family: var(--sds-typography-body-font-family) !important;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.3;
+    margin: 8px 0 0;
+}
+
+.sw2_claude-blog-nav {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.sw2_claude-blog-nav svg {
+    display: block;
+}
